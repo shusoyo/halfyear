@@ -15,7 +15,9 @@
 
 == 因式分解
 #example[
-  $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$
+  + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$
+  + $ln(a b c) = ln(a) + ln(b) + ln(c) space ("将乘法变为加法，便于求导")$
+
 ]
 
 == 不等式
@@ -42,6 +44,20 @@
   $ sqrt(x^2) = |x| $
 ]
 
-#remark("未定式与定式")[
+#theorem("二项式定理")[
+  $ (a + b) ^ n = sum_(k = 0)^n C^k_n thin a^k thin b^(n-k) $
+]
+// #box(height: 180pt)
+#formula("二项式定理的近似计算和放缩")[
+
+  $ (1+x)^n ≈ 1 + n x + n(n+1)/2 x^2 + … thin space $
+  $ (|x|≪1 "或n较大时可以只取得前几项。当x较小时,也可以使用泰勒展开得出") $ 
+  
+]
+
+#formula("极限相关二级结论")[
+  
+  + $lim_(x->infinity)(1+a/x)^(b x + d) = e ^(a b)$
+
 
 ]
