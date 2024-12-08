@@ -14,7 +14,7 @@ var make-pdf = {|name|
   var src-name = (str:join '/' [$name $fname])
   typst c $src-name --root $proot 
   var pdf-path = (str:join '/' [$proot $name main.pdf])
-  mv $pdf-path (str:join '/' [$syncf-path $name typst.pdf])
+  cp $pdf-path (str:join '/' [$syncf-path $name typst.pdf])
 }
 
 each $make-pdf $pname
