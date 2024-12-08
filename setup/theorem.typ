@@ -1,6 +1,10 @@
 #import "@preview/ctheorems:1.1.3": *
 
-#let thmbox = thmbox.with(namefmt: x => [（#x）])
+#let thmbox = thmbox.with(
+  namefmt: x => [#h(0.5em) #text(rgb(red))[#x：] #h(-0.4em)], 
+  separator: [#h(0.1em)]
+)
+
 #let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee"))
 #let corollary = thmplain(
   "corollary",
