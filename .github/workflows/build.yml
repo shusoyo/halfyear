@@ -1,0 +1,24 @@
+name: Build PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-pdf:
+    runs-on: hws
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Compile PDF
+        run: |
+          typst c calculus/main.typ calculus.pdf --root .
+
+      - name: Upload PDF as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: calculus.pdf
+          path: calculus.pdf  # 将生成的 PDF 文件作为 Artifact 上传
+
