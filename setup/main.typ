@@ -37,7 +37,7 @@
 
     #v(1em)
     #align(center)[
-      #raw("suspen")
+      #raw("suspen, courier")
       
       #datetime.today().display("[year] 年 [month] 月 [day] 日")
     ]
