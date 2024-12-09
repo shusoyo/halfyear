@@ -1,28 +1,20 @@
 #!/usr/bin/env elvish
 
-# use path
-# use str
-# 
-# var pname = [
-#   calculus
-# ]
-# 
-# var syncf-path = (get-env HOME)/learn/sync/11408
-# var proot = (path:dir (src)[name])
-# var fname = main.typ
-# 
-# var make-pdf = {|name|
-#   var src-name = (str:join '/' [$name $fname])
-#   typst c $src-name --root $proot 
-#   var pdf-path = (str:join '/' [$proot $name main.pdf])
-#   cp $pdf-path (str:join '/' [$syncf-path $name typst.pdf])
-# }
-  
-# each $make-pdf $pname
+# 删除旧的 Release
+gh release delete latest --yes
 
-# git tag -a latest -m "Update PDF with latest changes"
-# git push origin latest
-# gh release create latest calculus/main.pdf --title "Latest PDF Release" --notes "This is the latest PDF generated." --prerelease
+# 删除本地和远程的 `latest` 标签
+git tag -d latest
+git push origin --delete latest
 
-gh release upload latest calculus/main.pdf --clobber
+# 创建新的 `latest` 标签
+git tag -a latest -m "latest"
+git push origin latest
+
+# 创建新的 Release 并上传文件
+gh release create latest ^
+  --title "pdf" ^
+  --notes "latest" ^
+  --prerelease ^
+  calculus/main.pdf
 
