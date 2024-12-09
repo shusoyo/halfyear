@@ -15,6 +15,5 @@ git push origin latest
 gh release create latest ^
   --title "pdf" ^
   --notes "latest" ^
-  --prerelease ^
   calculus/main.pdf
 
