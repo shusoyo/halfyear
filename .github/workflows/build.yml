@@ -17,8 +17,8 @@ jobs:
           typst c calculus/main.typ calculus.pdf --root .
 
       - name: Upload PDF as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: calculus.pdf
-          path: calculus.pdf  # 将生成的 PDF 文件作为 Artifact 上传
+          path: pdfs  # 将生成的 PDF 文件作为 Artifact 上传
 
