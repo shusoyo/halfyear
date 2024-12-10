@@ -15,7 +15,7 @@
 #show math.ast: math.thin
 #let obey = math.tilde
 
-#include "basic.typ"
+#include "ch0.typ"
 #include "ch1.typ"
 #include "ch2.typ"
 #include "ch3.typ"
