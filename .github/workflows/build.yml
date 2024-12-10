@@ -6,19 +6,56 @@ on:
       - main
 
 jobs:
-  build-pdf:
+  build:
     runs-on: hws
+    permissions:
+      actions: write
+      contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compile PDF
         run: |
           typst c calculus/main.typ calculus.pdf --root .
+      
+      # - name: Upload PDF as Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: pdfs
+      #     path: calculus.pdf # Upload the generated PDF as an artifact
 
-      - name: Upload PDF as Artifact
-        uses: actions/upload-artifact@v3
+      - name: Update `latest` Tag
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git tag -f latest  # 强制更新最新的 `latest` 标签
+          git push origin -f latest  # 强制推送标签到远程
+
+      - name: Create or Update Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: calculus.pdf
-          path: calculus.pdf  # 将生成的 PDF 文件作为 Artifact 上传
+          files: calculus.pdf
+          make_latest: true
+          tag_name: latest  # 指定标签为 `latest`
+          name: "pdfs"
+          body: ""
+
+
+
+  cleanup:
+    runs-on: hws
+    permissions:
+      actions: write
+      contents: read
+
+    steps:
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 1
+          keep_minimum_runs: 2
+
 
