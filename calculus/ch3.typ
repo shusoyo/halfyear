@@ -5,13 +5,9 @@
 
 #show: project.with(
   title: "Chapter 3",
-  authors: (
-    "suspen",
-  ),
+  authors: ("suspen",),
   language: "ch",
 )
-
-
 
 = 函数微分
 
@@ -26,8 +22,13 @@
   1. $phi(x)$ 连续 $ <=> lim_(x -> a) phi(x) = phi(a)$.
 ]
 
-
 #definition("几何意义")[
   函数在某点的导数等于在这点的切线的斜率：
   $ f'(x_0) = k $
+]
+
+== 微分
+
+#definition[
+  有 $f(x)$ 在 $x_0$ 处可微，则有 $ dif y|_(x = x_0) = A ast Delta x = f'(x) dif x $
 ]

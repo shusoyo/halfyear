@@ -5,9 +5,7 @@
 
 #show: project.with(
   title: "Basic Knoweledge",
-  authors: (
-    "suspen",
-  ),
+  authors: ("suspen",),
   language: "ch",
 )
 
@@ -17,16 +15,15 @@
 #example[
   + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$
   + $ln(a b c) = ln(a) + ln(b) + ln(c) space ("将乘法变为加法，便于求导")$
-
 ]
 
 == 不等式
 #theorem[
-  $ 2 / (1/a + 1/b) <= sqrt(a b) <= (a + b) / 2 <= sqrt((a^2 + b^2) / 2), space (a, b > 0) $
+  $ 2 / (1 / a + 1 / b) <= sqrt(a b) <= (a + b) / 2 <= sqrt((a^2 + b^2) / 2), space (a, b > 0) $
 ]
 
 #theorem[
-  + $abs(size: #120%, |a| - |b|)  <= |a - b| $
+  + $abs(size: #120%, |a| - |b|) <= |a - b|$
   + $abs(a plus.minus b) <= |a| + |b|$
 
 ]
@@ -45,19 +42,14 @@
 ]
 
 #theorem("二项式定理")[
-  $ (a + b) ^ n = sum_(k = 0)^n C^k_n thin a^k thin b^(n-k) $
+  $ (a + b)^n = sum_(k = 0)^n C^k_n thin a^k thin b^(n-k) $
 ]
 // #box(height: 180pt)
 #formula("二项式定理的近似计算和放缩")[
-
-  $ (1+x)^n ≈ 1 + n x + n(n+1)/2 x^2 + … thin space $
-  $ (|x|≪1 "或n较大时可以只取得前几项。当x较小时,也可以使用泰勒展开得出") $ 
-  
+  $ (1+x)^n ≈ 1 + n x + n(n+1) / 2 x^2 + ... $
+  $|x| << 1$ 或n较大时可以只取得前几项。当x较小时,也可以使用泰勒展开得出
 ]
 
 #formula("极限相关二级结论")[
-  
-  + $lim_(x->infinity)(1+a/x)^(b x + d) = e ^(a b)$
-
-
+  + $lim_(x->infinity)(1+a / x)^(b x + d) = e^(a b)$
 ]

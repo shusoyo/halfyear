@@ -2,14 +2,12 @@
 
 #show: project.with(
   title: "Basic Mathmatical",
-  authors: (
-    "suspen",
-  ),
+  authors: ("suspen",),
   language: "ch",
   outl: [
     #outline(indent: true, title: "目录", depth: 2)
   ],
-  title_page: true
+  title_page: true,
 )
 
 #show math.ast: math.thin
