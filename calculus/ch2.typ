@@ -16,14 +16,7 @@
 ]
 
 = 杂项
-#formula("放缩二级结论")[
-  + $lim_(x->infinity)(a^n + b^n + ……)^(1 / n) = max{a,b,……}$
-  + 若 $0 < a < x < b  ,  0 < c < y < d , space "则" c/b < y/x < d/a  $
-  + 当 $0 < x < pi/4 "时", space x < tan x < 4/pi x$
-  + 当 $0 < x < pi/2 "时", space sin x > 2/π x$
-  + 当 $0 <= x <= 1 "时", space arctan x <= x <= arcsin x$
-  + 当 $0 < x "时", space 1/(1 + x) < ln(1 + 1/x) < 1/x space "或" space x/(1 + x) < ln(1 + x) < x $
-]
+
 
 // #set enum(numbering: "1")
 

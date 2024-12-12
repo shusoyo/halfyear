@@ -13,8 +13,8 @@
 
 == 因式分解
 #example[
-  + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$
-  + $ln(a b c) = ln(a) + ln(b) + ln(c) space ("将乘法变为加法，便于求导")$
+  + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$.
+  + $ln(a b c) = ln(a) + ln(b) + ln(c)$ （将乘法变为加法，便于求导）。
 ]
 
 == 不等式
@@ -25,7 +25,17 @@
 #theorem[
   + $abs(size: #120%, |a| - |b|) <= |a - b|$
   + $abs(a plus.minus b) <= |a| + |b|$
+]
 
+=== 不等式放缩
+
+#knowledge("放缩二级结论")[
+  + $ lim_(x->oo)(a^n + b^n + ……)^(1 / n) = max{a, b, ...} $
+  + 若 $0 < a < x < b, 0 < c < y < d, $ 则有 $c/b < y/x < d/a$
+  + 当 $0 < x < pi/4 "时", space x < tan x < 4/pi x$
+  + 当 $0 < x < pi/2 "时", space sin x > 2/π x$
+  + 当 $0 <= x <= 1 "时", space arctan x <= x <= arcsin x$
+  + 当 $0 < x "时", space 1/(1 + x) < ln(1 + 1/x) < 1/x space "或" space x/(1 + x) < ln(1 + x) < x $
 ]
 
 == 反三角函数
@@ -44,6 +54,7 @@
 #theorem("二项式定理")[
   $ (a + b)^n = sum_(k = 0)^n C^k_n thin a^k thin b^(n-k) $
 ]
+
 // #box(height: 180pt)
 #formula("二项式定理的近似计算和放缩")[
   $ (1+x)^n ≈ 1 + n x + n(n+1) / 2 x^2 + ... $
