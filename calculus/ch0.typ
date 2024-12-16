@@ -5,7 +5,6 @@
 
 #show: project.with(
   title: "Basic Knoweledge",
-  authors: ("suspen",),
   language: "ch",
 )
 
@@ -38,12 +37,13 @@
   + 当 $0 < x "时", space 1/(1 + x) < ln(1 + 1/x) < 1/x space "或" space x/(1 + x) < ln(1 + x) < x $
 ]
 
-== 反三角函数
+// TODO
+// == 反三角函数
 // TODO
 
 == 杂项
 #formula("求根公式")[
-  For equation $a x^2 + b x + c = 0, a != 0$:
+  若方程 $a x^2 + b x + c = 0, a != 0$, 则有
   $ x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a) $
 ]
 

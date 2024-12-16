@@ -5,7 +5,6 @@
 
 #show: project.with(
   title: "Basic Knoweledge",
-  authors: ("suspen",),
   language: "ch",
 )
 
