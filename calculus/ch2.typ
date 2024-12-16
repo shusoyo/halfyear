@@ -5,20 +5,23 @@
 
 #show: project.with(
   title: "Chapter 2",
-  authors: ("suspen",),
   language: "ch",
 )
 
 = 数列的极限
 
-#theorem("保号性")[
-  *TODO*
+#theorem("收敛数列的保号性")[
+  有数列 $lim_(n -> oo) {x_n} = a >_((<)) b$，则 $exists N in NN^+, "当" n > N, "有" x_n >_((<)) b$. 反之，若有 $b in RR, x_n >=_((<=)) b$，则 $lim_(n -> oo) = a >=_((<=)) b$.
 ]
 
-= 杂项
-
-
-// #set enum(numbering: "1")
+#theorem("归结原则")[
+  $exists x in accent(U, circle) (x_0), lim_(x -> x_0) f(x) = A, forall lim_(n -> oo)x_n = x_0$, 有$lim_(n -> oo) f(x_n) = A.$
+]
+#knowledge[
+  + 当 $x -> 0$ 时，$x_n = 1/n, lim_(n -> oo)x_n = 0$.
+  + 当 $x -> +oo$ 时，$x_n = n, lim_(n -> oo)x_n = +oo$.
+  + 相反的，当 $lim_(n -> oo) x_n -> a, and x_n != a, lim_(x -> a)f(x) = lim_(n -> oo)f(x_n) = A$.
+]
 
 #formula("证明收敛大题")[
   + 求出单调性
