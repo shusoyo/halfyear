@@ -1,9 +1,9 @@
 #import "../setup/main.typ": *
 
 #show: project.with(
-  title: "Basic Mathmatical",
-  authors: ("suspen",),
+  title: "Basic Mathematics",
   language: "ch",
+  authors: ("suspen", "courier"),
   outl: [
     #outline(indent: true, title: "目录", depth: 2)
   ],

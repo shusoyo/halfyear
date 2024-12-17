@@ -5,7 +5,6 @@
 
 #show: project.with(
   title: "Chapter 3",
-  authors: ("suspen",),
   language: "ch",
 )
 

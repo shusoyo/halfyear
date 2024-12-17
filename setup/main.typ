@@ -1,4 +1,4 @@
-#let project(title: "", authors: (), body, language: "en", outl : [], title_page: false) = {
+#let project(title: "", authors: (), body, language: "en", outl: [], title_page: false) = {
   set document(author: authors, title: title)
   set page(numbering: "1", number-align: center)
   set heading(numbering: "1.1 ")
@@ -31,7 +31,7 @@
       #v(1em)
       #align(center)[
         #raw("suspen, courier")
-        
+
         #datetime.today().display("[year] 年 [month] 月 [day] 日")
       ]
 
