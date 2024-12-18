@@ -12,6 +12,8 @@
     it
   }
 
+  show math.ast: math.thin
+
   show emph: text.with(font: ("Libertinus Serif", "STKaiti"))
 
   // auto spacing. eg: 第4章 -> 第 4 章
