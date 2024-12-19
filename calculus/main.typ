@@ -1,7 +1,7 @@
 #import "../setup/main.typ": *
 
 #show: project.with(
-  title: "Basic Mathematics",
+  title: "Basic Math",
   language: "ch",
   authors: ("suspen", "courier"),
   outl: [

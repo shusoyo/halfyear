@@ -12,14 +12,12 @@
 
 == 函数变换
 
-=== 因式分解
-#example[
+#knowledge("因式分解")[
   + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$.
   + $ln(a b c) = ln(a) + ln(b) + ln(c)$ （将乘法变为加法，便于求导）。
 ]
 
-=== 凑出奇函数
-#example[
+#knowledge("凑出奇函数")[
   + $ a > 1时，1 / (a^x + 1)-1 / 2 , (a^x - 1) / (a^x + 1) "均为奇函数。 " $
   + 含有指数函数的分式，考虑凑出奇函数。$f(x) = g(x) + k $ ，如果能凑出奇函数$g(x)$
     , 则$f(x) + f(-x) = 2k  $。
@@ -27,11 +25,11 @@
 ]
 
 == 不等式
-#theorem[
+#knowledge("基本不等式组")[
   $ 2 / (1 / a + 1 / b) <= sqrt(a b) <= (a + b) / 2 <= sqrt((a^2 + b^2) / 2), space (a, b > 0) $
 ]
 
-#theorem[
+#knowledge("绝对值不等式组")[
   + $abs(size: #120%, |a| - |b|) <= |a - b|$
   + $abs(a plus.minus b) <= |a| + |b|$
 ]

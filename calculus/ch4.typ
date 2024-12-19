@@ -12,36 +12,34 @@
 
 == 复杂函数求导
 
-#formula("分段函数求导")[
+#knowledge("分段函数求导")[
   先用求导公式求出不含分界点的部分，然后再用导数的定义求出分界点的。
 ]
 
 #formula("反函数求导")[
-  $ x'_(y) = 1 / (y'_x) $
-
-  $ x''_(y y) = - (y''_(x x)) / (y'_x)^3 $
+  $
+    x'_(y) &= 1 / (y'_x) \
+    x''_(y y) &= - (y''_(x x)) / (y'_x)^3
+  $
 ]
 
-#formula("隐函数求导")[
-  两边对x求导
-]
+// #formula("隐函数求导")[
+//   两边对x求导
+// ]
 
 #formula("参数方程求导")[
-
-
   // $ 函数 y = f(x)$由参数方程 $cases(x = phi(t),y = psi(t)) $ 确定。 $
 
   #align(center)[
-    函数$y = f(x)$由参数方程 $cases(x = phi(t),y = psi(t))$ 确定。
+    函数 $y = f(x)$ 由参数方程 $cases(x = phi(t),y = psi(t))$ 确定。
   ]
-  #align(center)[
-    $(d y)/(d x)$ = $(psi'(x))/(phi'(x))$
-    $space space space$
-    $(d^2 x) / (d y^2) = (psi''(t) phi'(t) - psi'(t) phi''(t)) / ([phi'(t)]^3)$
-  ]
+  $
+    (d y) / (d x) &= (psi'(x)) / (phi'(x)) \
+    (d^2 x) / (d y^2) &= (psi''(t) phi'(t) - psi'(t) phi''(t)) / ([phi'(t)]^3)
+  $
 ]
 
-#formula("对数求导法")[
+#knowledge("对数求导法")[
   对于多项相乘，相除，开方，乘方的式子，可以取对数求导。对于开方，乘方的函数，可以化成指数函数(底数是e)。
 ]
 
