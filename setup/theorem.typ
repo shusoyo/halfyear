@@ -15,28 +15,65 @@
 )
 
 #let knowledge = thmplain(
-  "knowledge point",
-  "Knowledge Point",
+  "annotation",
+  "Annotation",
+  inset: 0em,
 )
 
-#let formula = thmbox("formula", "Formula", fill: rgb("#e5f2ff"))
+#let annotation = thmplain(
+  "annotation",
+  "Annotation",
+  inset: 0em,
+)
+
+#let propostion = thmplain(
+  "propostion",
+  "Propostion",
+  inset: 0em,
+)
+
+#let formula = thmbox(
+  "formula",
+  "Formula",
+  fill: rgb("#e5f2ff"),
+)
 
 #let theorem = thmbox(
   "theorem",
   "Theorem",
   fill: rgb("#e8e8f8"),
 )
+// Proofs are attached to theorems, although they are not numbered
+#let proof = thmproof(
+  "proof",
+  "Proof",
+  base: "theorem",
+)
+
 #let lemma = thmbox(
   "theorem", // Lemmas use the same counter as Theorems
   "Lemma",
   fill: rgb("#efe6ff"),
 )
+
 #let corollary = thmbox(
   "corollary",
   "Corollary",
   base: "theorem", // Corollaries are 'attached' to Theorems
   fill: rgb("#f8e8e8"),
 )
+
+// Examples and remarks are not numbered
+#let example = thmplain(
+  "example",
+  "Example",
+).with(numbering: none)
+
+#let remark = thmplain(
+  "remark",
+  "Remark",
+  inset: 0em,
+).with(numbering: none)
 
 #let definition = thmbox(
   "definition", // Definitions use their own counter
@@ -50,22 +87,6 @@
   stroke: rgb("#ffaaaa") + 1pt,
   base: none, // Unattached: count globally
 ).with(numbering: "I") // Use Roman numerals
-
-// Examples and remarks are not numbered
-#let example = thmplain("example", "Example").with(numbering: none)
-
-#let remark = thmplain(
-  "remark",
-  "Remark",
-  inset: 0em,
-).with(numbering: none)
-
-// Proofs are attached to theorems, although they are not numbered
-#let proof = thmproof(
-  "proof",
-  "Proof",
-  base: "theorem",
-)
 
 #let solution = thmplain(
   "solution",
