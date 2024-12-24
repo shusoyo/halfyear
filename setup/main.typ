@@ -4,7 +4,7 @@
   set heading(numbering: "1.1 ")
 
   // fonts settings
-  set text(font: ("Libertinus Serif", "Noto Serif CJK SC"), lang: language, size: 11pt)
+  set text(font: ("Libertinus Serif", "Noto Serif CJK SC", "Noto Serif SC"), lang: language, size: 11pt)
   show raw: set text(font: "Fira Code", weight: "medium")
   show math.equation: set text(font: ("New Computer Modern Math", "Libertinus Serif"), size: 12pt)
   show math.equation: it => {
