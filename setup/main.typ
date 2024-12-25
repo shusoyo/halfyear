@@ -4,11 +4,16 @@
   set heading(numbering: "1.1 ")
 
   // fonts settings
-  set text(font: ("Libertinus Serif", "Noto Serif CJK SC", "Noto Serif SC"), lang: language, size: 11pt)
+  set text(
+    font: ("Libertinus Serif", "Noto Serif CJK SC", "Noto Serif SC"),
+    lang: language,
+    size: 11pt,
+    weight: "light",
+  )
   show raw: set text(font: "Fira Code", weight: "medium")
   show math.equation: set text(font: ("New Computer Modern Math", "Libertinus Serif"), size: 12pt)
   show math.equation: it => {
-    show regex("\p{script=Han}"): set text(font: "Noto Serif CJK SC", weight: "regular")
+    show regex("\p{script=Han}"): set text(font: "Noto Serif CJK SC", weight: "light")
     show regex("\p{script=Han}\s*,\s*\p{script=Han}"): it => [#show regex("\s*,\s*"): it => [#text(
           font: "Noto Serif CJK SC",
           "，",
@@ -18,6 +23,7 @@
     show regex("[。.]"): it => [. ]
     it
   }
+
   show regex("[。]"): it => [. ]
   show regex("\p{script=Han}\s*,\s*"): it => [#show regex("\s*,\s*"): it => [，]
     #it]
