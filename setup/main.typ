@@ -9,11 +9,18 @@
   show math.equation: set text(font: ("New Computer Modern Math", "Libertinus Serif"), size: 12pt)
   show math.equation: it => {
     show regex("\p{script=Han}"): set text(font: "Noto Serif CJK SC", weight: "regular")
-    show regex("[，,]"): it => [, ]
+    show regex("\p{script=Han}\s*,\s*\p{script=Han}"): it => [#show regex("\s*,\s*"): it => [#text(
+          font: "Noto Serif CJK SC",
+          "，",
+        )]
+      #it]
+    show regex("[,]"): it => [#text(font: "Noto Serif CJK SC", "，")]
     show regex("[。.]"): it => [. ]
     it
   }
   show regex("[。]"): it => [. ]
+  show regex("\p{script=Han}\s*,\s*"): it => [#show regex("\s*,\s*"): it => [，]
+    #it]
 
   // auto spacing. eg: 第4章 -> 第 4 章
   set text(cjk-latin-spacing: auto)

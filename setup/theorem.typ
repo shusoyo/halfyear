@@ -7,7 +7,7 @@
 
 #let thmplain = thmbox.with(
   padding: (top: 0em, bottom: 0em),
-  breakable: true,
+  breakable: false,
   inset: (top: 0em, left: 1.2em, right: 1.2em),
   namefmt: name => emph(text(font: ("Libertinus Serif", "STKaiti"), rgb("#ff0000"))[#h(0.5em) #name #h(0.1em)]),
   // separator: [#h(0.1em):],
