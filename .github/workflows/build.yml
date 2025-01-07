@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: hws
+    runs-on: nixos
     permissions:
       actions: write
       contents: write
@@ -15,9 +15,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Download fonts
+        run: |
+          nix build
+
       - name: Compile PDF
         run: |
-          typst c calculus/main.typ calculus.pdf --root .
+          typst c calculus/main.typ calculus.pdf --root . \
+            --font-path ./result \
+            --ignore-system-fonts
 
       - name: Update `latest` Tag
         run: |

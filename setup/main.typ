@@ -5,7 +5,7 @@
 
   // fonts settings
   set text(
-    font: ("Libertinus Serif", "Noto Serif CJK SC", "Noto Serif SC"),
+    font: ("Libertinus Serif", "Noto Serif CJK SC"),
     lang: language,
     size: 11pt,
     weight: "light",
@@ -31,7 +31,7 @@
   // auto spacing. eg: 第4章 -> 第 4 章
   set text(cjk-latin-spacing: auto)
 
-  show emph: text.with(font: ("Libertinus Serif", "STKaiti"))
+  show emph: text.with(font: ("Libertinus Serif", "Adobe Kaiti Std R"))
 
   set page(margin: 1.5cm)
 
