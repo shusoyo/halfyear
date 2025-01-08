@@ -21,7 +21,9 @@ jobs:
 
       - name: Compile PDF
         run: |
-          typst c calculus/main.typ calculus.pdf --root . \
+          nix run nixpkgs#typst -- \
+            c calculus/main.typ calculus.pdf \
+            --root . \
             --font-path ./result \
             --ignore-system-fonts
 
