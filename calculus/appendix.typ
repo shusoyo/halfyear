@@ -13,6 +13,6 @@
 )[
   == 导数表
   #columns(2)[
-    + $(arcsin x)' = 1 - sqrt(1 - x^2)$
+    + $(arcsin x)' = 1 / sqrt(1 - x^2)$
   ]
 ]

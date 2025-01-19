@@ -26,13 +26,16 @@
   + $a^x -1 ~ x ln a$
   + $1 - cos x ~ 1 / 2 x^2$
   + $(1 + x)^a - 1 ~ a x$
-
-  #remark[
-    + @Equivalent-Infintesimal 中的常用的等价无穷小，使用时需要注意应满足前提条件 $x -> 0$。
-    + 在进行等价无穷小代换时，只能在分子分母形式时替换（可以通过极限运算法则化简为单项式）。
-  ]
 ] <Equivalent-Infintesimal>
 
+#remark[
+  + @Equivalent-Infintesimal 中的常用的等价无穷小，使用时需要注意应满足前提条件 $x -> 0$。
+  + 在进行等价无穷小代换时，只能在分子分母形式时替换（可以通过极限运算法则化简为单项式）。
+]
+
+#annotation("两个重要极限")[
+  $ lim_(x -> 0) sin(x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
+]
 
 #definition("7 种未定式")[
   $ 0 / 0, infinity / infinity , 0 dot infinity, infinity - infinity, infinity^0, 0^0, 1^infinity $

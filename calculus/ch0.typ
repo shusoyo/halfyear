@@ -56,11 +56,15 @@
 ]
 
 #knowledge[
-  $ sqrt(x^2) = |x| $
+  $sqrt(x^2) = |x|$
+]
+
+#annotation[
+  $binom(n, k) = n! / (k! (n - k)!)$
 ]
 
 #theorem("二项式定理")[
-  $ (a + b)^n = sum_(k = 0)^n C^k_n thin a^k thin b^(n-k) $
+  $ (a + b)^n = sum_(k = 0)^n binom(n, k) thin a^k thin b^(n-k) $
 ]
 
 // #box(height: 180pt)
