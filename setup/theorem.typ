@@ -71,6 +71,12 @@
   "Example",
 ).with(numbering: none)
 
+#let properties = thmplain(
+  "properties",
+  "Properties",
+  inset: 0em,
+).with(numbering: none)
+
 #let remark = thmplain(
   "remark",
   "Remark",

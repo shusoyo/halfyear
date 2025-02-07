@@ -10,6 +10,11 @@
 
 = 函数的极限与连续
 
+#theorem("无穷小与函数极限的关系")[
+  $ lim_(x -> (x_0 \/ oo)) f(x) = A <=> f(x) = A + alpha $
+  $alpha$ 是 $x -> (x_0 \/ oo)$ 处的无穷小量。
+]
+
 #definition("等价无穷小")[
   有 $a in RR union {infinity, -infinity}. "有函数" f, g, h$ 在 $x = a$ 附近（临域内）有定义，且
   $ lim_(x -> a) f(x) / h(x) = 1 $

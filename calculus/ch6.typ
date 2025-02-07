@@ -94,7 +94,7 @@
   ]
 ]
 
-#corollary("Maclaurin series")[常见的麦克劳林展开式，见公式章节]
+#corollary("Maclaurin 展开式")[常见的麦克劳林展开式，见公式章节]
 
 == 微分等式
 #theorem()[
