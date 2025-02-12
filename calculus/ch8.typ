@@ -15,6 +15,7 @@
 #theorem("原函数存在定理")[
   连续函数必有原函数.
 ]
+
 #proof[
   思路为构造出变上限积分函数 $Phi(x)$ 然后求出 $Delta Phi(x)$, 对其由积分中值定理，构造出 $(Delta Phi(x)) / (Delta x) = f(xi)$, 等式两边同时取极限即可。
 ]
@@ -48,7 +49,7 @@
 == 变限积分
 #properties[
   + 函数 $f(x)$ 在 $I$ 上可积（可积判断见 @integrability），则函数 $F(x) = integral_a^x f(t) dif t$ 在 $I$ 上连续。
-  + $f(x)$ 连续，则 $F(X)$ 可导，且 $F'(x) = f(x)$.
+  + $f(x)$ 连续，则 $F(X) = integral_a^x f(t) dif t$ 可导，且 $F'(x) = f(x)$.
   + $F(x) = integral_a^x f(t) dif t$ 在 $f(x)$ 唯一间断点 $x_0$ 处 不可导，且 $cases(F'_-(x_0) = lim_(x -> x_0^-) f(x), F'_+(x_0) = lim_(x -> x_0^+) f(x))$，
   + 在 $f(x)$ 唯一的可去间断点 $x_1$ 处可导，且 $F'(x_1) = lim(x -> x_1) f(x)$.
 ]

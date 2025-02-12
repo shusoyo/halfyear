@@ -4,7 +4,7 @@
 #show: thmrules.with(qed-symbol: $square$)
 #show: project.with(language: "ch")
 
-= 一元函数微分学的应用（二）—— 中值定理、微分等式与微分不等式
+= 一元函数微分学的应用（二）中值定理、微分等式与微分不等式
 
 == 中值定理
 

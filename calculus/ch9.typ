@@ -9,12 +9,18 @@
 ps: 要注意公式，方法适用的条件。
 
 == 不定积分的计算
+#annotation("凑微分法")[
+  $ integral f[g(x)] g'(x) dif x = integral f[g(x)] dif [g(x)] $
+]
 
-#annotation("凑微分法")[ ]
 #annotation("换元法")[ ]
 
-#annotation("分部积分法")[ ]
-#annotation("有理函数的积分")[ ]
+#annotation("分部积分法")[
+  $ integral u dif v = u v - integral v dif u $
+]
+#annotation("有理函数的积分")[
+
+]
 
 == 定积分的计算
 
@@ -29,3 +35,8 @@ ps: 要注意公式，方法适用的条件。
 ]
 
 == 变限积分的计算
+
+#theorem[
+  有 $F(x) = integral_(phi_1 (x))^(phi_2 (x)) f(t) dif t$ 则
+  $ F'(x) = f[phi_1 (x)] phi'(x) - f[phi_2 (x)] phi'(x) $
+]

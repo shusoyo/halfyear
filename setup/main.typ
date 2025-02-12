@@ -31,6 +31,14 @@
   // auto spacing. eg: 第4章 -> 第 4 章
   set text(cjk-latin-spacing: auto)
 
+  // https://typst-doc-cn.github.io/guide/FAQ/multiple-files
+  show ref: it => {
+    if query(it.target).len() == 0 {
+      return text(fill: red, "<未找到引用" + str(it.target) + ">")
+    }
+    it
+  }
+
   set page(margin: 1.5cm)
 
   show math.ast: math.thin
