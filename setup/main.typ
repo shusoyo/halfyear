@@ -14,18 +14,23 @@
   show math.equation: set text(font: ("New Computer Modern Math", "Libertinus Serif"), size: 12pt)
   show math.equation: it => {
     show regex("\p{script=Han}"): set text(font: "Noto Serif CJK SC", weight: "light", size: 11pt)
-    show regex("\p{script=Han}\s*,\s*\p{script=Han}"): it => [#show regex("\s*,\s*"): it => [#text(
+    show regex("\p{script=Han}\s*,"): it => [#show regex("\s*,"): it => [#text(
           font: "Noto Serif CJK SC",
           "，",
         )]
       #it]
-    show regex("[,]"): it => [#text(font: "Noto Serif CJK SC", "，")]
-    show regex("[。.]"): it => [. ]
+
+    // show regex("[,]"): it => [#text(font: "Noto Serif CJK SC", "，")]
+    show regex("[,]"): it => [ , ]
+    show regex("[。.]"): it => [ . ]
     it
   }
-  show regex("[。]"): it => [. ]
-  show regex("\p{script=Han}\s*,\s*"): it => [#show regex("\s*,\s*"): it => [，]
+  show regex("[。]"): it => [ . ]
+  show regex("\p{script=Han}\s*\."): it => [ . ]
+  show regex("[,]"): it => [ , ]
+  show regex("\p{script=Han}\s*,"): it => [#show regex(","): it => [，]
     #it]
+
   show emph: text.with(font: ("Libertinus Serif", "Adobe Kaiti Std R"))
 
   // auto spacing. eg: 第4章 -> 第 4 章
