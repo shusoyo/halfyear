@@ -15,9 +15,14 @@ ps: 要注意公式，方法适用的条件。
 
 #annotation("换元法")[ ]
 
-#annotation("分部积分法")[
+#formula("分部积分法")[
   $ integral u dif v = u v - integral v dif u $
+  #remark[
+    #align(center)[反、对、幂、指、三]
+    $ u <- #h(4em) -> v $
+  ]
 ]
+
 #annotation("有理函数的积分")[
 
 ]

@@ -35,13 +35,15 @@
 
 === 不等式放缩
 
-#knowledge("放缩二级结论")[
+#knowledge("常见放缩或夹逼准则不等式")[
   + $ lim_(n->oo)(a^n + b^n + ……)^(1 / n) = max{a, b, ...} $
+
   + 若 $0 < a < x < b, 0 < c < y < d, $ 则有 $c/b < y/x < d/a$
-  + 当 $0 < x < pi/4 "时", space x < tan x < 4/pi x$
-  + 当 $0 < x < pi/2 "时", space sin x > 2/π x$
-  + 当 $0 <= x <= 1 "时", space arctan x <= x <= arcsin x$
-  + 当 $0 < x "时", space 1/(1 + x) < ln(1 + 1/x) < 1/x space "或" space x/(1 + x) < ln(1 + x) < x $
+  + 当 $0 < x < pi/4 "时",  x < tan x < 4/pi x$
+  + 当 $0 < x < pi/2 "时",  sin x > 2/π x$
+  + 当 $0 <= x <= 1 "时", arctan x <= x <= arcsin x$
+  + 当 $0 < x "时", 1/(1 + x) < ln(1 + 1/x) < 1/x "或" x/(1 + x) < ln(1 + x) < x $
+  + $e^x >= x + 1$
 ]
 
 // TODO
@@ -85,5 +87,5 @@
   + $1 / (1 + x) = 1 - x + x^2 - …… + (-1)^n x^n + o(x^n)$\
   + $ln(1 + x) = x - (x^2) / 2 + (x^3) / 3 + (-1)^(n-1) (x^n) / (n) + o(x^n)$
   + $(1 + x)^a = 1 + a x + a(a - 1) / (2!) x^2 + …… + (a(a - 1)……(a - n + 1)) / n! x^n + o(x^n)$
-]
+] <fm1-maclaurin-expansion>
 

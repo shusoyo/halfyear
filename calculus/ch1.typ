@@ -42,6 +42,10 @@
   $ lim_(x -> 0) sin(x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
 ]
 
+#annotation("几个重要极限结论")[
+  + $a > 0$ 时 $lim_(t -> 0^+) t^a ln t = 0$ （洛必达）
+]
+
 #definition("7 种未定式")[
   $ 0 / 0, infinity / infinity , 0 dot infinity, infinity - infinity, infinity^0, 0^0, 1^infinity $
 ]

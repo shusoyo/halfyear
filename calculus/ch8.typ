@@ -42,15 +42,19 @@
 
 #properties[
   + 积分的保号性：若区间 $[a, b]$ 上 $f(x) <= g(x)$， 则有 $integral_a^b f(x) dif x <= integral_a^b g(x) dif x$.
+
   + 估值定理：$x in [a, b], M = f(x)_max, m = f(x)_min, L = b - a$ 有 $m L <= integral_a^b f(x) dif x <= M L$.
   + 中值定理：$f(x)$ 在 $[a, b]$ 上连续，$exists xi in [a, b], integral_a^b f(x) dif x = f(xi) (b - a)$.
 ]
 
 == 变限积分
 #properties[
-  + 函数 $f(x)$ 在 $I$ 上可积（可积判断见 @integrability），则函数 $F(x) = integral_a^x f(t) dif t$ 在 $I$ 上连续。
+  + 函数 $f(x)$ 在 $I$ 上可积（可积判断见 @integrability ），则函数 $F(x) = integral_a^x f(t) dif t$ 在 $I$ 上连续。
+
   + $f(x)$ 连续，则 $F(X) = integral_a^x f(t) dif t$ 可导，且 $F'(x) = f(x)$.
+
   + $F(x) = integral_a^x f(t) dif t$ 在 $f(x)$ 唯一间断点 $x_0$ 处 不可导，且 $cases(F'_-(x_0) = lim_(x -> x_0^-) f(x), F'_+(x_0) = lim_(x -> x_0^+) f(x))$，
+
   + 在 $f(x)$ 唯一的可去间断点 $x_1$ 处可导，且 $F'(x_1) = lim(x -> x_1) f(x)$.
 ]
 
