@@ -26,7 +26,6 @@
     it
   }
   show regex("[。]"): it => [ . ]
-  show regex("\p{script=Han}\s*\."): it => [ . ]
   show regex("[,]"): it => [ , ]
   show regex("\p{script=Han}\s*,"): it => [#show regex(","): it => [，]
     #it]
@@ -63,9 +62,9 @@
 
       #v(1em)
       #align(center)[
-        #raw("suspen, courier")
+        #raw("suspen & courier")
 
-        #datetime.today().display("[year] 年 [month] 月 [day] 日")
+        #datetime.today().display("[year] - [month] - [day]")
       ]
 
       #show outline.entry.where(level: 1): it => {

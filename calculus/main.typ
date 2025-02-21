@@ -1,7 +1,7 @@
 #import "../setup/main.typ": *
 
 #show: project.with(
-  title: "Basic Math",
+  title: "基础数学",
   language: "ch",
   authors: ("suspen", "courier"),
   outl: [
@@ -21,5 +21,6 @@
 #include "ch9.typ"
 #include "ch10.typ"
 #include "ch11.typ"
+#include "ch12.typ"
 
 #include "appendix.typ"

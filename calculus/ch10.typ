@@ -43,11 +43,11 @@
 
 #formula("平面曲线的弧长")[
   + 直角坐标系
-    $ x $
+    $ s = integral_a^b sqrt(1 + [f'(x)]^2) dif x $
   + 极坐标系
-    $ x $
+    $ s = integral_alpha^beta sqrt([x'(t)]^2 + [y'(t)]^2) dif x $
   + 参数方程
-    $ x $
+    $ s = integral_alpha^beta sqrt([r(theta)]^2 + [r'(theta)]^2) dif x $
 ]
 
 #formula("旋转曲面的面积")[
