@@ -5,11 +5,10 @@
   language: "ch",
   authors: ("suspen", "courier"),
   outl: [
-    #outline(indent: true, title: "目录", depth: 2)
+    #outline(indent: auto, title: "目录", depth: 2)
   ],
   title_page: true,
 )
-
 #include "ch0.typ"
 #include "ch1.typ"
 #include "ch2.typ"
@@ -22,5 +21,7 @@
 #include "ch10.typ"
 #include "ch11.typ"
 #include "ch12.typ"
+#include "ch13.typ"
+#include "ch14.typ"
 
 #include "appendix.typ"

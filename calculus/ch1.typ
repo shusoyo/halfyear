@@ -21,6 +21,7 @@
 
 #annotation("判断函数的奇偶性")[
   + $f(x) + f(-x)$ 必为偶函数
+
   + $f(x) - f(-x)$ 必为奇函数
   + $f[phi(x)]$ （内偶则偶，内奇同外）
   + 函数求导或积分一次，改变一次奇偶性
@@ -29,11 +30,25 @@
 
 #annotation("周期性的重要结论")[
   + 若 $f(x)$ 周期为 $T$, 则 $f(a x + b)$ 周期为 $T/abs(a)$.
+
   + 求导不改变周期 .
-  + 积分呢？ *TODO*
+  + $integral_0^x f(t) dif t$ 只有在 $integral_0^T f(x) dif x = 0$ 时以 $T$ 为周期。
 ]
 
 == 函数极限的概念与性质
+
+#definition([函数极限 $epsilon - delta$ 语言描述])[
+  $
+    lim_(x -> x_0) f(x) = A <=> forall epsilon > 0, exists delta > 0, 当 0 < |x - x_0| < delta 时，有 |f(x) - A| < epsilon.
+  $
+]
+
+#annotation("无穷小的比阶")[
+  #align(center)[
+    等价、同阶、高阶、低阶 \
+    $1 space space space space space space space C space space space space space space space 0 space space space space space space oo$
+  ]
+]
 
 #theorem("无穷小与函数极限的关系")[
   $ lim_(x -> (x_0 \/ oo)) f(x) = A <=> f(x) = A + alpha $
@@ -51,15 +66,9 @@
   即 $f$ 与 $h$ 为等价无穷小，记作 $f ~ h, (x -> a)$。
 ]
 
-#knowledge("常见的等价无穷小")[
-  + $x ~ sin x ~ tan x ~ arcsin x ~ arctan x ~ ln(1 + x) ~ e^x - 1 ~ ln(x + sqrt(x^2 + 1))$
-  + $a^x -1 ~ x ln a$
-  + $1 - cos x ~ 1 / 2 x^2$
-  + $(1 + x)^a - 1 ~ a x$
-] <Equivalent-Infintesimal>
-
 #remark[
-  + @Equivalent-Infintesimal 中的常用的等价无穷小，使用时需要注意应满足前提条件 $x -> 0$。
+  + @Equivalent-Infintesimal 中的*常用的等价无穷小*，使用时需要注意应满足前提条件 $x -> 0$。
+  + @tylor-seris 中及 @fm1-maclaurin-expansion 中含有常用的 *泰勒展开式* .
   + 在进行等价无穷小代换时，只能在分子分母形式时替换（可以通过极限运算法则化简为单项式）。
 ]
 

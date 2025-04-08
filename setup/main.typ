@@ -14,20 +14,28 @@
   show math.equation: set text(font: ("New Computer Modern Math", "Libertinus Serif"), size: 12pt)
   show math.equation: it => {
     show regex("\p{script=Han}"): set text(font: "Noto Serif CJK SC", weight: "light", size: 11pt)
-    show regex("\p{script=Han}\s*,"): it => [#show regex("\s*,"): it => [#text(
-          font: "Noto Serif CJK SC",
-          "，",
-        )]
-      #it]
+    // show regex("\p{script=Han}\s*,"): it => [#show regex("\s*,"): it => [#text(
+    //       font: "Noto Serif CJK SC",
+    //       "，",
+    //     )]
+    //   #it]
 
-    // show regex("[,]"): it => [#text(font: "Noto Serif CJK SC", "，")]
-    show regex("[,]"): it => [ , ]
-    show regex("[。.]"): it => [ . ]
+    show regex("[,]"): it => [#text(font: "Noto Serif CJK SC", weight: "light", size: 11pt, "，")]
+    // show regex("[,]"): it => [ , ]
+    show regex("[。.]"): it => [. ]
     it
   }
-  show regex("[。]"): it => [ . ]
-  show regex("[,]"): it => [ , ]
-  show regex("\p{script=Han}\s*,"): it => [#show regex(","): it => [，]
+
+  show regex("[。]"): it => [. ]
+  // show regex("[,]"): it => [ , ]
+  show regex("\p{script=Han}\s*,"): it => [#show regex(","): it => [#text(
+        font: "Noto Serif CJK SC",
+        weight: "light",
+        size: 11pt,
+        "，",
+      )]
+    #it]
+  show regex("\p{script=Han}\s*."): it => [#show regex("[.]"): it => text(". ")
     #it]
 
   show emph: text.with(font: ("Libertinus Serif", "Adobe Kaiti Std R"))
@@ -77,7 +85,8 @@
 
   // Main body.
   set terms(tight: true)
-  show link: underline
+  // show link: underline.with(stroke: 1.5pt + red, offset: 2pt)
+  show link: it => text(yellow.negate(space: rgb))[#it]
 
   body
 }

@@ -15,6 +15,8 @@
 )[
   == 导数表
   #columns(2)[
+    + $abs(y)' = (sqrt(y^2))' = y / abs(y) y'$
+
     + $(arcsin x)' = 1 / sqrt(1 - x^2)$
 
     + $(arccos x)' = - 1 / sqrt(1 - x^2)$

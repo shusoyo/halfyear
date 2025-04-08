@@ -13,14 +13,12 @@
   对于函数 $f(x)$ 有 $F(x)$ 使得 $F(x)' = f(x)$， 其中 $F(x)$ 为 $f(x)$ 的原函数，$F(x) + C$ 为其不定积分。
 ]
 #theorem("原函数存在定理")[
-  连续函数必有原函数.
-]
+  + 连续函数必有原函数.
+    #proof[
+      思路为构造出变上限积分函数 $Phi(x)$ 然后求出 $Delta Phi(x)$, 对其由积分中值定理，构造出 $(Delta Phi(x)) / (Delta x) = f(xi)$, 等式两边同时取极限即可。
+    ]
 
-#proof[
-  思路为构造出变上限积分函数 $Phi(x)$ 然后求出 $Delta Phi(x)$, 对其由积分中值定理，构造出 $(Delta Phi(x)) / (Delta x) = f(xi)$, 等式两边同时取极限即可。
-]
-#theorem("不定积分存在定理")[
-  在含有第一类间断点和无穷间断点的区间内，一定不存在原函数。
+  + 在含有第一类间断点和无穷间断点的区间内，一定不存在原函数。
 ]
 
 
@@ -44,12 +42,13 @@
   + 积分的保号性：若区间 $[a, b]$ 上 $f(x) <= g(x)$， 则有 $integral_a^b f(x) dif x <= integral_a^b g(x) dif x$.
 
   + 估值定理：$x in [a, b], M = f(x)_max, m = f(x)_min, L = b - a$ 有 $m L <= integral_a^b f(x) dif x <= M L$.
-  + 中值定理：$f(x)$ 在 $[a, b]$ 上连续，$exists xi in [a, b], integral_a^b f(x) dif x = f(xi) (b - a)$.
+  + 中值定理：$f(x)$ 在 $[a, b]$ 上连续，$exists xi in (a, b), integral_a^b f(x) dif x = f(xi) (b - a)$.
 ]
+
 
 == 变限积分
 #properties[
-  + 函数 $f(x)$ 在 $I$ 上可积（可积判断见 @integrability ），则函数 $F(x) = integral_a^x f(t) dif t$ 在 $I$ 上连续。
+  + 函数 $f(x)$ 在 $I$ 上 #link(<integrability>)[可积]，则函数 $F(x) = integral_a^x f(t) dif t$ 在 $I$ 上连续。
 
   + $f(x)$ 连续，则 $F(X) = integral_a^x f(t) dif t$ 可导，且 $F'(x) = f(x)$.
 
@@ -65,4 +64,4 @@
   + $ integral_0^1 1 / x^p dif x cases("收敛"\, 0 < p < 1, "发散"\, p >= 1) . $
 
   + $ integral_0^(+oo) 1 / x^p dif x cases("收敛"\, p > 1, "发散"\, p <= 1) . $
-]
+]<improper-p-integ>

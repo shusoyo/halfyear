@@ -37,13 +37,14 @@
 #let formula = thmbox(
   "formula",
   "Formula",
-  fill: rgb("#e5f2ff"),
+  inset: 0em,
+  // fill: rgb("#e5f2ff"),
 )
 
 #let theorem = thmbox(
   "theorem",
   "Theorem",
-  fill: rgb("#e8e8f8"),
+  // fill: rgb("#e8e8f8"),
 )
 // Proofs are attached to theorems, although they are not numbered
 #let proof = thmproof(
@@ -55,20 +56,21 @@
 #let lemma = thmbox(
   "theorem", // Lemmas use the same counter as Theorems
   "Lemma",
-  fill: rgb("#efe6ff"),
+  // fill: rgb("#efe6ff"),
 )
 
 #let corollary = thmbox(
   "corollary",
   "Corollary",
   base: "theorem", // Corollaries are 'attached' to Theorems
-  fill: rgb("#f8e8e8"),
+  // fill: rgb("#f8e8e8"),
 )
 
 // Examples and remarks are not numbered
 #let example = thmplain(
   "example",
   "Example",
+  inset: 0em,
 ).with(numbering: none)
 
 #let properties = thmplain(
@@ -86,7 +88,7 @@
 #let definition = thmbox(
   "definition", // Definitions use their own counter
   "Definition",
-  fill: rgb("#e8f8e8"),
+  // fill: rgb("#e8f8e8"),
 )
 
 #let exercise = thmbox(
@@ -102,3 +104,9 @@
   base: "exercise",
   inset: 0em,
 ).with(numbering: none)
+
+#let qst = thmplain(
+  "q",
+  "Q",
+  inset: 0em,
+)

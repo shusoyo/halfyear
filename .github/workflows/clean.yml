@@ -6,7 +6,7 @@ on:
 
 jobs:
   cleanup:
-    runs-on: hws
+    runs-on: nixos
     permissions:
       actions: write
       contents: read
