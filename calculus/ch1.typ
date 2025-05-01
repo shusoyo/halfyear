@@ -68,7 +68,7 @@
 
 #remark[
   + @Equivalent-Infintesimal 中的*常用的等价无穷小*，使用时需要注意应满足前提条件 $x -> 0$。
-  + @tylor-seris 中及 @fm1-maclaurin-expansion 中含有常用的 *泰勒展开式* .
+  + @fm1-maclaurin-expansion 中含有常用的 *泰勒展开式* .
   + 在进行等价无穷小代换时，只能在分子分母形式时替换（可以通过极限运算法则化简为单项式）。
 ]
 

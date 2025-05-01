@@ -34,16 +34,18 @@
   + $abs(a plus.minus b) <= |a| + |b|$
 ]
 
-=== 不等式放缩
-
-#knowledge("常见放缩或夹逼准则不等式")[
-  + $ lim_(n->oo)(a^n + b^n + ……)^(1 / n) = max{a, b, ...} $
+#knowledge("常见不等关系")[
 
   + 若 $0 < a < x < b, 0 < c < y < d, $ 则有 $c/b < y/x < d/a.$
+
   + 当 $0 < x < pi/4 $时，$ x < tan x < 4/pi x.$
+
   + 当 $0 < x < pi/2 $时，$ sin x > 2/π x, sin x < x < tan x.$
+
   + 当 $0 <= x <= 1  $时，$ arctan x <= x <= arcsin x.$
+
   + 当 $0 < x "时", 1/(1 + x) < ln(1 + 1/x) < 1/x "或" x/(1 + x) < ln(1 + x) < x.$
+
   + $e^x >= x + 1.$
 ]
 
@@ -53,35 +55,36 @@
   + $sin x$ 在 $[0, pi]$ 上与 $x$ 轴围成区域的面积为 $2$, 将该区域的底边 $4$ 等分，所得的小区域的面积分别是 $1 - sqrt(2)/2, sqrt(2)/2, sqrt(2)/2, 1 - sqrt(2)/2$
 ]
 
+#annotation("三角变换")[
+  + $sin x + cos x = sqrt(2) (sqrt(2) / 2 sin x + sqrt(2) / 2 cos x) = sqrt(2) sin(x + pi /4)$ 辅助角公式.
+  + $arctan x + arctan 1 / x = pi / 2 (x > 0)$
+]
+
 == 杂项
 #formula("求根公式")[
   若方程 $a x^2 + b x + c = 0, a != 0$, 则有
-  $ x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a) $
+  $x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a)$.
 ]
 
 #knowledge[
   $sqrt(x^2) = |x|$
 ]
 
-#annotation[
-  $binom(n, k) = n! / (k! (n - k)!)$
-]
+
 
 #theorem("二项式定理")[
   $ (a + b)^n = sum_(k = 0)^n binom(n, k) thin a^k thin b^(n-k) $
+  #annotation("组合数")[
+    $binom(n, k) = n! / (k! (n - k)!)$
+  ]
+
+  #annotation("二项式定理的近似计算和放缩")[
+    $ (1+x)^n ≈ 1 + n x + n(n+1) / 2 x^2 + ... $
+    $|x| << 1$ 或 $n$ 较大时可以只取得前几项。当 $x$ 较小时,也可以使用泰勒展开得出
+  ]
 ]
 
-// #box(height: 180pt)
-#formula("二项式定理的近似计算和放缩")[
-  $ (1+x)^n ≈ 1 + n x + n(n+1) / 2 x^2 + ... $
-  $|x| << 1$ 或n较大时可以只取得前几项。当x较小时,也可以使用泰勒展开得出
-]
-
-#formula("极限相关二级结论")[
-  + $lim_(x->infinity)(1+a / x)^(b x + d) = e^(a b)$
-]
-
-== 知识点速记速查
+== 常用
 #knowledge("求极限时常见的等价无穷小")[
   + $x ~ sin x ~ tan x ~ arcsin x ~ arctan x ~ ln(1 + x) ~ e^x - 1 ~ ln(x + sqrt(x^2 + 1))$
 
@@ -90,27 +93,28 @@
   + $(1 + x)^a - 1 ~ a x$
 ] <Equivalent-Infintesimal>
 
-#knowledge("求极限时常见的泰勒展开式")[
-  + $arcsin x = x + x^3 / 6 + o(x^3)$
-
-  + $arctan x = x - x^3 / 3 + o(x^3)$
-  + $tan x = x + x^3 / 3 + o(x^3)$
-] <tylor-seris>
-
 #formula("常用的麦克劳林展开式")[
-  + $e^x = 1 + x + 1 / (2!) x^2 + …… + 1 / (n!) x^n + o(x^n)$
+  + $e^x = 1 + x + x^2 / 2 + x^3 / 6 + dots.h.c + frac(x^n, n !) + o (x^n)$
 
-  + $sin x = x - (x^3) / (3!) + …… + (-1)^n space (x^(2n + 1)) / (2n + 1)! + o(x^(2n + 1))$
+  + $arcsin x = x + x^3 / 6 + dots.h.c + frac((2 n - 1) ! !, (2 n) ! !) frac(x^(2 n + 1), 2 n + 1) + o (x^(2 n + 1))$
 
-  + $cos x = 1 - (x^2) / (2!) + (x^4) / (4!) -…… + (-1)^n (x^(2n)) / ((2n)!) + o(x^(2n))$
+  + $arctan x = x - x^3 / 3 + dots.h.c + (- 1)^n frac(x^(2 n + 1), 2 n + 1) + o (x^(2 n + 1))$
 
-  + $1 / (1 - x) = 1 + x + x^2 + …… + x^n + o(x^n)$
+  + $tan x = x + x^3 / 3  + dots.h.c + sum_(n = 1)^oo frac((- 1)^(n - 1) 2^(2 n) (2^(2 n) - 1) B_(2 n), (2 n) !) x^(2 n - 1) + o (x^(2 n - 1))$ 其中 $B_(2 n)$ 是伯努利数。
 
-  + $1 / (1 + x) = 1 - x + x^2 - …… + (-1)^n x^n + o(x^n)$
+  + $sin x = x - x^3 / 6 + dots.h.c + (- 1)^n frac(x^(2 n + 1), (2 n + 1) !) + o (x^(2 n + 1))$
 
-  + $ln(1 + x) = x - (x^2) / 2 + (x^3) / 3 + (-1)^(n-1) (x^n) / (n!) + o(x^n)$
+  + $cos x = 1 - x^2 / 2 + dots.h.c + (- 1)^n frac(x^(2 n), (2 n) !) + o (x^(2 n))$
 
-  + $(1 + x)^a = 1 + a x + a(a - 1) / (2!) x^2 + …… + (a(a - 1)……(a - n + 1)) / n! x^n + o(x^n)$
+  + $frac(1, 1 - x) = 1 + x + x^2 + x^3 + dots.h.c + x^n + o (x^n)$
+
+  + $frac(1, 1 + x) = 1 - x + x^2 - x^3 + dots.h.c + (- 1)^n x^n + o (x^n)$
+
+  + $ln (1 + x) = x - x^2 / 2 + x^3 / 3 - dots.h.c + (- 1)^(n + 1) x^n / n + o (x^n)$
+
+  + $(1 + x)^a = 1 + a x + frac(a (a - 1), 2) x^2 + dots.h.c + frac(a (a - 1) dots.h.c (a - n + 1), n !) x^n + o (x^n)$
+
+
 ] <fm1-maclaurin-expansion>
 
 #annotation[

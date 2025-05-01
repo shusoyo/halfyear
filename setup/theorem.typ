@@ -106,7 +106,33 @@
 ).with(numbering: none)
 
 #let qst = thmplain(
-  "q",
+  "qst",
   "Q",
-  inset: 0em,
+  // base: none,
+  inset: (bottom: 2em, left: 0em, right: 0em),
 )
+
+#let qstnn = thmplain(
+  "qstn",
+  "q",
+  // base: "qst",
+  base: none,
+  inset: (bottom: 2em, left: 1.2em, right: 1.2em),
+)
+
+#let sol = thmplain(
+  "solve",
+  "Solve",
+  base: "qst",
+  inset: 0em,
+).with(numbering: none)
+
+#let ps = thmplain(
+  "ps",
+  "ps",
+  base: "qst",
+  inset: 0em,
+  bodyfmt: x => [ #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#ff0000"))[#x]],
+).with(numbering: none)
+
+
