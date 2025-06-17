@@ -8,26 +8,101 @@
   language: "ch",
 )
 
-= 数列的极限
+= 函数极限
 
-#theorem("收敛数列的保号性")[
-  有数列 $lim_(n -> oo) {x_n} = a >_((<)) b$，则 $exists N in NN^+, "当" n > N, "有" x_n >_((<)) b$. 反之，若有 $b in RR, x_n >=_((<=)) b$，则 $lim_(n -> oo) = a >=_((<=)) b$.
+#definition([函数极限的 $epsilon - {delta, X}$ 语言描述])[
+  趋于 $x_0$ 的 $epsilon - delta$ 表示以及趋于 $oo$ 的 $epsilon - X$ 表示如下:
+  $
+    lim_(x -> x_0) f(x) &= A <=> forall epsilon > 0, exists delta > 0, 当 0 < |x - x_0| < delta 时，有 |f(x) - A| < epsilon.
+    \
+    lim_(x -> oo) f(x) &= A <=> forall epsilon > 0, exists X > 0, 当 |x| > X 时，有 |f(x) - A| < epsilon.
+  $
 ]
 
-#theorem("归结原则")[
-  $exists x in accent(U, circle) (x_0), lim_(x -> x_0) f(x) = A, forall lim_(n -> oo)x_n = x_0$, 有$lim_(n -> oo) f(x_n) = A.$
-]
-#knowledge[
-  + 当 $x -> 0$ 时，$x_n = 1/n, lim_(n -> oo)x_n = 0$.
-  + 当 $x -> +oo$ 时，$x_n = n, lim_(n -> oo)x_n = +oo$.
-  + 相反的，当 $lim_(n -> oo) x_n -> a, and x_n != a, lim_(x -> a)f(x) = lim_(n -> oo)f(x_n) = A$.
+#properties("局部性")[ ]
+#properties("保号性")[ ]
+#properties("有界性")[ ]
+
+#propostion("无穷小的比阶")[
+  给定两个无穷小 $a, b$, 根据 $a / b$ 作出判断。
+  #align(center)[
+    #table(
+      columns: 4,
+      stroke: 0pt,
+      [$1$], [$C$], [$0$], [$oo$],
+      [等价], [同阶], [高阶], [低阶],
+    )
+  ]
 ]
 
-#formula("证明收敛大题")[
-  + 求出单调性
-    - 代换题目中的递推式，根据情况结合保号性
-    - 根据结论：令 $x_(n + 1) = f(x_n)$，若 $f'(x) > 0, x_2 > x_1 $单增，$x_2 < x_1$ 单减。 $f'(x) < 0，$ 不单调。
+#theorem("无穷小与函数极限的关系")[
+  $ lim_(x -> (x_0 \/ oo)) f(x) = A <=> f(x) = A + alpha $
+  $alpha$ 是 $x -> (x_0 \/ oo)$ 处的无穷小量。
+]
 
-  + 求出极限
-    - 一般是设出极限 $a$，再带入求出极限 $a$，若 $f(x_n+1) = g(x_n)$，两边分别取极限。
+#definition("等价无穷小")[
+  有 $a in RR union {infinity, -infinity}. "有函数" f, g, h$ 在 $x = a$ 附近（临域内）有定义，且
+  $ lim_(x -> a) f(x) / h(x) = 1 $
+  则有
+  $
+    lim_(x->a) f(x) / g(x) = lim_(x ->a) h(x) / g(x) \
+    lim_(x->a) g(x) / f(x) = lim_(x ->a) g(x) / h(x) \
+  $
+  即 $f$ 与 $h$ 为等价无穷小，记作 $f ~ h, (x -> a)$。
+
+  #remark[
+    + @Equivalent-Infintesimal 中的常用的等价无穷小，使用时需要注意应满足前提条件 $x -> 0$。
+    + @fm1-maclaurin-expansion 中含有常用的泰勒展开式 .
+    + 在进行等价无穷小代换时，只能在分子分母形式时替换（可以通过极限运算法则化简为单项式）。
+  ]
+]
+
+
+
+// #annotation("两个重要极限")[
+//   $ lim_(x -> 0) sin(x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
+// ]
+
+#annotation("几个重要极限结论")[
+  + $a > 0$ 时 $lim_(t -> 0^+) t^a ln t = 0$ （洛必达）
+]
+
+#definition("7 种未定式")[
+  $ 0 / 0, infinity / infinity , 0 dot infinity, infinity - infinity, infinity^0, 0^0, 1^infinity $
+]
+
+#definition("无界变量和无穷大量")[
+  《高等数学辅导讲义》P11.
+  #remark[
+    无界不一定要有无穷大的量，如 $f(x) = x sin x$.
+  ]
+]
+
+== 函数极限的计算
+#propostion([$lim f(x) / g(x)$ 形式函数极限的性质])[
+  + $lim f(x) / g(x) = A, "如果" lim g(x) = 0$, 则 $lim f(x) = 0.$
+    #proof[
+      $f(x) = f(x) / g(x) g(x), lim f(x) = lim f(x) / g(x) lim g(x) = A times lim g(x) = A times 0 = 0.$
+    ]
+
+  + $lim f(x) / g(x) = A != 0, "如果" lim f(x) = 0$, 则 $lim g(x) = 0.$
+    #proof[
+      $lim g(x) = lim f(x) / (f(x) \/ g(x)) = lim f \/ lim f(x) / g(x) = 0 / A = 0.$
+    ]
+]
+
+#propostion()[
+  + 若 $lim f (x)$ 存在，$lim g (x)$ 不存在，则
+    $lim [f (x) plus.minus g (x)]$
+    必不存在。$arrow.r.double = lim f (x) plus.minus lim g (x)$
+
+  + 若 $lim f (x)$ 不存在，$lim g (x)$ 也不存在，则
+    $lim [f (x) plus.minus g (x)]$ 不一定不存在。
+
+  + 若 $lim f (x) = A eq.not 0$，则
+    $lim f (x) g (x) = A lim g (x)$，即乘除法中非零因子可往外先提出去。
+]
+
+#definition("洛必达法则")[
+  《张宇三十讲 - 2025》P25
 ]

@@ -2,24 +2,21 @@
 
 #let thmbox = thmbox.with(
   namefmt: x => [#h(0.5em) #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#ff0000"))[#x] #h(0.1em)],
+  base_level: 1,
   // separator: [#h(0.1em):],
+  inset: 0em,
 )
 
 #let thmplain = thmbox.with(
   padding: (top: 0em, bottom: 0em),
-  breakable: false,
+  breakable: true,
   inset: (top: 0em, left: 1.2em, right: 1.2em),
   namefmt: name => emph(
     text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#ff0000"))[#h(0.5em) #name #h(0.1em)],
   ),
   // separator: [#h(0.1em):],
   titlefmt: emph,
-)
-
-#let knowledge = thmplain(
-  "annotation",
-  "Annotation",
-  inset: 0em,
+  base_level: 1,
 )
 
 #let annotation = thmplain(
@@ -28,7 +25,7 @@
   inset: 0em,
 )
 
-#let propostion = thmplain(
+#let propostion = thmbox(
   "propostion",
   "Propostion",
   inset: 0em,
@@ -39,6 +36,12 @@
   "Formula",
   inset: 0em,
   // fill: rgb("#e5f2ff"),
+)
+
+#let definition = thmbox(
+  "definition", // Definitions use their own counter
+  "Definition",
+  // fill: rgb("#e8f8e8"),
 )
 
 #let theorem = thmbox(
@@ -85,12 +88,6 @@
   inset: 0em,
 ).with(numbering: none)
 
-#let definition = thmbox(
-  "definition", // Definitions use their own counter
-  "Definition",
-  // fill: rgb("#e8f8e8"),
-)
-
 #let exercise = thmbox(
   "exercise",
   "Exercise",
@@ -108,15 +105,30 @@
 #let qst = thmplain(
   "qst",
   "Q",
-  // base: none,
-  inset: (bottom: 2em, left: 0em, right: 0em),
-)
+  base: none,
+  inset: (bottom: 1em, left: 0em, right: 0em),
+  // inset: (bottom: 18em, left: 0em, right: 0em),
+).with(breakable: false)
+
+#let qset = thmplain(
+  "qset",
+  "Q Set",
+  inset: (bottom: 0em, left: 0em, right: 0em),
+  namefmt: name => emph(
+    text(
+      font: ("Libertinus Serif", "Adobe Kaiti Std R"),
+      // rgb("#ff0000"),
+    )[#h(0.5em) #name #h(0.1em)],
+  ),
+  bodyfmt: it => grid(inset: (left: 1.2em, right: 1.2em), [#it]),
+).with(numbering: none)
 
 #let qstnn = thmplain(
   "qstn",
   "q",
   // base: "qst",
-  base: none,
+  base: "qst",
+  // base_level: -1,
   inset: (bottom: 2em, left: 1.2em, right: 1.2em),
 )
 
@@ -124,15 +136,29 @@
   "solve",
   "Solve",
   base: "qst",
+  base_level: "2",
   inset: 0em,
 ).with(numbering: none)
 
 #let ps = thmplain(
   "ps",
-  "ps",
+  "hints",
   base: "qst",
   inset: 0em,
-  bodyfmt: x => [ #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#ff0000"))[#x]],
+  titlefmt: x => [
+    #text(
+      font: ("Libertinus Serif", "Adobe Kaiti Std R"),
+      yellow.negate(space: rgb),
+    )[#emph[#x]]],
+  bodyfmt: x => [
+    #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"))[#x]],
 ).with(numbering: none)
+// #text(yellow.negate(space: rgb))
 
+#let apdx = thmbox(
+  "apdx",
+  "Appendix",
+  stroke: 0.6pt,
+  inset: 1em,
+)
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pname=("calculus" "linear-algebra")
-syncf_path="$HOME/ss/sync/11408"
+syncf_path="$HOME/ss/sync/11408/m2"
 proot=$(dirname "$(readlink -f "$0")")
 fname="main.typ"
 

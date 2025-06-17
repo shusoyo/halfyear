@@ -11,3 +11,5 @@
 )
 
 #include "./ch0.typ"
+#include "./ch1.typ"
+#include "./ch2.typ"

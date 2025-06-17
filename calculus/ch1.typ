@@ -8,95 +8,35 @@
   language: "ch",
 )
 
-= 函数的极限与连续
 
-== 函数的性质
+#let lim = $limits(lim)$
+= 数列极限
 
-#properties("函数的性质")[
-  + 有界性
-  + 单调性
-  + 奇偶性
-  + 周期性
-]
-
-#annotation("判断函数的奇偶性")[
-  + $f(x) + f(-x)$ 必为偶函数
-
-  + $f(x) - f(-x)$ 必为奇函数
-  + $f[phi(x)]$ （内偶则偶，内奇同外）
-  + 函数求导或积分一次，改变一次奇偶性
-  + $f(a + b) = f(a) + f(b)$ 则 $f(x)$ 为奇函数.
-]
-
-#annotation("周期性的重要结论")[
-  + 若 $f(x)$ 周期为 $T$, 则 $f(a x + b)$ 周期为 $T/abs(a)$.
-
-  + 求导不改变周期 .
-  + $integral_0^x f(t) dif t$ 只有在 $integral_0^T f(x) dif x = 0$ 时以 $T$ 为周期。
-]
-
-== 函数极限的概念与性质
-
-#definition([函数极限 $epsilon - delta$ 语言描述])[
+#definition([数列极限 $epsilon - N$ 语言描述])[
   $
-    lim_(x -> x_0) f(x) = A <=> forall epsilon > 0, exists delta > 0, 当 0 < |x - x_0| < delta 时，有 |f(x) - A| < epsilon.
+    lim_(x -> x_0) x_n = a <=> forall epsilon > 0, exists N in NN^+, 当 n > N 时，有 |x_n - a| < epsilon.
   $
 ]
 
-#annotation("无穷小的比阶")[
-  #align(center)[
-    等价、同阶、高阶、低阶 \
-    $1 space space space space space space space C space space space space space space space 0 space space space space space space oo$
-  ]
+#theorem("收敛数列的保号性")[
+  有数列 $lim_(n -> oo) {x_n} = a >_((<)) b$，则 $exists N in NN^+, "当" n > N, "有" x_n >_((<)) b$. 反之，若有 $b in RR, x_n >=_((<=)) b$，则 $lim_(n -> oo) = a >=_((<=)) b$.
 ]
 
-#theorem("无穷小与函数极限的关系")[
-  $ lim_(x -> (x_0 \/ oo)) f(x) = A <=> f(x) = A + alpha $
-  $alpha$ 是 $x -> (x_0 \/ oo)$ 处的无穷小量。
+#theorem("归结原则")[
+  $exists x in accent(U, circle) (x_0), lim_(x -> x_0) f(x) = A, forall lim_(n -> oo)x_n = x_0$, 有$lim_(n -> oo) f(x_n) = A.$
 ]
 
-#definition("等价无穷小")[
-  有 $a in RR union {infinity, -infinity}. "有函数" f, g, h$ 在 $x = a$ 附近（临域内）有定义，且
-  $ lim_(x -> a) f(x) / h(x) = 1 $
-  则有
-  $
-    lim_(x->a) f(x) / g(x) = lim_(x ->a) h(x) / g(x) \
-    lim_(x->a) g(x) / f(x) = lim_(x ->a) g(x) / h(x) \
-  $
-  即 $f$ 与 $h$ 为等价无穷小，记作 $f ~ h, (x -> a)$。
+#annotation[
+  + 当 $x -> 0$ 时，$x_n = 1 / n, lim_(n -> oo)x_n = 0$.
+  + 当 $x -> +oo$ 时，$x_n = n, lim_(n -> oo)x_n = +oo$.
+  + 相反的，当 $lim_(n -> oo) x_n -> a, and x_n != a, lim_(x -> a)f(x) = lim_(n -> oo)f(x_n) = A$.
 ]
 
-#remark[
-  + @Equivalent-Infintesimal 中的*常用的等价无穷小*，使用时需要注意应满足前提条件 $x -> 0$。
-  + @fm1-maclaurin-expansion 中含有常用的 *泰勒展开式* .
-  + 在进行等价无穷小代换时，只能在分子分母形式时替换（可以通过极限运算法则化简为单项式）。
-]
-
-#annotation("两个重要极限")[
-  $ lim_(x -> 0) sin(x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
-]
-
-#annotation("几个重要极限结论")[
-  + $a > 0$ 时 $lim_(t -> 0^+) t^a ln t = 0$ （洛必达）
-]
-
-#definition("7 种未定式")[
-  $ 0 / 0, infinity / infinity , 0 dot infinity, infinity - infinity, infinity^0, 0^0, 1^infinity $
-]
-
-#remark[
-  无界不一定要有无穷大的量，如 $f(x) = x sin x$.
-]
-
-#theorem[
-  $lim f(x) / g(x) = A, "如果" f(x) "与" g(x) "其中之一等于" 0, "则另一个也为" 0.$
-]
-
-#proof[
-  $f(x) = f(x) / g(x) g(x), lim f(x) = lim f(x) / g(x) lim g(x) = A times lim g(x) = A times 0 = 0.$
-]
-
-#theorem[
-  + 当 $lim f(x)$ 存在，而 $lim g(x)$ 不存在时，有 $u(x) = f(x) + g(x), lim u(x)$ 必定不存在。
-  + 当 $f(x), g(x)$ 都不存在时，$u(x)$ 不一定存在。
+#theorem([O.Stolz 定理用于判定 $oo / oo$ 有奇效])[
+  若
+  $lim_(n arrow.r oo) y_n = + oo$，且至少从某一项开始在 $n$ 增大时 $y_n$
+  亦增大，即 $y_(n + 1) > y_n$，则
+  $ lim_(n arrow.r oo) x_n / y_n = lim_(n arrow.r oo) frac(x_n - x_(n - 1), y_n - y_(n - 1)) . $
+  等式右边极限（有限或者无穷）存在推出左边有相同的极限。我们可以先应用这个定理把极限确定下，在尝试转换思路求
+  $lim_(n arrow.r oo) (x_n / y_n - A) = 0$，也许会有奇效。
 ]

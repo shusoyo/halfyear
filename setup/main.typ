@@ -7,20 +7,29 @@
   set text(
     font: ("Libertinus Serif", "Noto Serif CJK SC"),
     lang: language,
-    size: 11pt,
+    size: 12pt,
     weight: "light",
   )
-  show raw: set text(font: "Fira Code", weight: "medium")
+  show raw: set text(font: "Fira Code", weight: "regular")
   show math.equation: set text(font: ("New Computer Modern Math", "Libertinus Serif"), size: 12pt)
   show math.equation: it => {
-    show regex("\p{script=Han}"): set text(font: "Noto Serif CJK SC", weight: "light", size: 11pt)
+    show regex("\p{script=Han}"): set text(
+      font: "Noto Serif CJK SC",
+      weight: "light",
+      size: 12pt,
+    )
     // show regex("\p{script=Han}\s*,"): it => [#show regex("\s*,"): it => [#text(
     //       font: "Noto Serif CJK SC",
     //       "，",
     //     )]
     //   #it]
 
-    show regex("[,]"): it => [#text(font: "Noto Serif CJK SC", weight: "light", size: 11pt, "，")]
+    show regex("[,]"): it => [#text(
+        font: "Noto Serif CJK SC",
+        weight: "light",
+        size: 12pt,
+        "，",
+      )]
     // show regex("[,]"): it => [ , ]
     show regex("[。.]"): it => [. ]
     it
@@ -31,7 +40,7 @@
   show regex("\p{script=Han}\s*,"): it => [#show regex(","): it => [#text(
         font: "Noto Serif CJK SC",
         weight: "light",
-        size: 11pt,
+        size: 12pt,
         "，",
       )]
     #it]
@@ -59,7 +68,22 @@
 
   show heading: set block(above: 1.4em, below: 1em)
 
-  // show regex("[“”‘’．，。、？！：；（）｛｝［］〔〕〖〗《 》〈 〉「」【】『』─—＿·…\u{30FC}]+"): set text(font: "Noto Serif CJK SC")
+  show regex("[“”‘’．，。、？！：；（）｛｝［］〔〕〖〗《 》〈 〉「」【】『』─—＿·…\u{30FC}]+"): set text(
+    font: "Noto Serif CJK SC",
+  )
+
+  // https://typst-doc-cn.github.io/guide/FAQ/math-equation.html#%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7
+  set math.equation(numbering: "(1)")
+  show math.equation.where(block: true): it => {
+    if not it.has("label") {
+      let fields = it.fields()
+      let _ = fields.remove("body")
+      fields.numbering = none
+      [#counter(math.equation).update(v => v - 1)#math.equation(..fields, it.body)<math-equation-without-label>]
+    } else {
+      it
+    }
+  }
 
   if title_page {
     page([
