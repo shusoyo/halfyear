@@ -39,6 +39,7 @@
           mkdir fonts
           ln -s ${noto-font-cjk-sc-ttf}/Serif/OTC fonts/noto-font-cjk-sc-ttf
           ln -s ${fira-code}/share/fonts/truetype fonts/fira-code
+          ln -s ${pkgs.fira}/share/fonts/opentype fonts/fira-mono
 
           mkdir -p fonts/kaiti
           ln -s ${kaiti-otf} fonts/kaiti/kaiti.otf

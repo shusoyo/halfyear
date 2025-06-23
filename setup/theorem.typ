@@ -25,9 +25,9 @@
   inset: 0em,
 )
 
-#let propostion = thmbox(
-  "propostion",
-  "Propostion",
+#let proposition = thmbox(
+  "proposition",
+  "Proposition",
   inset: 0em,
 )
 
@@ -88,6 +88,13 @@
   inset: 0em,
 ).with(numbering: none)
 
+#let apdx = thmbox(
+  "apdx",
+  "Appendix",
+  stroke: 0.6pt,
+  inset: 1em,
+)
+
 #let exercise = thmbox(
   "exercise",
   "Exercise",
@@ -123,14 +130,6 @@
   bodyfmt: it => grid(inset: (left: 1.2em, right: 1.2em), [#it]),
 ).with(numbering: none)
 
-#let qstnn = thmplain(
-  "qstn",
-  "q",
-  // base: "qst",
-  base: "qst",
-  // base_level: -1,
-  inset: (bottom: 2em, left: 1.2em, right: 1.2em),
-)
 
 #let sol = thmplain(
   "solve",
@@ -154,11 +153,4 @@
     #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"))[#x]],
 ).with(numbering: none)
 // #text(yellow.negate(space: rgb))
-
-#let apdx = thmbox(
-  "apdx",
-  "Appendix",
-  stroke: 0.6pt,
-  inset: 1em,
-)
 

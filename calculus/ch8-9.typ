@@ -29,7 +29,7 @@
 //   $ integral f[g(x)] g'(x) dif x = integral f[g(x)] dif [g(x)] $
 // ]
 
-#propostion("分部积分法")[
+#proposition("分部积分法")[
   $ integral u dif v = u v - integral v dif u $
   #annotation("分部积分的优先级")[
     #align(center)[反、对、幂、指、三]
@@ -37,7 +37,7 @@
   ]
 ]
 
-#propostion("表格积分法")[
+#proposition("表格积分法")[
   若 $u$ 和 $v$
   在所考虑的区间上有直到 $(n + 1)$ 阶的各阶连续导数，那么可以用 $v^((n))$
   替换前式中的 $v$，则
@@ -87,7 +87,7 @@
 #pagebreak()
 
 === 有理函数的积分
-#propostion("王谱拆项法（有理函数的积分）")[
+#proposition("王谱拆项法（有理函数的积分）")[
 
   (step 1) “求挡代”：即将被积函数分解为几项待定系数的分数时，要求哪一项的系数，就挡住被积函数分母中和要求的这一项分母形式一致的部分，将要求的这一项的分母表达式的零点带入到“挡”后的被积函数，得到的值就是所求的系数。
 
@@ -152,7 +152,7 @@
 ]
 
 
-#propostion("区间再现")[
+#proposition("区间再现")[
   $
     integral_a^b f(x) thin dif x &= integral_a^b f(a + b - x) thin dif x \ &= 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x \
     &= integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x
@@ -164,14 +164,14 @@
       integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x = integral_a^((a + b) / 2) f(x) thin dif x + integral_a^((a + b) / 2) f(a + b - x) thin dif x
     $ <rehere-eq1>
     对第二项进行 $t = a + b - x$ 换元可得 $ integral_a^((a + b) / 2) f(a + b - x) thin dif x = integral_((a + b) / 2)^b f(t) thin dif t $
-    代入到 @rehere-eq1 得
+    代入到 @eqt:rehere-eq1 得
     $
       integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x = integral_a^b f(x) thin dif x
     $
   ]
 ]
 
-#propostion("常用的区间再现的引申公式")[
+#proposition("常用的区间再现的引申公式")[
   + $integral_0^(pi / 2) f (sin x) thin d x & = integral_0^(pi / 2) f (cos x) thin d x$
 
   + $integral_0^(pi / 2) f (sin x , cos x) thin d x & = integral_0^(pi / 2) f (cos x , sin x) thin d x$
@@ -200,14 +200,14 @@
 == 反常积分
 #theorem("敛散性的判别")[ 见 《高等数学辅导讲义》 P121.]
 
-#propostion("两个重要结论")[
+#proposition("两个重要结论")[
   + $ integral_0^1 1 / x^p dif x med cases("收敛"\, 0 < p < 1, "发散"\, p >= 1) . $
 
   + $ integral_0^(+oo) 1 / x^p dif x med cases("收敛"\, p > 1, "发散"\, p <= 1) . $
 
 ]<improper-p-integ>
 
-#propostion([常见的 $p$ 函数相关的敛散性判别])[
+#proposition([常见的 $p$ 函数相关的敛散性判别])[
   + $integral_0^1 1 / (x^alpha (1 - x)^beta) dif x , alpha < 1, beta < 1 "收敛"$
     #proof[
       $exists xi in (0, 1):$

@@ -1,7 +1,7 @@
 #import "../setup/main.typ": *
 
 #show: project.with(
-  title: "基础数学",
+  title: "考研高数",
   language: "ch",
   authors: ("suspen", "courier"),
   outl: [
@@ -21,4 +21,5 @@
 #include "ch13.typ"
 #include "ch14.typ"
 
+#include "preliminary.typ"
 #include "appendix.typ"
