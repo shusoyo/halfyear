@@ -31,6 +31,12 @@ jobs:
             --root . \
             --font-path ./result \
             --ignore-system-fonts
+          nix run nixpkgs#typst -- \
+            c calculus/problem.typ calculus-problems.pdf \
+            --root . \
+            --font-path ./result \
+            --ignore-system-fonts
+          
       - name: Update `latest` Tag
         run: |
           git config user.name "GitHub Actions"
@@ -44,6 +50,7 @@ jobs:
           files: |
             calculus.pdf
             linear-algebra.pdf
+            calculus-problems.pdf
           make_latest: true
           tag_name: latest  # 指定标签为 `latest`
           name: "pdfs"
