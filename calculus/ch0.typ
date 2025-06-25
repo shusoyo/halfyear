@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
 
 #show: thmrules.with(qed-symbol: $square$)
@@ -60,3 +60,4 @@
 #annotation[
   + 初等函数在定义域上连续，初等函数的导数也是初等函数。
 ]
+

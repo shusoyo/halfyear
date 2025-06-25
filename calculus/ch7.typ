@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
 
 #show: thmrules.with(qed-symbol: $square$)
@@ -23,7 +23,7 @@
 === 偏导数
 
 #properties[
-  + 多元函数 $f(x, y)$ 的 $(diff^2 f)/(diff^2 x diff y)$ 与 $(diff f) / (diff y diff x)$ 都在区域 $D$ 内连续，则在区域 $D$ 内 ，$(diff^2 f)/(diff x diff y) = (diff^2 f) / (diff y diff x)$.
+  + 多元函数 $f(x, y)$ 的 $(diff^2 f) / (diff^2 x diff y)$ 与 $(diff f) / (diff y diff x)$ 都在区域 $D$ 内连续，则在区域 $D$ 内 ，$(diff^2 f) / (diff x diff y) = (diff^2 f) / (diff y diff x)$.
 ]
 
 === 可微

@@ -66,6 +66,10 @@
   show regex("\p{script=Han}\s*."): it => [#show regex("[.]"): it => text(". ")
     #it]
 
+  show regex("[“”‘’．，。、？！：；（）｛｝［］〔〕〖〗《 》〈 〉「」【】『』─—＿·…\u{30FC}]+"): set text(
+    font: "Noto Serif CJK SC",
+  )
+
 
   // auto spacing. eg: 第4章 -> 第 4 章
   set text(cjk-latin-spacing: auto)
@@ -83,52 +87,39 @@
   set page(margin: 1.5cm)
   show heading: set block(above: 1.4em, below: 1em)
 
-  show math.ast: math.thin
-
   set enum(indent: 1.5em)
 
   // https://typst-doc-cn.github.io/guide/FAQ/math-equation.html#%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7
   show math.equation: i-figured.show-equation.with(only-labeled: true)
   show heading: i-figured.reset-counters
 
+  show math.ast: math.thin
+
   // show link: underline.with(stroke: 1.5pt + red, offset: 2pt)
   show link: it => text(yellow.negate(space: rgb))[#it]
 
-  show regex("[“”‘’．，。、？！：；（）｛｝［］〔〕〖〗《 》〈 〉「」【】『』─—＿·…\u{30FC}]+"): set text(
-    font: "Noto Serif CJK SC",
-  )
-
   // outline
   if title_page {
+    show outline.entry.where(level: 1): set outline.entry(fill: line(length: 0%))
+    show outline.entry.where(level: 1): it => {
+      v(17pt, weak: true)
+      strong(text(yellow.negate(space: rgb))[#it])
+    }
+
     page([
       #v(6.18em)
       #align(center)[
-        #block(text(weight: 700, 1.75em, title))
-      ]
+        #block(text(weight: 700, 1.85em, title))
+        #v(1em)
 
-      #v(1em)
-      #align(center)[
-        #raw("suspen & courier")
+        #link("https://github.com/shusoyo")[`suspen`]`,`
+        #link("https://github.com/Couriee")[`courier`]
 
         #datetime.today().display("[year] - [month] - [day]")
+
+        #v(1em)
+        #outl
       ]
-
-      // #show outline.entry: it => {
-      //   text(yellow.negate(space: rgb))[#it]
-      // }
-      #show outline.entry.where(level: 1): set outline.entry(fill: line(length: 0%))
-
-      #show outline.entry.where(level: 1): it => {
-        v(17pt, weak: true)
-        strong(text(yellow.negate(space: rgb))[#it])
-      }
-
-      // #show outline.entry: it => {
-      //   text(yellow.negate(space: rgb))[#it]
-      // }
-
-
-      #outl
     ])
   }
 
@@ -139,3 +130,6 @@
 }
 
 #let lim = $limits(lim)$
+
+#let bluetxt = text.with(yellow.negate(space: rgb))
+#let redtxt = text.with(rgb("#e60012"))

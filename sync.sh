@@ -18,7 +18,6 @@ make_pdf() {
   target_dir="$syncf_path/$name"
   mkdir -p "$target_dir"
 
-  # curl -F "files=@$pdf_path" -F "csrf=Q0ddOtuIKY" http://10.85.13.10:27777/shared/halfyear/
   mv "$pdf_path" "$target_dir/typst.pdf"
   mv "$problem_pdf_path" "$target_dir/problems.pdf"
 }

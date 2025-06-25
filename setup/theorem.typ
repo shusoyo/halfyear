@@ -1,7 +1,7 @@
 #import "@preview/ctheorems:1.1.3": *
 
 #let thmbox = thmbox.with(
-  namefmt: x => [#h(0.5em) #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#ff0000"))[#x] #h(0.1em)],
+  namefmt: x => [#h(0.5em) #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#e60012"))[#x] #h(0.1em)],
   base_level: 1,
   // separator: [#h(0.1em):],
   inset: 0em,
@@ -12,7 +12,7 @@
   breakable: true,
   inset: (top: 0em, left: 1.2em, right: 1.2em),
   namefmt: name => emph(
-    text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#ff0000"))[#h(0.5em) #name #h(0.1em)],
+    text(font: ("Libertinus Serif", "Adobe Kaiti Std R"), rgb("#e60012"))[#h(0.5em) #name #h(0.1em)],
   ),
   // separator: [#h(0.1em):],
   titlefmt: emph,

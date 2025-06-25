@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
 
 #show: thmrules.with(qed-symbol: $square$)
@@ -9,12 +9,9 @@
 )
 
 
-#let lim = $limits(lim)$
-
-
-
 = 数列极限
 
+== 概念与性质
 #definition([数列极限 $epsilon - N$ 语言描述])[
   $
     lim_(x -> x_0) x_n = a <=> forall epsilon > 0, exists N in NN^+, 当 n > N 时，有 |x_n - a| < epsilon.

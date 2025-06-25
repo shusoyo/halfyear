@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
 
 #show: thmrules.with(qed-symbol: $square$)

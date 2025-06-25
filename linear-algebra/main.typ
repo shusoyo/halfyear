@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 
 #show: project.with(
   title: "基础线性代数",

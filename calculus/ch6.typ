@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
 
 #show: thmrules.with(qed-symbol: $square$)
@@ -68,7 +68,7 @@
 === 积分等式
 
 #theorem("积分中值定理的推广")[
-  有函数 $f(x), g(x)$ 在 $[a, b]$ 上连续，#text(yellow.negate(space: rgb))[$g(x)$ 在 $[a, b]$ 上不变号], $exists xi in (a, b), integral_b^a f(x) g(x) dif x = f(xi) integral_b^a g(x) dif x.$
+  有函数 $f(x), g(x)$ 在 $[a, b]$ 上连续，#bluetxt[$g(x)$ 在 $[a, b]$ 上不变号], $exists xi in (a, b), integral_b^a f(x) g(x) dif x = f(xi) integral_b^a g(x) dif x.$
 ]
 
 == 物理应用

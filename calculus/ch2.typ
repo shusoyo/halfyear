@@ -1,4 +1,4 @@
-#import "../setup/main.typ": *
+#import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
 
 #show: thmrules.with(qed-symbol: $square$)
@@ -12,6 +12,7 @@
 
 = 函数极限
 
+== 概念与性质
 #definition([函数极限的 $epsilon - {delta, X}$ 语言描述])[
   趋于 $x_0$ 的 $epsilon - delta$ 表示以及趋于 $oo$ 的 $epsilon - X$ 表示如下:
   $
@@ -51,7 +52,8 @@
 ]
 
 
-== 无穷小及无穷小的阶
+== 无穷小和无穷大
+=== 无穷小的分阶
 #definition("无穷小的分阶")[
   给定两个无穷小 $alpha, beta$, 根据 $alpha / beta$ 作出判断。
   #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"))[
@@ -93,6 +95,7 @@
   $alpha$ 是 $x -> (x_0 \/ oo)$ 处的无穷小量。
 ]
 
+=== 等价无穷小与等价无穷小代换
 #definition("等价无穷小")[
   有 $a in RR union {infinity, -infinity}. "有函数" f, g, h$ 在 $x = a$ 附近（临域内）有定义，且
   $ lim_(x -> a) f(x) / h(x) = 1 $
@@ -151,7 +154,7 @@
   ]
 ]
 
-== 无穷大
+=== 无穷大
 #proposition("函数极限中常用的无穷大的比较")[
   当 $x arrow.r + oo$ 时：
   $ ln^a x lt.double x^beta lt.double a^x, (a > 0, beta > 0, a > 1) . $
@@ -220,22 +223,21 @@
 
 === 闭区间上连续函数的性质
 #theorem("有界与最值定理")[
-  有函数 $f(x), x in [a, b], f(x)$ 在其定义域上连续，则 $exists M, m.$ 其中 $M = f_max, m = f_min$ 且 $M >= f(x) >= m$.
+  在闭区间上连续的函数在该区间上有界且一定能取得它的最大值和最小值。
+]<有界与最值定理>
+
+#theorem("零点定理")[
+  设函数 $f (x)$ 在闭区间 $[a,b]$ 连续，且 $f (a) dot.op f (b) < 0$，则在开区间
+  $(a , b)$ 内至少有一点 $xi$，使 $f (xi) = 0 .$
 ]
 
 #theorem("介值定理")[
-  闭连开导，当 $m<= mu <= M$ 时, 存在 $xi in [a,b],$ 使得$f(xi) = mu$.
-]
+  若 $f (x)$ 在 $[a,b]$ 上连续，且 $f (a) eq.not f (b)$，则对 $f (a)$ 与
+  $f (b)$ 之间任一数 $C$，至少存在一个 $xi in (a,b)$，使得
+  $f (xi) = C$.
 
-#theorem("平均值定理")[
-  + 闭连开导,当 $a < x_1 < x_2 < ···< x_n < b$ 时，在 $[x_1,x_n]$ 内至少存在一点 $xi$ 使得,
-    $ f(xi) = (f(x_1) + f(x_2) + ··· + f(x_n)) / n. $
-  + 连续型
-    $ f(xi) = 1 / (b-a) integral^b_a f(x)d x $
+  #corollary[
+    若 $f (x)$ 在 $[a,b]$ 上连续，则 $f (x)$ 在 $[a , b]$
+    可取到介于最小值 $m$ 与最大值 $M$ 之间的任何值。
+  ]
 ]
-
-#theorem("零点定理")[
-  闭连开导，当 $f(a) ·f(b) < 0$ 时, 存在 $xi in (a,b),$ 使得 $f(xi) = 0$。
-  #remark()[$f(a),f(b),a,b$ 为无穷大也行.同时也可以引申到导数零点定理.]
-]
-
