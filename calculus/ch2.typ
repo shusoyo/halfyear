@@ -120,8 +120,8 @@
   #proof[
     $
       lim frac(alpha_1 - beta_1, alpha_2 - beta_2) & = lim frac(alpha_1 / beta_1 - 1, alpha_2 / beta_2 - 1)
-      = frac(lim alpha_1 / beta_1 - 1, lim alpha_2 / beta_2 - lim beta_2 / beta_1)
-      = frac(k - 1, lim alpha_2 / beta_1 - lim beta_2 / beta_1)
+                                                     = frac(lim alpha_1 / beta_1 - 1, lim alpha_2 / beta_2 - lim beta_2 / beta_1)
+                                                     = frac(k - 1, lim alpha_2 / beta_1 - lim beta_2 / beta_1)
     $
     因为 $lim alpha_2 / beta_1 - lim beta_2 / beta_1 = k - 1 eq.not 0$，所以 $lim frac(alpha_1 - beta_1, alpha_2 - beta_2) = 1$，则 $alpha_1 - beta_1 tilde.op alpha_2 - beta_2$。
 
@@ -168,6 +168,39 @@
   ]
 ]
 
+== 常用极限
+#proposition("常用的基本极限")[
+  + $ lim_(x arrow.r 0) frac(sin x, x) = 1 $
+
+  + $ lim_(x arrow.r 0) (1 + x)^(1 / x) = e $
+
+  + $ lim_(x arrow.r oo) (1 + 1 / x)^x = e $
+
+  + $ lim_(x arrow.r 0) frac(a^x - 1, x) = ln a quad (a > 0) $
+
+  + $ lim_(n arrow.r oo) root(n, n) = 1 $
+
+  + $
+      lim_(x arrow.r oo) frac(a_n x^n + a_(n - 1) x^(n - 1) + dots.h.c + a_1 x + a_0, b_m x^m + b_(m - 1) x^(m - 1) + dots.h.c + b_1 x + b_0) =
+      cases(
+        a_n / b_m\, & n = m,
+        0\, & n < m,
+        oo\, & n > m
+      )
+    $
+
+  + $
+      lim_(n arrow.r oo) x^n = cases(
+        0\, & abs(x) < 1,
+        oo\, & abs(x) > 1,
+        1\, & x = 1,
+        "不存在"\, & x = -1
+      )
+    $
+
+  + $ lim_(n arrow.r oo) e^(n x) = cases(0\, & x < 0, + oo\, & x > 0, 1\, & x = 0) $
+]
+
 == 函数极限的计算
 
 #proposition("两个重要极限")[
@@ -181,6 +214,7 @@
 #definition("7 种未定式")[
   $ 0 / 0, infinity / infinity , 0 dot infinity, infinity - infinity, infinity^0, 0^0, 1^infinity $
 ]
+
 
 #proposition([$lim f(x) / g(x)$ 形式函数极限的性质])[
   + $lim f(x) / g(x) = A, "如果" lim g(x) = 0$, 则 $lim f(x) = 0.$
@@ -222,15 +256,43 @@
 
 见《高等数学辅导讲义》P44
 
+#proposition("连续性的四则运算法则")[
+  设 $f (x)$ 与 $g (x)$ 都在点 $x = x_0$
+  处连续，则 $f (x) plus.minus g (x)$ 与 $f (x) g (x)$ 在点 $x = x_0$
+  处连续，当 $g (x_0) eq.not 0$ 时，$f (x) \/ g (x)$ 在点 $x = x_0$
+  处也连续。
+]
+
+#proposition("复合函数的连续性")[
+  设 $u = phi (x)$ 在点 $x = x_0$ 处连续，$y = f (u)$
+  在点 $u = u_0$ 处连续，且 $u_0 = phi (x_0)$，则 $f [phi (x)]$ 在点
+  $x = x_0$ 处连续。
+
+]
+#proposition("反函数的连续性")[
+  设 $y = f (x)$ 在区间 $I_x$ 上单调且连续，则反函数
+  $x = phi (y)$ 在对应的区间 $I_y = { y \| y = f (x) , x in I_x }$
+  上连续且有相同的单调性。
+]
+
+=== 间断点
+#definition("间断点的分类")[
+  函数 $f (x)$ 可能在 $x_0$ 处存在两类间断点
+
+  + $x_0$ 处单侧极限存在但是不等于 $f (x_0)$，则 $f (x)$ 在 $x_0$
+    处有间断点，称其为普通间断点或者第一类间断点.
+    若左右极限存在且相等，则称其为可去间断点；若左右极限存在且不相等，通常说在
+    $f (x)$ 在 $x_0$ 处有跃度.
+
+  + $x_0$ 处单侧极限是无穷或者根本不存在，则 $f (x)$ 在 $x_0$
+    处有间断点，称其为第二类间断点.
+]
+
 === 闭区间上连续函数的性质
 #theorem("有界与最值定理")[
   在闭区间上连续的函数在该区间上有界且一定能取得它的最大值和最小值。
 ]<有界与最值定理>
 
-#theorem("零点定理")[
-  设函数 $f (x)$ 在闭区间 $[a,b]$ 连续，且 $f (a) dot.op f (b) < 0$，则在开区间
-  $(a , b)$ 内至少有一点 $xi$，使 $f (xi) = 0 .$
-]
 
 #theorem("介值定理")[
   若 $f (x)$ 在 $[a,b]$ 上连续，且 $f (a) eq.not f (b)$，则对 $f (a)$ 与
@@ -241,4 +303,10 @@
     若 $f (x)$ 在 $[a,b]$ 上连续，则 $f (x)$ 在 $[a , b]$
     可取到介于最小值 $m$ 与最大值 $M$ 之间的任何值。
   ]
+]
+
+
+#theorem("零点定理")[
+  设函数 $f (x)$ 在闭区间 $[a,b]$ 连续，且 $f (a) dot.op f (b) < 0$，则在开区间
+  $(a , b)$ 内至少有一点 $xi$，使 $f (xi) = 0 .$
 ]

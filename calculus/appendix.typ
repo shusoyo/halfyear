@@ -77,3 +77,46 @@
 
   + $(1 + x)^a = 1 + a x + frac(a (a - 1), 2) x^2 + dots.h.c + frac(a (a - 1) dots.h.c (a - n + 1), n !) x^n + o (x^n)$
 ] <fm1-maclaurin-expansion>
+
+#apdx("导数表")[
+  #block(height: 300pt)[
+
+    #columns(2)[
+      + $(C)' = 0$
+
+      + $(x^alpha)' = alpha x^(alpha - 1)$
+
+      + $(a^x)' = a^x ln a$
+
+      + $(e^x)' = e^x$
+
+      + $(log_a x)' = frac(1, x ln a)$
+
+      + $(sin x)' = cos x$
+
+      + $(tan x)' = sec^2 x$
+
+      + $(sec x)' = sec x tan x$
+
+      + $(arcsin x)' = 1 / sqrt(1 - x^2)$
+
+      + $(arctan x)' = frac(1, 1 + x^2)$
+
+      + $(x^alpha)' = alpha x^(alpha - 1)$
+
+      + $(e^x)' = e^x$
+
+      + $(ln lr(|x|))' = 1 / x$
+
+      + $(cos x)' = - sin x$
+
+      + $(cot x)' = - csc^2 x$
+
+      + $(csc x)' = - csc x cot x$
+
+      + $(arccos x)' = - 1 / sqrt(1 - x^2)$
+
+      + $(op("arccot") x)' = - 1/(1 + x^2)$
+    ]
+  ]
+]

@@ -47,10 +47,9 @@
 
 == 扩充知识
 #theorem([#emph[Stolz] 定理用于判定 $oo / oo$])[
-  若
-  $lim_(n arrow.r oo) y_n = + oo$，且至少从某一项开始在 $n$ 增大时 $y_n$
-  亦增大，即 $y_(n + 1) > y_n$，则
-  $ lim_(n arrow.r oo) x_n / y_n = lim_(n arrow.r oo) frac(x_n - x_(n - 1), y_n - y_(n - 1)) . $
-  等式右边极限（有限或者无穷）存在推出左边有相同的极限。我们可以先应用这个定理把极限确定下，在尝试转换思路求
-  $lim_(n arrow.r oo) (x_n / y_n - A) = 0$，也许会有奇效。
+  已知 ${ b_n }$
+  严格单调递增趋于正无穷，且
+  $ lim_(n arrow.r oo) frac(a_(n + 1) - a_n, b_(n + 1) - b_n) = A, $ 其中
+  $A$ 是有限数或 $+ oo$ 或 $- oo$，则
+  $ lim_(n arrow.r oo) a_n / b_n = A . $
 ]
