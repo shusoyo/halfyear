@@ -8,7 +8,8 @@
   // fonts settings
   set text(
     font: (
-      "Libertinus Serif",
+      "New Computer Modern",
+      // "Libertinus Serif",
       "Noto Serif CJK SC",
     ),
     lang: language,
@@ -24,17 +25,17 @@
   show math.equation: set text(
     font: (
       "New Computer Modern Math",
-      "Libertinus Serif",
+      "New Computer Modern",
+      // "Libertinus Serif",
     ),
-    size: 12pt,
+    size: 11pt,
   )
 
-  show emph: text.with(
-    font: (
-      "Libertinus Serif",
-      "Adobe Kaiti Std R",
-    ),
-  )
+  show emph: text.with(font: (
+    "New Computer Modern",
+    // "Libertinus Serif",
+    "Adobe Kaiti Std R",
+  ))
 
   // fonts adjust
   show math.equation: it => {
@@ -84,8 +85,9 @@
   }
 
   // page size
-  set page(margin: 1.5cm)
+  // set page(margin: 1.5cm)
   show heading: set block(above: 1.4em, below: 1em)
+  show heading.where(level: 1): set align(center)
 
   set enum(indent: 1.5em)
 
