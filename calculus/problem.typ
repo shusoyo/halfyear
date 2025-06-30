@@ -199,10 +199,9 @@
 #qst(`A P56 E2`)[
   设 $f \( 0 \) = 0$，判断以下是否为 $f \( x \)$ 在点 $x = 0$ 可导的充要条件.
   #set enum(numbering: "A.")
-  #qg2c(
-    [+ $lim_(h arrow.r 0) 1 / h^2 f \( 1 - cos h \)$ 存在.],
-    [2. $lim_(h arrow.r 0) 1 / h^2 f \( h - sin h \)$ 存在.],
-  )
+  #qg2c([+ $lim_(h arrow.r 0) 1 / h^2 f \( 1 - cos h \)$ 存在.], [
+    2. $lim_(h arrow.r 0) 1 / h^2 f \( h - sin h \)$ 存在.
+  ])
 ]
 
 #qst(`A P58 E5`)[
@@ -621,7 +620,7 @@
 
 #qst(`A P130 E5`)[
   设星形线 $cases(
-    x = a cos^3 t, ,
+    x = a cos^3 t,
     y = a sin^3 t
   )$ 求：
 

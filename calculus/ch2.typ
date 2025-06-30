@@ -231,7 +231,7 @@
 #proposition()[
   + 若 $lim f (x)$ 存在，$lim g (x)$ 不存在，则
     $lim [f (x) plus.minus g (x)]$
-    必不存在。$arrow.r.double = lim f (x) plus.minus lim g (x)$
+    必不存在。
 
   + 若 $lim f (x)$ 不存在，$lim g (x)$ 也不存在，则
     $lim [f (x) plus.minus g (x)]$ 不一定不存在。

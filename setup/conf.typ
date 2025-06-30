@@ -26,6 +26,7 @@
     font: (
       "New Computer Modern Math",
       "New Computer Modern",
+      "Noto Serif CJK SC",
       // "Libertinus Serif",
     ),
     size: 11pt,

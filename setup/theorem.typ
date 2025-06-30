@@ -123,15 +123,9 @@
   inset: 0em,
 ).with(numbering: none)
 
-#let qst = thmplain(
-  "qst",
-  "Q",
-  base: none,
-  inset: (bottom: 1em, left: 0em, right: 0em),
-  // inset: (bottom: 18em, left: 0em, right: 0em),
-).with(breakable: false)
+#let qst = thmplain("qst", "Q", base: none, inset: (bottom: 1em, left: 0em, right: 0em)).with(breakable: false)
 
-#let qset = thmplain(
+#let qset = thmbox(
   "qset",
   "Q Set",
   inset: (bottom: 0em, left: 0em, right: 0em),
@@ -171,7 +165,7 @@
         "Adobe Kaiti Std R",
       ),
       yellow.negate(space: rgb),
-    )[#emph[#x]]],
+    )[#x]],
   bodyfmt: x => [
     #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"))[#x]],
 ).with(numbering: none)

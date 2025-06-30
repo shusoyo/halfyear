@@ -37,7 +37,7 @@
 
 #lemma("单侧导数极限定理")[
   设函数 $f (x)$ 在点 $x_0$ 的某邻域 $U (x_0)$ 内连续，在
-  $accent(U, circle) (x_0)$ 内可导，若存在_#redtxt[有限或无穷]_ 的极限 $lim_(x -> x_0^+) f'(x) = k$，则 $f'_+(x_0) = k.$ 导数左侧极限与左导数的关系同理。
+  $accent(U, circle) (x_0)$ 内可导，若存在 _#redtxt[有限或无穷]_ 的极限 $lim_(x -> x_0^+) f'(x) = k$，则 $f'_+(x_0) = k.$ 导数左侧极限与左导数的关系同理。
 
   #proof[
     任取 $x in accent(U, circle)_+ (x_0)$，$f (x)$ 在 $[x_0 , x]$ 上满足 #link(<lagrange-midvalue-theorem>)[Lagrange
@@ -75,7 +75,7 @@
     对无穷大的点同理。
   ]
   更多证明方式见 #link("https://zhuanlan.zhihu.com/p/651443880") .
-]
+]<导数无第一类间断点和无穷间断点>
 
 #proposition("导数的几何意义")[
   函数在某点的导数等于在这点的切线的斜率：
