@@ -3,13 +3,12 @@
 #let project(title: "", authors: (), body, language: "en", outl: [], title_page: false) = {
   set document(author: authors, title: title)
   set page(numbering: "1", number-align: center)
-  set heading(numbering: "1.1 ")
+  set heading(numbering: "1.1.a ")
 
   // fonts settings
   set text(
     font: (
-      "New Computer Modern",
-      // "Libertinus Serif",
+      (name: "New Computer Modern", covers: "latin-in-cjk"),
       "Noto Serif CJK SC",
     ),
     lang: language,
@@ -25,53 +24,20 @@
   show math.equation: set text(
     font: (
       "New Computer Modern Math",
-      "New Computer Modern",
-      "Noto Serif CJK SC",
-      // "Libertinus Serif",
+      (name: "New Computer Modern", covers: "latin-in-cjk"),
+      "Adobe Kaiti Std R",
     ),
     size: 11pt,
   )
 
-  show emph: text.with(font: (
-    "New Computer Modern",
-    // "Libertinus Serif",
-    "Adobe Kaiti Std R",
-  ))
-
-  // fonts adjust
-  show math.equation: it => {
-    show regex("\p{script=Han}"): set text(
-      font: "Noto Serif CJK SC",
-      weight: "light",
-      size: 11pt,
-    )
-
-    show regex("[,]"): it => [#text(
-        font: "Noto Serif CJK SC",
-        weight: "light",
-        size: 11pt,
-        "，",
-      )]
-
-    show regex("[。.]"): it => [. ]
-    it
-  }
-
-  show regex("[。]"): it => [. ]
-  show regex("\p{script=Han}\s*,"): it => [#show regex(","): it => [#text(
-        font: "Noto Serif CJK SC",
-        weight: "light",
-        size: 11pt,
-        "，",
-      )]
-    #it]
-  show regex("\p{script=Han}\s*."): it => [#show regex("[.]"): it => text(". ")
-    #it]
-
-  show regex("[“”‘’．，。、？！：；（）｛｝［］〔〕〖〗《 》〈 〉「」【】『』─—＿·…\u{30FC}]+"): set text(
-    font: "Noto Serif CJK SC",
+  show emph: text.with(
+    font: (
+      "New Computer Modern",
+      "Adobe Kaiti Std R",
+    ),
   )
 
+  show regex("[。]"): it => [. ]
 
   // auto spacing. eg: 第4章 -> 第 4 章
   set text(cjk-latin-spacing: auto)

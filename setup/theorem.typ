@@ -1,89 +1,68 @@
 #import "@preview/ctheorems:1.1.3": *
 
+#let thm-name-fmt = name => [
+  #text(font: ("New Computer Modern", "Adobe Kaiti Std R"), rgb("#e60012"))[#h(0.1em) #name #h(0em)]
+]
+
+
 #let thmbox = thmbox.with(
-  namefmt: x => [#h(0.5em) #text(
-      font: (
-        "New Computer Modern",
-        // "Libertinus Serif",
-        "Adobe Kaiti Std R",
-      ),
-      rgb("#e60012"),
-    )[#x] #h(0.1em)],
+  namefmt: thm-name-fmt,
   base_level: 1,
-  // separator: [#h(0.1em):],
+  titlefmt: t => text(size: 0.95em)[#strong[#t]],
   inset: 0em,
 )
 
-#let thmplain = thmbox.with(
-  padding: (top: 0em, bottom: 0em),
-  breakable: true,
-  inset: (top: 0em, left: 1.2em, right: 1.2em),
-  namefmt: name => emph(text(
-    font: (
-      "New Computer Modern",
-      // "Libertinus Serif",
-      "Adobe Kaiti Std R",
-    ),
-    rgb("#e60012"),
-  )[#h(0.5em) #name #h(
-      0.1em,
-    )]),
-  // separator: [#h(0.1em):],
-  titlefmt: emph,
+#let thmplain = thmplain.with(
+  breakable: false,
+  namefmt: thm-name-fmt,
+  titlefmt: t => text(size: 0.95em)[#emph[#t]],
   base_level: 1,
+  inset: 0em,
 )
 
 #let annotation = thmplain(
   "annotation",
   "Annotation",
-  inset: 0em,
 )
 
 #let proposition = thmbox(
   "proposition",
   "Proposition",
-  inset: 0em,
 )
 
 #let formula = thmbox(
   "formula",
   "Formula",
-  inset: 0em,
-  // fill: rgb("#e5f2ff"),
 )
 
 #let definition = thmbox(
   "definition", // Definitions use their own counter
   "Definition",
-  // fill: rgb("#e8f8e8"),
 )
 
 #let theorem = thmbox(
   "theorem",
   "Theorem",
-  // fill: rgb("#e8e8f8"),
 )
-// Proofs are attached to theorems, although they are not numbered
+
 #let proof = thmproof(
   "proof",
   "Proof",
+  titlefmt: t => text(size: 0.95em)[#emph[#t]],
   base: "theorem",
 )
 
 #let lemma = thmbox(
   "theorem", // Lemmas use the same counter as Theorems
   "Lemma",
-  // fill: rgb("#efe6ff"),
 )
 
 #let corollary = thmbox(
   "corollary",
   "Corollary",
   base: "theorem", // Corollaries are 'attached' to Theorems
-  // fill: rgb("#f8e8e8"),
 )
 
-// Examples and remarks are not numbered
 #let example = thmplain(
   "example",
   "Example",
@@ -93,7 +72,6 @@
 #let properties = thmplain(
   "properties",
   "Properties",
-  inset: 0em,
 ).with(numbering: none)
 
 #let remark = thmplain(
@@ -123,20 +101,16 @@
   inset: 0em,
 ).with(numbering: none)
 
-#let qst = thmplain("qst", "Q", base: none, inset: (bottom: 1em, left: 0em, right: 0em)).with(breakable: false)
+#let qst = thmplain(
+  "qst",
+  "Q",
+  base: none,
+  inset: (bottom: 1em, left: 0em, right: 0em),
+).with(breakable: false)
 
 #let qset = thmbox(
   "qset",
   "Q Set",
-  inset: (bottom: 0em, left: 0em, right: 0em),
-  namefmt: name => emph(text(
-    font: (
-      "New Computer Modern",
-      // "Libertinus Serif",
-      "Adobe Kaiti Std R",
-    ),
-    // rgb("#ff0000"),
-  )[#h(0.5em) #name #h(0.1em)]),
   bodyfmt: it => grid(
     inset: (left: 1.2em, right: 1.2em),
     [#it],
@@ -161,13 +135,10 @@
     #text(
       font: (
         "New Computer Modern",
-        // "Libertinus Serif",
         "Adobe Kaiti Std R",
       ),
       yellow.negate(space: rgb),
     )[#x]],
-  bodyfmt: x => [
-    #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"))[#x]],
+  bodyfmt: emph,
 ).with(numbering: none)
-// #text(yellow.negate(space: rgb))
 

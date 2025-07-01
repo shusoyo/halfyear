@@ -9,7 +9,6 @@
 = 一元函数积分学
 
 == 不定积分
-
 #definition("原函数与不定积分")[
   设函数 $f (x)$ 定义在某区间 $I$ 上，若存在可导函数
   $F (x)$，对于该区间上任意一点都有 $F' (x) = f (x)$ 成立，则称 $F (x)$ 是
@@ -30,6 +29,7 @@
     ]
 ]
 
+== 不定积分的计算
 === 第一类换元法
 #proposition()[
   若 $integral f (u) thin d u = F (u) + C$, 且 $phi (x)$ 可导, 则
@@ -75,10 +75,10 @@
 
   类似的
   $
-    & integral u' v^((n)) thin dif x      &        & = u' v^((n - 1)) - integral u'' v^((n - 1)) thin dif x,   \
-    & integral u'' v^((n - 1)) thin dif x &        & = u'' v^((n - 2)) - integral u''' v^((n - 2)) thin dif x, \
-    &                                     & dots.v                                                             \
-    & integral u^((n)) v' thin dif x      &        & = u^((n)) v - integral u^((n + 1)) v thin dif x,
+    & integral u' v^((n)) thin dif x & & = u' v^((n - 1)) - integral u'' v^((n - 1)) thin dif x, \
+    & integral u'' v^((n - 1)) thin dif x & & = u'' v^((n - 2)) - integral u''' v^((n - 2)) thin dif x, \
+    & & dots.v \
+    & integral u^((n)) v' thin dif x & & = u^((n)) v - integral u^((n + 1)) v thin dif x,
   $
   因此最终可以得到
   $
@@ -278,6 +278,8 @@
   $ F'(x) = f[phi_1 (x)] phi'(x) - f[phi_2 (x)] phi'(x) . $
 ]
 
+== 定积分的计算
+
 === 积分学的基本公式
 #theorem("微积分基本定理")[
   如果函数 $F (x)$ 是连续函数 $f (x)$ 在区间 $[a , b]$ 上的一个原函数，则
@@ -287,14 +289,18 @@
 
 === 华里士公式
 
-=== 点火公式
+#proposition()[
+  $
+    integral_0^(pi / 2) sin^n x thin d x = integral_0^(pi / 2) cos^n x thin d x = cases(delim: "{", frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 1 / 2 dot.op pi / 2\, & n "为偶数", , frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 2 / 3\, & n "为大于 1 的奇数")
+  $
+]
 
 === 区间再现
-#proposition("区间再现")[
+#proposition()[
   $
-    integral_a^b f(x) thin dif x & = integral_a^b f(a + b - x) thin dif x                      \
-                                 & = 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x       \
-                                 & = integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x
+    integral_a^b f(x) thin dif x & = integral_a^b f(a + b - x) thin dif x \
+    & = 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x \
+    & = integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x
   $
 
   对于前两行的公式，只需要进行 $t = a + b - x$ 的换元即可证明，对于第三行公式证明如下：
@@ -327,7 +333,7 @@
   $lim_(t arrow.r + oo) integral_a^t f (x) thin dif x$
   存在，则称此极限为函数 $f (x)$ 在无穷区间 $\[ a, + oo \)$
   上的反常积分，记作 $integral_a^(+ oo) f (x) thin dif x$，即
-  $ integral_a^(+ oo) f (x) thin dif x = lim_(t arrow.r + oo) integral_a^t f (x) thin dif x , $
+  $ integral_a^(+ oo) f (x) thin dif x = lim_(t arrow.r + oo) integral_a^t f (x) thin dif x $
   这时也称反常积分 $integral_a^(+ oo) f (x) thin dif x$
   收敛。如果上述极限不存在，则称反常积分
   $integral_a^(+ oo) f (x) thin dif x$ 发散。
@@ -346,40 +352,53 @@
   发散。为了让上述极限式更简单一些，我们通常取 $t in \[ a , b \)$，使得
   $ lim_(t arrow.r b^(-)) integral_a^t f (x) d x . $
 ]
+
+=== 敛散性的判别
+
 #theorem("敛散性的判别")[ 见 《高等数学辅导讲义》 P121.]
 
 #proposition("两个重要结论")[
-  + $ integral_0^1 1 / x^p dif x med cases("收敛"\, 0 < p < 1, "发散"\, p >= 1) . $
+  + $ integral_0^1 1 / x^p dif x med cases("收敛"\, quad & 0 < p < 1, "发散"\, & p >= 1) . $
 
-  + $ integral_0^(+oo) 1 / x^p dif x med cases("收敛"\, p > 1, "发散"\, p <= 1) . $
+  + $ integral_1^(+oo) 1 / x^p dif x med cases("收敛"\, & p > 1, "发散"\, quad & p <= 1) . $
 
 ]<improper-p-integ>
 
-#proposition([常见的 $p$ 函数相关的敛散性判别])[
-  + $integral_0^1 1 / (x^alpha (1 - x)^beta) dif x , alpha < 1, beta < 1 "收敛"$
-    #proof[
-      $exists xi in (0, 1):$
-      $
-        I & = integral_0^xi 1 / (x^alpha (1 - x)^beta) dif x + integral_xi^1 1 / (x^alpha (1 - x)^beta) dif x \
-      $
-      对于第一项，$0$ 是其瑕点，由比值判别法可知 $lim_(x -> 0^+) 1 / x^alpha \/ 1 / (x^alpha (1 - x)^beta) > 0$ 即两函数同敛散，由 @improper-p-integ 可知，当 $alpha < 1$ 时，第一项积分收敛。同理易证 $beta < 1$ 第二项积分收敛。
-    ]
+#proposition()[
+  $ integral_0^1 1 / (x^alpha (1 - x)^beta) dif x , alpha < 1, beta < 1 "收敛" $
+  #proof[
+    $exists xi in (0, 1):$
+    $
+      I & = integral_0^xi 1 / (x^alpha (1 - x)^beta) dif x + integral_xi^1 1 / (x^alpha (1 - x)^beta) dif x \
+    $
+    对于第一项，$0$ 是其瑕点，由比值判别法可知 $lim_(x -> 0^+) 1 / x^alpha \/ 1 / (x^alpha (1 - x)^beta) > 0$ 即两函数同敛散，由 @improper-p-integ 可知，当 $alpha < 1$ 时，第一项积分收敛。同理易证 $beta < 1$ 第二项积分收敛。
 
-  + $integral_0^1 (ln x) / (x^alpha (1 - x)^beta) dif x , alpha < 1, beta < 2 "收敛"$
-    #proof[
-      $exists xi in (0, 1):$
-      $
-        I & = integral_0^xi (ln x) / (x^alpha (1 - x)^beta) dif x + integral_xi^1 (ln x) / (x^alpha (1 - x)^beta) dif x \
-      $
-      对于第一项积分，假设 $alpha < 1, exists epsilon > 0, alpha + epsilon < 1$, 由比值审敛法 $lim_(x -> 0^+) (x^epsilon ln x) / (x^(alpha + epsilon) (1 - x)^beta) \/ 1 / x^(alpha + epsilon) = 0$, 可知若 $integral_0^xi 1 / x^(alpha + epsilon) dif x$ 收敛，则第一项积分也收敛，根据 @improper-p-integ 可知，$alpha < 1$.
-
-      对于第二项积分，由比值审敛法 $lim_(x -> 1^-) 1 / (1 - x)^(beta - 1) \/ (ln x) / (x^alpha (1 - x)^beta) = 1$ 可知，两个函数积分同敛散，由 @improper-p-integ 可知，此时需满足 $beta < 2$.
-    ]
-
-
-  + $integral_0^1 (ln (1 - x)) / (x^alpha (1 - x)^beta) dif x , alpha < 2, beta < 1 "收敛"$
-
-  + $integral_1^(+oo) 1 / x^p dif x , p > 1 "收敛"$
-
-  + $integral_1^(+oo) (ln x) / x^p dif x , p > 1 "收敛"$
+  ]
 ]
+
+#proposition()[
+  $ integral_0^1 (ln x) / (x^alpha (1 - x)^beta) dif x , alpha < 1, beta < 2 "收敛" $
+  #proof[
+    $exists xi in (0, 1):$
+    $
+      I & = integral_0^xi (ln x) / (x^alpha (1 - x)^beta) dif x + integral_xi^1 (ln x) / (x^alpha (1 - x)^beta) dif x \
+    $
+    对于第一项积分，假设 $alpha < 1, exists epsilon > 0, alpha + epsilon < 1$, 由比值审敛法 $lim_(x -> 0^+) (x^epsilon ln x) / (x^(alpha + epsilon) (1 - x)^beta) \/ 1 / x^(alpha + epsilon) = 0$, 可知若 $integral_0^xi 1 / x^(alpha + epsilon) dif x$ 收敛，则第一项积分也收敛，根据 @improper-p-integ 可知，$alpha < 1$.
+
+    对于第二项积分，由比值审敛法 $lim_(x -> 1^-) 1 / (1 - x)^(beta - 1) \/ (ln x) / (x^alpha (1 - x)^beta) = 1$ 可知，两个函数积分同敛散，由 @improper-p-integ 可知，此时需满足 $beta < 2$.
+  ]
+]
+
+#proposition()[
+  $ integral_0^1 (ln (1 - x)) / (x^alpha (1 - x)^beta) dif x , alpha < 2, beta < 1 "收敛" $
+]
+
+#proposition()[
+  $ integral_1^(+oo) 1 / x^p dif x , p > 1 "收敛" $
+]
+
+#proposition()[
+  $ integral_1^(+oo) (ln x) / x^p dif x , p > 1 "收敛" $
+]
+
+=== Gamma 函数
