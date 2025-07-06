@@ -407,29 +407,30 @@
         $I = integral_0^(n pi) sqrt(1 - sin 2 x) thin upright(d) x .$
       ]
 
-      #qst(`R 2 98 lyf-p168-e12`)[
+      // #qst(`R 2 98 lyf-p168-e12`)[
 
-        $I = integral frac(ln (sin x), sin^2 x) thin upright(d) x$
-      ]
+      //   $I = integral frac(ln (sin x), sin^2 x) thin upright(d) x$
+      // ]
+
       #qst(`R 2 94 lyf-p170-e18`)[
 
         $integral frac(upright(d) x, sin 2 x + 2 sin x)$
       ]
     ],
     [
-      #qst(`A P98 E11`)[
-        $I = integral frac(upright(d) x, sin x dot.op cos^4 x)$.
-        #ps[ $1$ 的妙用]
-      ]
+      // #qst(`A P98 E11`)[
+      //   $I = integral frac(upright(d) x, sin x dot.op cos^4 x)$.
+      //   #ps[ $1$ 的妙用]
+      // ]
 
       #qst(`A P109 E8`)[
         $I = integral_0^(pi / 2) frac(sin x, sin x + cos x) thin upright(d) x .$
       ]
 
-      #qst(`R 2 03 lyf-p167-e10`)[
+      // #qst(`R 2 03 lyf-p167-e10`)[
 
-        $I = integral frac(x e^(arctan x), (1 + x^2)^(3 / 2)) thin upright(d) x$
-      ]
+      //   $I = integral frac(x e^(arctan x), (1 + x^2)^(3 / 2)) thin upright(d) x$
+      // ]
 
       #qst(`R 2 08 lyf-p182-e21`)[
 
@@ -482,9 +483,9 @@
 // ]
 
 
-#qst(`A P115 E7`)[
-  证明 $F (x) = integral_x^(x + 2 pi) e^(sin t) sin t thin upright(d) t$ 为正常数.
-]
+// #qst(`A P115 E7`)[
+//   证明 $F (x) = integral_x^(x + 2 pi) e^(sin t) sin t thin upright(d) t$ 为正常数.
+// ]
 
 #qst(`A P116 E8`)[
   证明 $F (x) = integral_0^x (t - t^2) sin^(2 n) t thin upright(d) t$ 在
@@ -494,7 +495,7 @@
 #qst(`A P116 E10`)[
   设函数 $f (x)$ 在 $(0, + oo)$
   内连续，$f (1) = 5 / 2$，且对所有 $x, t in (0, + oo)$ 满足条件
-  $integral_1^x f (u) thin upright(d) u = t integral_1^x f (u) thin upright(d) u + x integral_1^t f (u) thin upright(d) u ,$ 求 $f (x)$。
+  $ integral_1^(x t) f (u) thin upright(d) u = t integral_1^x f (u) thin upright(d) u + x integral_1^t f (u) thin upright(d) u $ 求 $f (x)$。
 ]
 
 #qst(`A P119 E3`)[
@@ -503,52 +504,20 @@
   $ (integral_0^1 f (x) thin upright(d) x)^2 > integral_0^1 f^3 (x) thin upright(d) x . $
 ]
 
-#qst(`A P118 E2`)[
-  设 $f (x)$ 在 $[0, 1]$ 上连续，单调减。证 $integral_0^a f (x) thin upright(d) x gt.eq a integral_0^1 f (x) thin upright(d) x quad (0 < a < 1) .$
+// #qst(`A P118 E2`)[
+//   设 $f (x)$ 在 $[0, 1]$ 上连续，单调减。证 $ integral_0^a f (x) thin upright(d) x gt.eq a integral_0^1 f (x) thin upright(d) x quad (0 < a < 1) . $
+// ]
 
-]
-
-#qst(`A P120 E5`)[
-  设 $f (x)$ 在 $[a, b]$
-  上有连续导数，$f (a) = 0$，求证：
-  $ max_(a lt.eq x lt.eq b) lr(|f ' (x)|) gt.eq 2 / (b - a)^2 integral_a^b lr(|f (x)|) thin upright(d) x . $
-
-]
+// #qst(`A P120 E5`)[
+//   设 $f (x)$ 在 $[a, b]$
+//   上有连续导数，$f (a) = 0$，求证：
+//   $ max_(a lt.eq x lt.eq b) lr(|f ' (x)|) gt.eq 2 / (b - a)^2 integral_a^b lr(|f (x)|) thin upright(d) x . $
+// ]
 
 #qst(`A P121 E6`)[
   设 $f (x)$ 在 $[0, 1]$ 上有连续导数，且
   $f (0) = 0$，求证：
-  $ integral_0^1 f^2 (x) thin upright(d) x lt.eq 1 / 2 integral_0^1 f'^2 (x) thin upright(d) x . $
-]
-
-#qset("判断敛散性，若收敛，计算反常积分")[
-  #show math.equation.where(block: false): math.display
-  #qg2c(
-    [
-      #qst(`A P123 E1`)[
-        $integral_0^(+ oo) e^(- x^2) thin upright(d) x$.
-      ]
-    ],
-    [
-      #qst(`A P126 E3`)[
-        $integral_0^(+ oo) frac(x e^(- x), (1 + e^(- x))^2) thin upright(d) x$.
-      ]
-    ],
-  )
-]
-
-
-#qst(`A P123 E2`)[
-  设 $m , n$ 均是正整数，判断反常积分 $integral_0^1 root(m, ln^2 (1 - x)) / root(n, x) thin upright(d) x$ 的收敛性与 $m, n$ 的取值是否有关.
-]
-
-#qst(`A P124 E3`)[
-  若反常积分 $integral_e^(+ oo) frac(1, x ln^(a + 1) x) thin upright(d) x$ 收敛，求 $a$ 的取值范围。
-]
-
-#qst(`A P126 E4`)[
-  求证：
-  $integral_0^(+ oo) frac(x^2, 1 + x^4) thin upright(d) x = integral_0^(+ infinity) frac(1, 1 + x^4) thin upright(d) x$，并求其值。
+  $ integral_0^1 f^2 (x) thin upright(d) x lt.eq {1/2, 1/4, 1/8} dot.op integral_0^1 f'^2 (x) thin upright(d) x . $
 ]
 
 #qst(`R 2 88 lyf-p151-e2`)[
@@ -619,10 +588,10 @@
 ]
 
 #qst(`A P130 E5`)[
-  设星形线 $cases(
+  设星形线 $ cases(
     x = a cos^3 t,
     y = a sin^3 t
-  )$ 求：
+  ) $ 求：
 
   + 它所围的面积；
 
@@ -635,7 +604,7 @@
   某闸门的形状与大小如下图所示，闸门的上部为矩形
   $A B C D$，其中 $D E = E C = 1 m$，下部由二次抛物线与线段 $A B$
   所围成。当水面与闸门的上端相平时，欲使闸门矩形部分承受的水压力与闸门下部承受的水压力之比为
-  $5 : 4$，闸门矩形部分的高 $h$ 应为多少（米）？
+  $5 : 4$，闸门矩形部分的高 $h$ 应为多少米？
 ]
 
 #qst(`A P131 E2`)[
@@ -644,6 +613,37 @@
   $72 pi upright("cm")^3$，其中盛满水，若将容器中的水从容器的顶部抽出
   $64 pi upright("cm")^3$，至少需做多少功？（长度单位：m，重力加速度为
   $g thin upright("m/s")^2$，水的密度为 $10^3 thin upright("kg/m")^3$）
+]
+
+== 反常积分
+#qset("判断敛散性，若收敛，计算反常积分")[
+  #show math.equation.where(block: false): math.display
+  #qg2c(
+    [
+      #qst(`A P123 E1`)[
+        $integral_0^(+ oo) e^(- x^2) thin upright(d) x$.
+      ]
+    ],
+    [
+      #qst(`A P126 E3`)[
+        $integral_0^(+ oo) frac(x e^(- x), (1 + e^(- x))^2) thin upright(d) x$.
+      ]
+    ],
+  )
+]
+
+
+#qst(`A P123 E2`)[
+  设 $m , n$ 均是正整数，判断反常积分 $integral_0^1 root(m, ln^2 (1 - x)) / root(n, x) thin upright(d) x$ 的收敛性与 $m, n$ 的取值是否有关.
+]
+
+#qst(`A P124 E3`)[
+  若反常积分 $integral_e^(+ oo) frac(1, x ln^(a + 1) x) thin upright(d) x$ 收敛，求 $a$ 的取值范围。
+]
+
+#qst(`A P126 E4`)[
+  求证：
+  $integral_0^(+ oo) frac(x^2, 1 + x^4) thin upright(d) x = integral_0^(+ infinity) frac(1, 1 + x^4) thin upright(d) x$，并求其值。
 ]
 
 

@@ -30,12 +30,10 @@
     size: 11pt,
   )
 
-  show emph: text.with(
-    font: (
-      "New Computer Modern",
-      "Adobe Kaiti Std R",
-    ),
-  )
+  show emph: text.with(font: (
+    "New Computer Modern",
+    "Adobe Kaiti Std R",
+  ))
 
   show regex("[。]"): it => [. ]
 

@@ -117,6 +117,11 @@
   函数在 $x_0$ 可微 $<=>$ 函数在 $x_0$ 可导.
 ]
 
+#proposition("可微的判别")[
+  判断 $ lim_(Delta x -> 0) (Delta y - A Delta x)/(Delta x) $ 其中 $A Delta x = f'(x_0) Delta x$ 为增量的线性主部，若该极限等于 $0$ 则函数在 $x_0$ 处可微。
+]
+
+
 == 高阶导数
 
 #definition("高阶导数")[ ]

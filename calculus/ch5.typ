@@ -30,6 +30,14 @@
 ]
 
 == 不定积分的计算
+
+#annotation([积不出的函数])[
+  原函数存在但无法用初等函数表达的函数有
+  $
+    integral (dif x)/sqrt(1 + x^4), integral e^(plus.minus x^2) dif x, integral (sin x) / x dif x, integral (cos x)/ x dif x .
+  $
+]
+
 === 第一类换元法
 #proposition()[
   若 $integral f (u) thin d u = F (u) + C$, 且 $phi (x)$ 可导, 则
@@ -75,10 +83,10 @@
 
   类似的
   $
-    & integral u' v^((n)) thin dif x & & = u' v^((n - 1)) - integral u'' v^((n - 1)) thin dif x, \
-    & integral u'' v^((n - 1)) thin dif x & & = u'' v^((n - 2)) - integral u''' v^((n - 2)) thin dif x, \
-    & & dots.v \
-    & integral u^((n)) v' thin dif x & & = u^((n)) v - integral u^((n + 1)) v thin dif x,
+    & integral u' v^((n)) thin dif x      &        & = u' v^((n - 1)) - integral u'' v^((n - 1)) thin dif x,   \
+    & integral u'' v^((n - 1)) thin dif x &        & = u'' v^((n - 2)) - integral u''' v^((n - 2)) thin dif x, \
+    &                                     & dots.v                                                             \
+    & integral u^((n)) v' thin dif x      &        & = u^((n)) v - integral u^((n + 1)) v thin dif x,
   $
   因此最终可以得到
   $
@@ -156,11 +164,42 @@
 #proposition("万能公式")[
   令 $t = tan x / 2$,
   $
-    integral R (sin x, cos x) thin d x = integral R (frac(2 t, 1 + t^2), frac(1 - t^2, 1 + t^2)) frac(2, 1 + t^2) thin dif t ,
+    integral R (sin x, cos x) thin dif x = integral R (frac(2 t, 1 + t^2), frac(1 - t^2, 1 + t^2)) frac(2, 1 + t^2) thin dif t ,
   $
   其中 $R (sin x , cos x)$ 表示自变量为 $sin x , cos x$ 的有理函数.
 
-  #proof[Todo]
+  #proof[
+    令 $t = tan x/2$.
+
+    (step 1) 先证明 $sin x = (2t) / (1 + t^2)$.
+    $
+      sin x = 2 sin x/2 cos x/2 = 2 (sin x/2)/(cos x/2) cos^2 x/2 = 2 t cos^2 x/2
+    $<万能公式证明-1>
+
+    由 $sin^2 x + cos^2 x = 1$ 得
+    $
+      (sin^2 x)/(cos^2 x) + (cos^2 x)/(cos^2 x) & = 1/ (cos^2 x) \
+                              => quad quad quad
+                              tan^2 x + 1       & =1/ (cos^2 x)
+    $
+
+    整理得 $ cos^2 x & = 1/(tan^2 x + 1) $<万能公式证明-2>
+
+    将 @eqt:万能公式证明-2 代入 @eqt:万能公式证明-1 得
+    $
+      sin x = (2t) / (1 + t^2)
+    $
+
+    (step 2) 再证明 $cos x = (1 - t^2)/(1 + t^2)$,
+    由万能公式得
+    $
+      tan^2 x/2 = (1 - cos x) / (1 + cos x)
+    $
+    整理得
+    $ cos x = (1 - tan^2 x/2)/(1 + tan^2 x/2) = (1- t^2)/(1 + t^2) $
+
+    又因为 $tan x/2 = t$, 即 $x/2 = arctan t$, 故 $dif x = 2/(1 + t^2) dif t$.
+  ]
 ]
 
 #proposition("特殊凑微分方法")[
@@ -281,7 +320,7 @@
 == 定积分的计算
 
 === 积分学的基本公式
-#theorem("微积分基本定理")[
+#theorem([牛顿--莱布尼茨公式 ])[
   如果函数 $F (x)$ 是连续函数 $f (x)$ 在区间 $[a , b]$ 上的一个原函数，则
   $ integral_a^b f (x) thin d x = F (b) - F (a) . $
   通常记为 $F(x)|_a^b$.
@@ -298,9 +337,9 @@
 === 区间再现
 #proposition()[
   $
-    integral_a^b f(x) thin dif x & = integral_a^b f(a + b - x) thin dif x \
-    & = 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x \
-    & = integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x
+    integral_a^b f(x) thin dif x & = integral_a^b f(a + b - x) thin dif x                      \
+                                 & = 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x       \
+                                 & = integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x
   $
 
   对于前两行的公式，只需要进行 $t = a + b - x$ 的换元即可证明，对于第三行公式证明如下：
@@ -358,10 +397,9 @@
 #theorem("敛散性的判别")[ 见 《高等数学辅导讲义》 P121.]
 
 #proposition("两个重要结论")[
-  + $ integral_0^1 1 / x^p dif x med cases("收敛"\, quad & 0 < p < 1, "发散"\, & p >= 1) . $
+  + $ integral_a^(b) 1 / (x - a)^p dif x med cases(p < 1\, &"收敛", p >= 1\, quad & "发散") , quad (b > a) . $
 
-  + $ integral_1^(+oo) 1 / x^p dif x med cases("收敛"\, & p > 1, "发散"\, quad & p <= 1) . $
-
+  + $ integral_a^(+oo) 1 / x^p dif x med cases(p > 1\, &"收敛", p <= 1\, quad & "发散") , quad (a > 0). $
 ]<improper-p-integ>
 
 #proposition()[

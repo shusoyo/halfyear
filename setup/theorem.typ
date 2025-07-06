@@ -1,21 +1,33 @@
 #import "@preview/ctheorems:1.1.3": *
 
+#let tfont = (
+  "New Computer Modern Math",
+  (name: "New Computer Modern", covers: "latin-in-cjk"),
+  "Adobe Kaiti Std R",
+)
+
 #let thm-name-fmt = name => [
-  #text(font: ("New Computer Modern", "Adobe Kaiti Std R"), rgb("#e60012"))[#h(0.1em) #name #h(0em)]
+  #text(
+    font: (
+      (name: "New Computer Modern", covers: "latin-in-cjk"),
+      "Adobe Kaiti Std R",
+    ),
+    rgb("#e60012"),
+  )[#h(0.1em) #name #h(-0.2em)]
 ]
 
 
 #let thmbox = thmbox.with(
   namefmt: thm-name-fmt,
   base_level: 1,
-  titlefmt: t => text(size: 0.95em)[#strong[#t]],
+  // titlefmt: t => text(size: 0.98em)[#strong[#t]],
   inset: 0em,
 )
 
 #let thmplain = thmplain.with(
   breakable: false,
   namefmt: thm-name-fmt,
-  titlefmt: t => text(size: 0.95em)[#emph[#t]],
+  // titlefmt: t => text(size: 0.98em)[#emph[#t]],
   base_level: 1,
   inset: 0em,
 )
@@ -101,21 +113,12 @@
   inset: 0em,
 ).with(numbering: none)
 
-#let qst = thmplain(
-  "qst",
-  "Q",
-  base: none,
-  inset: (bottom: 1em, left: 0em, right: 0em),
-).with(breakable: false)
+#let qst = thmplain("qst", "Q", base: none, inset: (bottom: 1em, left: 0em, right: 0em)).with(breakable: false)
 
-#let qset = thmbox(
-  "qset",
-  "Q Set",
-  bodyfmt: it => grid(
-    inset: (left: 1.2em, right: 1.2em),
-    [#it],
-  ),
-).with(numbering: none)
+#let qset = thmbox("qset", "Q Set", bodyfmt: it => grid(
+  inset: (left: 1.2em, right: 1.2em),
+  [#it],
+)).with(numbering: none)
 
 
 #let sol = thmplain(

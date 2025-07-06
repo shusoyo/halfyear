@@ -11,6 +11,12 @@
 = Preliminary
 
 == 不等式
+#annotation("常见不等式及证明")[
+  + https://space.bilibili.com/328805110/lists/1102302
+
+  + https://zhuanlan.zhihu.com/p/566860871
+]
+
 #proposition("基本不等式组")[
   $ 2 / (1 / a + 1 / b) <= sqrt(a b) <= (a + b) / 2 <= sqrt((a^2 + b^2) / 2), space (a, b > 0) $
   可归纳出 $|a b| <= (a^2 + b^2) / 2$
@@ -19,6 +25,26 @@
 #proposition("绝对值不等式组")[
   + $abs(size: #120%, |a| - |b|) <= |a - b|$
   + $abs(a plus.minus b) <= |a| + |b|$
+]
+
+#proposition([柯西--施瓦茨不等式])[
+  假设 $f (x)$ 和 $g (x)$ 在区间 $[a , b]$ 上可积，那么
+  $ integral_a^b f^2 (x) dif x dot.op integral_a^b g^2 (x) dif x >= (integral_a^b f (x) g (x) dif x)^2 $
+
+  #proof[若 $f (x) = 0$，显然不等式成立。
+
+    若 $f (x) eq.not 0$，则 $integral_a^b f^2 (x) d x > 0$，引入 $lambda$，有
+
+    $
+      integral_a^b [lambda f (x) + g (x)]^2 d x
+      &= integral_a^b [lambda^2 f^2 (x) + g^2 (x) + 2 lambda f (x) g (x)] d x
+      \
+      &= lambda^2 integral_a^b f^2 (x) d x + 2 lambda integral_a^b f (x) g (x) d x + integral_a^b g^2 (x) d x gt.eq 0
+    $
+    将其视为 $lambda$ 的二元一次方程，则由其根判别式
+    $ Delta = (2 integral_a^b f (x) g (x) d x)^2 - 4 integral_a^b f^2 (x) d x integral_a^b g^2 (x) d x lt.eq 0 $
+    移项后即为所证。
+  ]
 ]
 
 #proposition("常见不等关系")[
@@ -98,3 +124,12 @@
   即 $y^2 + x^2 = r^2$ 绕 $x$ 或 $y$ 轴的旋转体体积：
   $ V = 2 integral_0^r 2 pi x sqrt(r^2 - x^2) dif x = 4 / 3 pi r^3. $
 ]
+
+#proposition("弧长公式")[
+  $L = r theta$ .
+]
+
+#annotation("基本物理公式")[
+  + 力与位移方向相同时，做功 $W = F d$.
+]
+
