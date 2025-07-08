@@ -6,8 +6,8 @@
 
 = 多元函数微分学
 
-== 二元函数的极限
-#definition("多元函数的极限")[
+== 多元函数的极限
+#definition("二元函数的极限")[
   设二元函数 $f (P) = f (x , y)$ 的定义域为
   $D$，$P_0 (x_0 , y_0)$ 是 $D$ 的聚点。如果存在常数
   $A$，对于任意给定的正数 $epsilon$，总存在正数 $delta$，使得当点
@@ -88,8 +88,8 @@
 ]
 #theorem[
   如果函数 $z = f (x , y)$ 的两个二阶混合偏导数
-  $f''_(x y) (x , y)$ 及 $f''_(y x) (x , y)$ 在区域 $D$ 内连续，则在区域
-  $D$ 内恒有 $f''_(x y) (x , y) = f''_(y x) (x , y) .$
+  $f''_(x y) (x , y)$ 及 $f''_(y x) (x , y)$ 在区域 $D$ 内 #hilight[连续]，则在区域
+  $D$ 内恒有 #hilight[ $f''_(x y) (x , y) = f''_(y x) (x , y) .$]
 ]
 
 == 全微分
@@ -124,10 +124,11 @@
 
 #proposition("全微分存在的必要条件")[
   若函数 $z = f (x , y)$ 在点 $(x , y)$
-  处可微，则该函数在该点处的偏导数必存在，且
-  $A = frac(partial z, partial x) , B = frac(partial z, partial y) .$
-  由此可得，若函数 $z = f (x , y)$ 在点 $(x , y)$ 处可微，则全微分可记为
-  $dif z = frac(partial z, partial x) d x + frac(partial z, partial y) d y .$
+  处可微，则该函数在该点处的偏导数 $frac(partial z, partial x) , frac(partial z, partial y)$ 必存在，且函数 $z = f (x , y)$ 在点 $(x , y)$ 处的全微分为
+  $ dif z = frac(partial z, partial x) Delta x + frac(partial z, partial y) Delta y . $
+  也可写为
+  $ dif z = frac(partial z, partial x) dif x + frac(partial z, partial y) dif y . $
+
 ]<全微分存在的必要条件>
 
 #proposition("全微分存在的充分条件")[
@@ -143,26 +144,27 @@
 ]
 
 
-== 多元函数微分法则
+== 多元复合函数求导法则
+=== 全微分形式的不变性
 
-=== 隐函数存在定理
+== 隐函数求导公式
 #theorem("隐函数确定的一元函数")[
-  对于由方程 $F (x , y) = 0$ 确定的隐函数 $y = f (x)$，#redtxt[当 $F_y' (x , y) eq.not 0$ 时]，则有
-  $ frac(d y, d x) = - frac(F_x' (x , y), F_y' (x , y)) . $
+  对于由方程 $F (x , y) = 0$ 确定的隐函数 $y = f (x)$，#hilight[当 $F_y' (x , y) eq.not 0$ 时]，则有
+  $ frac(d y, d x) = - frac(F'_x (x , y), F'_y (x , y)) . $
 
   #proof[
     将 $y = f (x)$ 代入 $F (x , y) = 0$，得
     $F [x , f (x)] = 0$，在这个等式两边对 $x$ 求导，得
-    $F_x' (x , y) + F_y' (x , y) dot.op frac(d y, d x) = 0$，因
-    $F_y' (x , y) eq.not 0$，故
-    $ frac(d y, d x) = - frac(F_x' (x , y), F_y' (x , y)) . $
+    $F'_x (x , y) + F'_y (x , y) dot.op frac(d y, d x) = 0$，因
+    $F'_y (x , y) eq.not 0$，故
+    $ frac(d y, d x) = - frac(F'_x (x , y), F'_y (x , y)) . $
   ]
 ]
 
 #theorem("隐函数确定的多元函数")[
-  对于由方程 $F (x , y , z) = 0$ 确定的隐函数 $z = f (x , y)$，#redtxt[当 $F_z' (x , y , z) eq.not 0$ 时]，则有
+  对于由方程 $F (x , y , z) = 0$ 确定的隐函数 $z = f (x , y)$，#hilight[当 $F'_z (x , y , z) eq.not 0$ 时]，则有
   $
-    frac(partial z, partial x) = - frac(F_x' (x , y , z), F_z' (x , y , z)) , quad frac(partial z, partial y) = - frac(F_y' (x , y , z), F_z' (x , y , z)) .
+    frac(partial z, partial x) = - frac(F'_x (x , y , z), F'_z (x , y , z)) , quad frac(partial z, partial y) = - frac(F'_y (x , y , z), F'_z (x , y , z)) .
   $
 
   #proof[
@@ -171,11 +173,48 @@
     $F [x , y , f (x , y)] = 0$，在这个等式两边分别对 $x$ 和 $y$
     求偏导数，得
     $
-      F_x' (x , y , z) + F_z' (x , y , z) dot.op frac(partial z, partial x) = 0, quad F_y' (x , y , z) + F_z' (x , y , z) dot.op frac(partial z, partial y) = 0 .
+      F'_x (x , y , z) + F'_z (x , y , z) dot.op frac(partial z, partial x) = 0, quad F'_y (x , y , z) + F'_z (x , y , z) dot.op frac(partial z, partial y) = 0 .
     $
-    因 $F_z' (x , y , z) eq.not 0$，故
+    因 $F'_z (x , y , z) eq.not 0$，故
     $
-      frac(partial z, partial x) = - frac(F_x' (x , y , z), F_z' (x , y , z)) , quad frac(partial z, partial y) = - frac(F_y' (x , y , z), F_z' (x , y , z)) .
+      frac(partial z, partial x) = - frac(F'_x (x , y , z), F'_z (x , y , z)) , quad frac(partial z, partial y) = - frac(F'_y (x , y , z), F'_z (x , y , z)) .
     $
+  ]
+]
+
+== 极值与最值
+
+#theorem("极值的充分条件")[
+  设 $z = f (x , y)$ 在点
+  $P_0 (x_0 , y_0)$ 的某邻域内有二阶连续偏导数，又
+  $f'_x (x_0 , y_0) = 0 , f'_y (x_0 , y_0) = 0$。记
+  $ A = f''_(x x) (x_0 , y_0) , B = f''_(x y) (x_0 , y_0) , C = f''_(y y) (x_0 , y_0) . $
+  则有下述结论：
+  + 若 $A C - B^2 > 0$，则 $(x_0 , y_0)$ 为 $f (x , y)$ 的极值点。
+
+    - $A < 0$，则 $(x_0 , y_0)$ 为 $f (x , y)$ 的极大值点；
+
+    - $A > 0$，则 $(x_0 , y_0)$ 为 $f (x , y)$ 的极小值点。
+
+  + 若 $A C - B^2 < 0$，则 $(x_0 , y_0)$ 不为 $f (x , y)$ 的极值点。
+
+  + 若 $A C - B^2 = 0$，则 $(x_0 , y_0)$ 可能为 $f (x , y)$
+    的极值点，也可能不为 $f (x , y)$ 的极值点（此时一般用定义判定）。
+]
+
+#proposition("条件极值")[
+  可微函数 $z = f (x , y)$ 在
+  $phi (x , y) = 0$（确定的隐函数可微）下的条件极值与函数
+  $ L (x , y , r) = f (x , y) + r phi (x , y) $ 的极值点等价.
+
+  #proof[
+    函数 $L (x , y)$ 的全微分为
+    $ d L = [f_x ' (x , y) + r phi_x ' (x , y)] d x + [f_y ' (x , y) + r phi_y ' (x , y)] d y + phi (x , y) d r . $
+    因此它极值点必要条件是 $ cases(
+      f_x' (x , y) + r phi_x' (x , y) = 0\
+      f_y' (x , y) + r phi_y' (x , y) = 0\
+      phi (x , y) = 0
+    ) $ 在 $phi (x , y) = 0$ 的条件下，有 $L = f$。因此 $L$
+    的极值点就是 $f$ 的极值点.
   ]
 ]
