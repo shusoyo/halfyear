@@ -43,6 +43,8 @@
       + $integral frac(upright(d) x, sqrt(x^2 + a^2)) = ln lr(|x + sqrt(x^2 + a^2)|) + C$
 
       + $integral frac(upright(d) x, sqrt(x^2 - a^2)) = ln lr(|x + sqrt(x^2 - a^2)|) + C$
+
+      + $mkItg(- 1/(sin x + cos x)^2) = (cos x) / (sin x + cos x) + C$
     ]
   ]
 ]

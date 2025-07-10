@@ -24,6 +24,7 @@
 #include "ch6.typ"
 #include "ch7.typ"
 #include "ch8.typ"
+#include "ch9.typ"
 
 #include "preliminary.typ"
 #include "appendix.typ"

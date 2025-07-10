@@ -72,7 +72,7 @@
 #let corollary = thmbox(
   "corollary",
   "Corollary",
-  base: "theorem", // Corollaries are 'attached' to Theorems
+  // base: "theorem", // Corollaries are 'attached' to Theorems
 )
 
 #let example = thmplain(

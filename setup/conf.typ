@@ -104,4 +104,4 @@
 #let bluetxt = text.with(yellow.negate(space: rgb))
 #let redtxt = text.with(rgb("#e60012"))
 
-#let hilight = x => box(fill: rgb("#fffd11a1"))[#x]
+#let hilight = x => box(fill: rgb("#fffd11a1"))[#emph[#x]]

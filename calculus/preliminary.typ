@@ -62,18 +62,6 @@
   + $e^x >= x + 1.$
 ]
 
-== 函数变换
-#annotation("因式分解")[
-  + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$.
-  + $ln(a b c) = ln(a) + ln(b) + ln(c)$ （将乘法变为加法，便于求导）。
-]
-
-// #annotation("凑出奇函数")[
-//   + $ a > 1 时, 1 / (a^x + 1)-1 / 2 , (a^x - 1) / (a^x + 1) "均为奇函数。 " $
-//   + 含有指数函数的分式，考虑凑出奇函数。$f(x) = g(x) + k$ ，如果能凑出奇函数$g(x)$
-//     , 则$f(x) + f(-x) = 2k$。
-// ]
-
 == 三角函数
 
 #annotation[
@@ -85,14 +73,26 @@
   + $arctan x + arctan 1 / x = pi / 2 (x > 0)$
 ]
 
+#annotation("反三角函数相关讲解视频")[
+  + https://www.bilibili.com/video/BV1uz421q7e8
+]
+
+#proposition("反三角函数")[
+  + $sin (arcsin a) = a, (a in [-1, 1])$.
+
+  + $arcsin (sin theta) = theta, (theta in [-pi/2, pi/2])$.
+]
+
 == 多项式
 #proposition("求根公式")[
   若方程 $a x^2 + b x + c = 0, a != 0$, 则有
   $x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a)$.
 ]
 
-#annotation[
-  $sqrt(x^2) = |x|$
+#annotation()[
+  #hilight[
+    $sqrt(x^2) = |x|$
+  ]
 ]
 
 #theorem("二项式定理")[
@@ -136,4 +136,27 @@
 #annotation("基本物理公式")[
   + 力与位移方向相同时，做功 $W = F d$.
 ]
+
+== 杂项
+
+#annotation("因式分解")[
+  + $a^3 plus.minus b^3 = (a plus.minus b)(a^2 minus.plus a b plus b^2)$.
+  + $ln(a b c) = ln(a) + ln(b) + ln(c)$ （将乘法变为加法，便于求导）。
+]
+
+#proposition([$op("sgn")$ 符号函数])[
+  $
+    op("sgn") = cases(
+      -1 quad & x < 0,
+      0 & x = 0,
+      1 & x > 0,
+    )
+  $
+]
+
+// #annotation("凑出奇函数")[
+//   + $ a > 1 时, 1 / (a^x + 1)-1 / 2 , (a^x - 1) / (a^x + 1) "均为奇函数。 " $
+//   + 含有指数函数的分式，考虑凑出奇函数。$f(x) = g(x) + k$ ，如果能凑出奇函数$g(x)$
+//     , 则$f(x) + f(-x) = 2k$。
+// ]
 

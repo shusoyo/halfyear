@@ -20,6 +20,9 @@
   也记作 $lim_(P arrow.r P_0) f (P) = A$，为了区别于一元函数的极限，把二元函数的极限叫做二重极限。
 ]
 
+#properties("保号性")[]
+#properties("局部有界性")[]
+
 #proposition("二元函数极限存在的充要条件")[
   极限 $lim_((x , y) arrow.r (x_0 , y_0)) f (x , y) = A$
   （存在）的充要条件是当点 $P (x , y)$
@@ -48,7 +51,6 @@
   + 若在定义域内沿某两条不同路径（如直线 $y = k x$，抛物线 $y^2 = x$）极限 $lim_((x , y) arrow.r (x_0 , y_0)) f (x , y)$ 的值不相等.
 
   + 或沿某一路径极限 $lim_((x , y) arrow.r (x_0 , y_0)) f (x , y)$ 不存在，则可断言极限 $lim_((x , y) arrow.r (x_0 , y_0)) f (x , y)$ 不存在。
-
 ]
 
 #definition([二元函数连续性定义])[
@@ -145,6 +147,7 @@
 
 
 == 多元复合函数求导法则
+=== 链式法则
 === 全微分形式的不变性
 
 == 隐函数求导公式
@@ -180,6 +183,22 @@
       frac(partial z, partial x) = - frac(F'_x (x , y , z), F'_z (x , y , z)) , quad frac(partial z, partial y) = - frac(F'_y (x , y , z), F'_z (x , y , z)) .
     $
   ]
+]
+
+#proposition("由方程组所确定的隐函数")[
+  设 $u = u (x , y) , v = v (x , y)$ 由 $ cases(
+    F (x , y , u , v) = 0,
+    G (x , y , u , v) = 0
+  ) $ 所确定. 等式两边同时对 $x$ 求导，得到
+  $
+    cases(
+      F'_x + F'_u frac(partial u, partial x) + F'_v frac(partial v, partial x) = 0,
+      G'_x + G'_u frac(partial u, partial x) + G'_v frac(partial v, partial x) = 0
+    )
+  $
+  解方程组便可得到 $(diff u)/(diff x)$ 与 $(diff v)/(diff x)$. $(diff u)/(diff y)$ 与 $(diff v)/(diff y)$ 同理.
+
+
 ]
 
 == 极值与最值
