@@ -37,7 +37,7 @@
 
 #lemma("单侧导数极限定理")[
   设函数 $f (x)$ 在点 $x_0$ 的某邻域 $U (x_0)$ 内连续，在
-  $accent(U, circle) (x_0)$ 内可导，若存在 _#hilight[有限或无穷]_ 的极限 $lim_(x -> x_0^+) f'(x) = k$，则 $f'_+(x_0) = k.$ 导数左侧极限与左导数的关系同理。
+  $accent(U, circle) (x_0)$ 内可导，若存在 _#hl[有限或无穷]_ 的极限 $lim_(x -> x_0^+) f'(x) = k$，则 $f'_+(x_0) = k.$ 导数左侧极限与左导数的关系同理。
 
   #proof[
     任取 $x in accent(U, circle)_+ (x_0)$，$f (x)$ 在 $[x_0 , x]$ 上满足 #link(<lagrange-midvalue-theorem>)[Lagrange

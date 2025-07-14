@@ -96,6 +96,14 @@
   // Main body.
   set terms(tight: true)
 
+  show highlight: set text(font: (
+    "New Computer Modern",
+    "Adobe Kaiti Std R",
+  ))
+
+  // show highlight.where(body)
+
+
   body
 }
 
@@ -104,4 +112,4 @@
 #let bluetxt = text.with(yellow.negate(space: rgb))
 #let redtxt = text.with(rgb("#e60012"))
 
-#let hilight = x => box(fill: rgb("#fffd11a1"))[#emph[#x]]
+#let hl = x => box(fill: rgb("#fffd11a1"))[#emph[#x]]

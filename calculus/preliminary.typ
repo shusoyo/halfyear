@@ -88,9 +88,8 @@
   若方程 $a x^2 + b x + c = 0, a != 0$, 则有
   $x = (-b plus.minus sqrt(b^2 - 4 a c)) / (2 a)$.
 ]
-
 #annotation()[
-  #hilight[
+  #hl[
     $sqrt(x^2) = |x|$
   ]
 ]
@@ -152,6 +151,10 @@
       1 & x > 0,
     )
   $
+]
+
+#annotation("中学数学基础讲解")[
+  + https://space.bilibili.com/1632276842/lists/3683198
 ]
 
 // #annotation("凑出奇函数")[

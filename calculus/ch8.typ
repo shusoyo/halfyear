@@ -90,8 +90,8 @@
 ]
 #theorem[
   如果函数 $z = f (x , y)$ 的两个二阶混合偏导数
-  $f''_(x y) (x , y)$ 及 $f''_(y x) (x , y)$ 在区域 $D$ 内 #hilight[连续]，则在区域
-  $D$ 内恒有 #hilight[ $f''_(x y) (x , y) = f''_(y x) (x , y) .$]
+  $f''_(x y) (x , y)$ 及 $f''_(y x) (x , y)$ 在区域 $D$ 内 #hl[连续]，则在区域
+  $D$ 内恒有 #hl[ $f''_(x y) (x , y) = f''_(y x) (x , y) .$]
 ]
 
 == 全微分
@@ -145,14 +145,13 @@
   是否为零。
 ]
 
-
 == 多元复合函数求导法则
 === 链式法则
 === 全微分形式的不变性
 
 == 隐函数求导公式
 #theorem("隐函数确定的一元函数")[
-  对于由方程 $F (x , y) = 0$ 确定的隐函数 $y = f (x)$，#hilight[当 $F_y' (x , y) eq.not 0$ 时]，则有
+  对于由方程 $F (x , y) = 0$ 确定的隐函数 $y = f (x)$，#hl[当 $F_y' (x , y) eq.not 0$ 时]，则有
   $ frac(d y, d x) = - frac(F'_x (x , y), F'_y (x , y)) . $
 
   #proof[
@@ -165,7 +164,7 @@
 ]
 
 #theorem("隐函数确定的多元函数")[
-  对于由方程 $F (x , y , z) = 0$ 确定的隐函数 $z = f (x , y)$，#hilight[当 $F'_z (x , y , z) eq.not 0$ 时]，则有
+  对于由方程 $F (x , y , z) = 0$ 确定的隐函数 $z = f (x , y)$，#hl[当 $F'_z (x , y , z) eq.not 0$ 时]，则有
   $
     frac(partial z, partial x) = - frac(F'_x (x , y , z), F'_z (x , y , z)) , quad frac(partial z, partial y) = - frac(F'_y (x , y , z), F'_z (x , y , z)) .
   $

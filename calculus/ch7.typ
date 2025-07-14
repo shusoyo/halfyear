@@ -44,6 +44,16 @@
     若 $- integral P (x) dif x = lr(|g (x , y)|)$，这里能否去掉绝对值取决于 $P (x)$ 中的常数系数 $a$.
     若 $a$ 是无理数，或者 $a$ 是 $plus.minus 1 / 2 , plus.minus 1 / 4 , dots.h.c$ 等偶分母分数时，积分结果出现了 $ln$ 时，绝对值不可省去.
   ]
+
+  #annotation()[
+    由于 $integral P (x) dif x$ 与
+    $integral Q (x) e^(integral P (x) dif x) dif x$
+    均应理解为某一不含任意常数的原函数，故公式法亦可写成
+    $
+      y = C e^(- integral_(x_0)^x P (t) dif t) + e^(- integral_(x_0)^x P (t) dif t) integral_(x_0)^x Q (t) e^(integral_(x_0)^t P (s) dif s) dif t ,
+    $
+    这里的 $x_0$ 在题设未提出定值要求时，可按方便解题的原则来取。此写法在研究解的性质时颇为有用。#hl()[除此之外，此写法在无法完全求出微分方程时，例如当只能写出公式中所给形式时，] #hl[对此时 $y$ 的计算也很有用。]
+  ]
 ]
 
 
@@ -117,11 +127,11 @@
 == 高阶线性方程解的结构
 
 #proposition("二阶线性微分方程的齐次与非齐次")[
-  二阶线性微分方程的一般形式为 $ y'' + P (x) y' + Q (x) y = f(x) $ 当 $f(x) equiv 0$ 时，为 #hilight[二阶齐次线性微分方程]，否则为 #hilight[二阶非齐次线性微分方程] .
+  二阶线性微分方程的一般形式为 $ y'' + P (x) y' + Q (x) y = f(x) $ 当 $f(x) equiv 0$ 时，为 #hl[二阶齐次线性微分方程]，否则为 #hl[二阶非齐次线性微分方程] .
 ]
 
 #proposition()[
-  若函数 $y_1 (x)$ 与 $y_2 (x)$ 是 #hilight[二阶齐次线性微分方程]  的两个解，那么
+  若函数 $y_1 (x)$ 与 $y_2 (x)$ 是 #hl[二阶齐次线性微分方程]  的两个解，那么
   $ y = C_1 y_1 (x) + C_2 y_2 (x) $
   也是方程的解，其中 $C_1 , C_2$ 是任意常数.
 
@@ -137,7 +147,7 @@
 
 ]
 #proposition()[
-  如果 $y_1 (x)$ 与 $y_2 (x)$ 是 #hilight[二阶齐次线性微分方程] 的两个 #hilight[线性无关] 的特解，那么
+  如果 $y_1 (x)$ 与 $y_2 (x)$ 是 #hl[二阶齐次线性微分方程] 的两个 #hl[线性无关] 的特解，那么
   $ y = C_1 y_1 (x) + C_2 y_2 (x) $ 就是方程的通解.
 
 ]
@@ -150,7 +160,7 @@
 
 ]
 #proposition("非齐次线性方程的通解")[
-  设 $y^(\*) (x)$ 是 #hilight[二阶非齐次线性方程组] 的一个特解.
+  设 $y^(\*) (x)$ 是 #hl[二阶非齐次线性方程组] 的一个特解.
   $Y (x)$ 是其导出二阶齐次线性方程组的通解，则 $ y = Y (x) + y^(\*) (x) $
   是二阶非齐次线性微分方程的通解.
 
@@ -269,11 +279,11 @@
 #annotation()[
   作变换 $x = e^t$ 或者 $t = ln x$ (与 $x < 0$ 时所得结果一致)，则有
   $
-    frac(d y, d x) &= frac(d y, d t) frac(d t, d x) = 1 / x frac(d y, d t)\
-    frac(d^2 y, d x^2) &= frac(d, d x) (1 / x frac(d y, d t)) = - 1 / x^2 frac(d y, d t) + 1 / x frac(d (frac(d y, d x)), d t) frac(d t, d x) &= 1 / x^2 (frac(d^2 y, d x^2) - frac(d y, d t)) .\
-    frac(d^3 y, d x^3) &= 1 / x^3 (frac(d^3 y, d t^3) - 3 frac(d^2 y, d t^2) + 2 frac(d y, d t)) .
+    frac(dif y, dif x) &= frac(dif y, dif t) frac(dif t, dif x) = 1 / x frac(dif y, dif t)\
+    frac(d^2 y, dif x^2) &= frac(d, dif x) (1 / x frac(dif y, dif t)) = - 1 / x^2 frac(dif y, dif t) + 1 / x frac(dif (frac(dif y, dif x)), dif t) frac(dif t, dif x) &= 1 / x^2 (frac(d^2 y, dif x^2) - frac(dif y, dif t)) .\
+    frac(d^3 y, dif x^3) &= 1 / x^3 (frac(d^3 y, dif t^3) - 3 frac(d^2 y, dif t^2) + 2 frac(dif y, dif t)) .
   $
-  采用记号 $D$ 表示对 $t$ 求导的运算 $frac(d, d t)$，于是有
+  采用记号 $D$ 表示对 $t$ 求导的运算 $frac(d, dif t)$，于是有
   $
            x y' & = D y                                           \
           x y'' & = D^2 y - D y = D (D - 1) y                     \
@@ -283,5 +293,4 @@
   $
   将它们带入欧拉方程，便得到一个以 $t$ 为自变量的常系数线性微分方程.
   在求出一个方程的解后，把 $t$ 换成 $ln x$，即可得到原方程的解.
-
 ]

@@ -10,6 +10,7 @@
   title_page: true,
 )
 
-#include "./ch0.typ"
 #include "./ch1.typ"
 #include "./ch2.typ"
+#include "./ch3.typ"
+#include "./ch0.typ"

@@ -16,7 +16,7 @@
 #let mba = $bold(A)$
 
 
-= Chapter 0
+= Appendix
 
 #annotation([$r(bold(A)) = 1$ 总结])[
   + 假设 $bold(A) = (a_(i j))_(n times n)$ 则 $exists va = (a_1, a_2, dots , a_n), vb = (b_1, b_2, ..., b_n),$ $bold(A) = va^T vb .$

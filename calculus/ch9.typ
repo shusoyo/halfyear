@@ -65,7 +65,7 @@
   $D_(y x)$，同时交换被积函数的自变量，则积分结果不变，即
   $ integral.double_(D_(x y)) f (x , y) d x d y = integral.double_(D_(y x)) f (y , x) d x d y . $
   若 $D_(x y) = D_(y x)$，则称区域 $D_(x y)$
-  具有 #hilight[轮换对称性]，那么此时仅交换被积函数的自变量，积分结果不变，即
+  具有 #hl[轮换对称性]，那么此时仅交换被积函数的自变量，积分结果不变，即
   $
     integral.double_(D_(x y)) f (x , y) d x d y = integral.double_(D_(x y)) f (y , x) d x d y = 1/2 integral.double_(D_(x y)) f (y , x) + f(x, y) thin dif x dif y.
   $
