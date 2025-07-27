@@ -1,11 +1,8 @@
 #import "../setup/conf.typ": *
 #import "../setup/theorem.typ": *
+#import "./lib.typ"
 
 #show: thmrules.with(qed-symbol: $square$)
-
-#show: project.with(
-  title: "Basic Knoweledge",
-  language: "ch",
-)
+#show: project
 
 = 行列式

@@ -330,7 +330,7 @@
 
 #proposition()[
   $
-    integral_0^(pi / 2) sin^n x thin d x = integral_0^(pi / 2) cos^n x thin d x = cases(delim: "{", frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 1 / 2 dot.op pi / 2\, & n "为偶数", , frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 2 / 3\, & n "为大于 1 的奇数")
+    integral_0^(pi / 2) sin^n x thin d x = integral_0^(pi / 2) cos^n x thin d x = cases(delim: "{", frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 1 / 2 dot.op pi / 2\, space space & n "为偶数", , frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 2 / 3\, & n "为大于 1 的奇数")
   $
 ]
 

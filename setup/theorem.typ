@@ -7,13 +7,7 @@
 )
 
 #let thm-name-fmt = name => [
-  #text(
-    font: (
-      (name: "New Computer Modern", covers: "latin-in-cjk"),
-      "Adobe Kaiti Std R",
-    ),
-    rgb("#e60012"),
-  )[#h(0.1em) #name #h(-0.2em)]
+  #text(font: tfont, rgb("#e60012"))[#h(0.1em) #name #h(-0.2em)]
 ]
 
 
@@ -113,12 +107,16 @@
   inset: 0em,
 ).with(numbering: none)
 
-#let qst = thmplain("qst", "Q", base: none, inset: (bottom: 1em, left: 0em, right: 0em)).with(breakable: false)
+#let qst = thmplain("qst", "Q", base: none, inset: (
+  bottom: 2em,
+  left: 0em,
+  right: 0em,
+)).with(breakable: false)
 
 #let qset = thmbox("qset", "Q Set", bodyfmt: it => grid(
   inset: (left: 1.2em, right: 1.2em),
   [#it],
-)).with(numbering: none)
+)).with(numbering: none, breakable: true)
 
 
 #let sol = thmplain(

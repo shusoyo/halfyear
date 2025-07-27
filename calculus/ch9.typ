@@ -35,11 +35,22 @@
   $
 
   令 $Phi(x) = integral_(phi_1(x))^(phi_2(x)) f(x, y) dif y$ 则二重积分也等同于对被积函数为 $Phi(x)$ 的单重积分：
-  $
-    integral_a^b Phi(x) dif x .
-  $
+  $integral_a^b Phi(x) dif x .$
 
 ]
+
+#proposition("变量代换")[
+  设 $f (x , y)$ 是定义在区域 $D$
+  上的连续函数，变换 $ x = x (u , v) , quad y = y (u , v) $ 定义在区域
+  $D'$ 上，且把 $D'$ 一一映射到 $D$ 上，并且 $x (u , v)$、$y (u , v)$
+  具有一阶连续偏导数，其 #hl[雅可比行列式]
+  $ J = frac(partial (x , y), partial (u , v)) = mat(delim: "|", frac(partial x, partial u), frac(partial x, partial v); frac(partial y, partial u), frac(partial y, partial v)) eq.not 0 , $ 则有
+  $
+    integral.double_D f (x , y) thin dif x thin dif y = integral.double_(D') f lr(( x (u , v) , y (u , v) )) thin lr(|frac(partial (x , y), partial (u , v))|) thin dif u thin dif v .
+  $
+]
+
+
 
 == 二重积分的对称性
 #proposition("利用对称性计算的一般结论")[
@@ -63,11 +74,11 @@
   在 $x O y$ 直角坐标轴上给定某个区域
   $D_(x y)$。若交换 $x$ 轴和 $y$ 轴，原区域 $D_(x y)$ 现记为
   $D_(y x)$，同时交换被积函数的自变量，则积分结果不变，即
-  $ integral.double_(D_(x y)) f (x , y) d x d y = integral.double_(D_(y x)) f (y , x) d x d y . $
+  $ integral.double_(D_(x y)) f (x , y) dif x dif y = integral.double_(D_(y x)) f (y , x) dif x dif y . $
   若 $D_(x y) = D_(y x)$，则称区域 $D_(x y)$
   具有 #hl[轮换对称性]，那么此时仅交换被积函数的自变量，积分结果不变，即
   $
-    integral.double_(D_(x y)) f (x , y) d x d y = integral.double_(D_(x y)) f (y , x) d x d y = 1/2 integral.double_(D_(x y)) f (y , x) + f(x, y) thin dif x dif y.
+    integral.double_(D_(x y)) f (x , y) dif x dif y = integral.double_(D_(x y)) f (y , x) dif x dif y = 1/2 integral.double_(D_(x y)) f (y , x) + f(x, y) thin dif x dif y.
   $
 ]
 
@@ -103,3 +114,5 @@
     具有轮换对称性。
   ]
 ]
+
+
