@@ -149,6 +149,15 @@
 === 链式法则
 === 全微分形式的不变性
 
+#proposition("全微分形式的不变性")[设 $z = f (u , v)$, $u = u (x , y)$, $v = v (x , y)$，如果 $f (u , v)$,
+  $u (x , y)$, $v (x , y)$ 分别有连续偏导数，则复合函数 $z = f (u , v)$ 在
+  $(x , y)$ 处的全微分仍可表示为
+
+  $ dif z = frac(partial z, partial u) dif u + frac(partial z, partial v) dif v , $
+
+  即无论 $u , v$ 是自变量还是中间变量，上式总成立。
+]
+
 == 隐函数求导公式
 #theorem("隐函数确定的一元函数")[
   对于由方程 $F (x , y) = 0$ 确定的隐函数 $y = f (x)$，#hl[当 $F_y' (x , y) eq.not 0$ 时]，则有

@@ -1,7 +1,7 @@
 #import "../setup/conf.typ": *
 
 #show: project.with(
-  title: "基础线性代数",
+  title: "考研线性代数",
   language: "ch",
   authors: ("suspen", "courier"),
   outl: [

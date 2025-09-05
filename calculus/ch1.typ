@@ -22,8 +22,10 @@
   若数列极限 ${x_n}$ 存在，则数列 ${x_n}$ 有界。
 ]
 #properties("保号性")[
-  有数列 $lim_(n -> oo) {x_n} = a >_((<)) b in RR$，则 $exists N in NN^+, "当" n > N, "有" x_n >_((<)) b$. 反之，若有 $x_n >=_((<=)) b$，则 $lim_(n -> oo) = a >=_((<=)) b$.
+  有数列 $lim_(n -> oo) {x_n} = a >_((<)) b in RR$，则 $exists N in NN^+,$ 当 $n > N,$ 有 $x_n >_((<)) b$. 反之，若有 $x_n >=_((<=)) b$，则 $lim_(n -> oo) = a >=_((<=)) b$.
 ]
+
+
 
 // #theorem("归结原则")[
 //   $exists x in accent(U, circle) (x_0), lim_(x -> x_0) f(x) = A, forall lim_(n -> oo)x_n = x_0$, 有$lim_(n -> oo) f(x_n) = A.$

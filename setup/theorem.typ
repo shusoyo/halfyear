@@ -31,6 +31,11 @@
   "Annotation",
 )
 
+#let ref = thmplain(
+  "ref",
+  "ref",
+).with(numbering: none)
+
 #let proposition = thmbox(
   "proposition",
   "Proposition",
@@ -55,6 +60,7 @@
   "proof",
   "Proof",
   titlefmt: t => text(size: 0.95em)[#emph[#t]],
+  // inset: (left: 1em, right: 1em),
   base: "theorem",
 )
 
@@ -69,11 +75,11 @@
   // base: "theorem", // Corollaries are 'attached' to Theorems
 )
 
-#let example = thmplain(
+#let example = thmbox(
   "example",
   "Example",
   inset: 0em,
-).with(numbering: none)
+)
 
 #let properties = thmplain(
   "properties",

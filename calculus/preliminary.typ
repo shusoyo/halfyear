@@ -106,6 +106,25 @@
   ]
 ]
 
+#proposition("韦达定理")[
+  对于一般的一元 $n$ 次多项式方程：
+  $ a_n x^n + a_(n - 1) x^(n - 1) + dots.h.c + a_1 x + a_0 = 0 quad (a_n eq.not 0) $
+  如果它的 $n$ 个根分别为
+  $x_1 , x_2 , dots.h , x_n$，那么韦达定理给出了以下关系：
+
+  1. 根的和：
+  $ sum_(i = 1)^n x_i = - a_(n - 1) / a_n $
+
+  2. 根的两两乘积之和：
+  $ sum_(1 lt.eq i < j lt.eq n) x_i x_j = a_(n - 2) / a_n $
+
+  3. 根的三三乘积之和：
+  $ sum_(1 lt.eq i < j < k lt.eq n) x_i x_j x_k = - a_(n - 3) / a_n $
+
+  4. 所有根的乘积：
+  $ product_(i = 1)^n x_i = (- 1)^n a_0 / a_n $
+]
+
 == 数列求和
 #proposition("等差数列求和公式")[
   设等差数列的第一项为 $a_1$，公差为 $d$，前 $n$ 项和 $S_n$ 有

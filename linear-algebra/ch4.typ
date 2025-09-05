@@ -36,3 +36,10 @@
   ]
 ]
 
+#proposition("特征方程")[
+  $
+    |lambda bold(E) - bold(A) | = lambda^n + a_(n - 1) lambda^(n - 1) + ... + a_1 lambda + a_0 = f(lambda)
+  $
+]
+
+

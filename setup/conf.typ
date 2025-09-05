@@ -3,7 +3,7 @@
 #let project(title: "", authors: (), body, language: "en", outl: [], title_page: false) = {
   set document(author: authors, title: title)
   set page(numbering: "1", number-align: center)
-  set heading(numbering: "1.1.a ")
+  set heading(numbering: "1.1.a. ")
 
   // fonts settings
   set text(
@@ -82,8 +82,9 @@
         #block(text(weight: 700, 1.85em, title))
         #v(1em)
 
-        #link("https://github.com/shusoyo")[`suspen`]`,`
-        #link("https://github.com/Couriee")[`courier`]
+        #link("https://github.com/shusoyo")[`suspen`]
+        // `,`
+        // #link("https://github.com/Couriee")[`courier`]
 
         #datetime.today().display("[year] - [month] - [day]")
 

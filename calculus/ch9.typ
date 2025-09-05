@@ -26,6 +26,7 @@
   $ integral.double_D f (x , y) thin dif sigma = f (xi , eta) sigma . $
 ]
 
+
 == 二重积分的计算
 
 #proposition("二重积分到累次积分的转化")[

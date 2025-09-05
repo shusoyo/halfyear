@@ -1,7 +1,8 @@
 #!/bin/bash
 
-pname=("calculus" "linear-algebra")
-syncf_path="$HOME/ss/sync/11408"
+pname=("calculus" "linear-algebra" "paper-set")
+syncf_path="$HOME/ss/syncthing/sync/22408/302/"
+# syncf_path="$HOME/Library/Mobile Documents/com~apple~CloudDocs/22408"
 proot=$(dirname "$(readlink -f "$0")")
 fname="main.typ"
 
@@ -15,8 +16,8 @@ make_pdf() {
   target_dir="$syncf_path/$name"
   mkdir -p "$target_dir"
 
-  typst c "$src_name" "$target_dir/typst.pdf" --root "$proot" --font-path ./result --ignore-system-fonts
-  typst c "$problem_src_name" "$target_dir/problems.pdf" --root "$proot" --font-path ./result --ignore-system-fonts
+  typst c "$src_name" "$target_dir/$name-typst.pdf" --root "$proot" --font-path ./result --ignore-system-fonts
+  typst c "$problem_src_name" "$target_dir/$name-problems.pdf" --root "$proot" --font-path ./result --ignore-system-fonts
 }
 
 for name in "${pname[@]}"; do

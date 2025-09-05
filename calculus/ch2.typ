@@ -37,7 +37,11 @@
     时，$f (x) gt.eq 0$（或
     $f (x) lt.eq 0$）$arrow.r.double A gt.eq 0$（或 $A lt.eq 0$）。
 ]
-
+#annotation("保号性的等号问题")[
+  举例子：
+  + 函数 $x^3 >= 0$, 但 $lim_(x -> 0^+) x^3 != lim_(x -> 0^-) x^3$.
+  + $1/n > 0$  但 $lim_(n -> oo) 1/n = 0$.
+]
 #properties("保序性")[
   $lim_(x arrow.r x_0) f (x) = A , lim_(x arrow.r x_0) g (x) = B$，则
 
@@ -153,6 +157,10 @@
       lim_(x -> x_0) (ln abs(f(x))) / (ln abs(g(x))) = 1
     $
   ]
+
+  #ref[
+    https://www.bilibili.com/video/BV1s94y1o7nf
+  ]
 ]
 
 === 无穷大
@@ -204,7 +212,7 @@
 == 函数极限的计算
 
 #proposition("两个重要极限")[
-  $ lim_(x -> 0) sin(x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
+  $ lim_(x -> 0) (sin x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
 ]
 
 #annotation("几个重要极限结论")[

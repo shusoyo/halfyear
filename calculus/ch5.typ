@@ -15,7 +15,7 @@
   $f (x)$ 在区间 $I$ 上的一个原函数。称
   $integral f (x) thin d x = F (x) + C$ 为 $f (x)$ 在区间 $I$
   上的不定积分。
-]
+]<不定积分的定义>
 
 #theorem("原函数存在定理")[
   + 连续函数必有原函数.
@@ -83,9 +83,9 @@
 
   类似的
   $
-    & integral u' v^((n)) thin dif x      &        & = u' v^((n - 1)) - integral u'' v^((n - 1)) thin dif x,   \
+    & integral u' v^((n)) thin dif x      &        & = u' v^((n - 1)) - integral u'' v^((n - 1)) thin dif x, \
     & integral u'' v^((n - 1)) thin dif x &        & = u'' v^((n - 2)) - integral u''' v^((n - 2)) thin dif x, \
-    &                                     & dots.v                                                             \
+    &                                     & dots.v \
     & integral u^((n)) v' thin dif x      &        & = u^((n)) v - integral u^((n + 1)) v thin dif x,
   $
   因此最终可以得到
@@ -337,8 +337,8 @@
 === 区间再现
 #proposition()[
   $
-    integral_a^b f(x) thin dif x & = integral_a^b f(a + b - x) thin dif x                      \
-                                 & = 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x       \
+    integral_a^b f(x) thin dif x & = integral_a^b f(a + b - x) thin dif x \
+                                 & = 1 / 2 integral_a^b [f(x) + f(a + b - x)] thin dif x \
                                  & = integral_a^((a + b) / 2) [f(x) + f(a + b - x)] thin dif x
   $
 
@@ -394,7 +394,60 @@
 
 === 敛散性的判别
 
-#theorem("敛散性的判别")[ 见 《高等数学辅导讲义》 P121.]
+
+#proposition("无穷区间上的反常积分的比值审敛法")[
+  设函数$f (x)$, $g (x)$ 在区间 $\[ a , + oo \)$
+  上连续，并且 $0 lt.eq f (x) lt.eq g (x) (a lt.eq x < + oo)$，则
+
+  + 当 $integral_a^(+ oo) g (x) thin d x$
+    收敛时，$integral_a^(+ oo) f (x) thin d x$ 收敛；
+
+  + 当 $integral_a^(+ oo) f (x) thin d x$
+    发散时，$integral_a^(+ oo) g (x) thin d x$ 发散。
+]
+
+#corollary("极限形式")[设函数$f (x)$, $g (x)$ 在区间
+  $\[ a , + oo \)$ 上连续, 且 $f (x) gt.eq 0$, $g (x) > 0$,
+  $lim_(x arrow.r + oo) frac(f (x), g (x)) = lambda$ (有限或 $oo$)，则
+
+  + 当 $lambda eq.not 0$ 且 $lambda eq.not oo$
+    时，$integral_a^(+ oo) f (x) thin d x$ 与
+    $integral_a^(+ oo) g (x) thin d x$ 有相同的敛散性；
+
+  + 当 $lambda = 0$ 时，若 $integral_a^(+ oo) g (x) thin d x$ 收敛，则
+    $integral_a^(+ oo) f (x) thin d x$ 也收敛；
+
+  + 当 $lambda = oo$ 时，若 $integral_a^(+ oo) g (x) thin d x$ 发散，则
+    $integral_a^(+ oo) f (x) thin d x$ 也发散。
+]
+
+
+#proposition("无界函数反常积分的比值审敛法")[
+  设$f (x)$, $g (x)$ 在 $\( a , b \]$ 上连续，瑕点同为
+  $x = a$，并且 $f (x) lt.eq g (x) (a < x lt.eq b)$，则
+
+  + 当 $integral_a^b g (x) thin d x$ 收敛时，$integral_a^b f (x) thin d x$
+    收敛；
+
+  + 当 $integral_a^b f (x) thin d x$ 发散时，$integral_a^b g (x) thin d x$
+    发散。
+]
+
+#corollary("极限形式")[设$f (x)$, $g (x)$ 在 $\( a , b \]$
+  上连续，瑕点同为 $x = a$，并且 $f (x) gt.eq 0$,
+  $g (x) > 0 (a < x lt.eq b)$,
+  $lim_(x arrow.r a^(+)) frac(f (x), g (x)) = lambda$ (有限或 $oo$)，则
+
+  + 当 $lambda eq.not 0$ 且 $lambda eq.not oo$
+    时，$integral_a^b f (x) thin d x$ 和 $integral_a^b g (x) thin d x$
+    有相同的敛散性；
+
+  + 当 $lambda = 0$ 时，若 $integral_a^b g (x) thin d x$ 收敛，则
+    $integral_a^b f (x) thin d x$ 也收敛；
+
+  + 当 $lambda = oo$ 时，若 $integral_a^b g (x) thin d x$ 发散，则
+    $integral_a^b f (x) thin d x$ 也发散。
+]
 
 #proposition("两个重要结论")[
   + $ integral_a^(b) 1 / (x - a)^p dif x med cases(p < 1\, &"收敛", p >= 1\, quad & "发散") , quad (b > a) . $
