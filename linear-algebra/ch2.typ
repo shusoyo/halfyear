@@ -5,7 +5,7 @@
 #show: thmrules.with(qed-symbol: $square$)
 #show: project
 
-= 线性空间
+= 向量的线性关系
 
 == 线性表示
 #definition("线性表示")[
@@ -205,9 +205,7 @@
     一定线性相关。
 ]
 
-3. 与线性表示的关系
-
-#proposition()[
+#proposition("与线性表示的关系")[
   如果
   $bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s$
   线性无关，则：
@@ -264,15 +262,15 @@
       )
     $
 
-    将问题转化为求齐次方程组的解的问题，其中 $bold(K) = (k_(i j))_(t times s)$ 为系数矩阵，$bold(X) = x_i$ 为未知量向量，未知量个数为 $s$ 个，方程个数为 $t$ 个，因为 $s > t$ 所以该齐次方程组有非零解.
+    将问题转化为求齐次方程组的解的问题，其中 $bold(K) = (k_(i j))_(t times s)$ 为系数矩阵，$bold(x) = x_i$ 为未知量向量，未知量个数为 $s$ 个，方程个数为 $t$ 个，因为 $s > t$ 所以该齐次方程组有非零解.
 
-    即 $exists bold(X) = (x_1, x_2, ..., x_s)^T$ 为满足齐次方程组的非零解，也即满足 $f = x_1 va_1 + x_2 va_2 + ... + x_s va_s = 0$, 故向量组 $va_1, va_2, ..., va_s$ 线性相关。
+    即 $exists bold(x) = (x_1, x_2, ..., x_s)^T$ 为满足齐次方程组的非零解，也即满足 $f = x_1 va_1 + x_2 va_2 + ... + x_s va_s = 0$, 故向量组 $va_1, va_2, ..., va_s$ 线性相关。
   ]
 
   \
 
   #proof("2")[
-    向量组 $va_1, va_2, ..., va_s$ 可被向量组 $vb_1, vb_2, ..., vb_t$ 线性表示, 那么
+    向量组 $va_1, va_2, ..., va_n$ 可被向量组 $vb_1, vb_2, ..., vb_m$ 线性表示, 那么
     $
       op("span")
       (va_1, va_2, ..., va_s) subset.eq op("span") (vb_1, vb_2, ..., vb_t)
@@ -344,7 +342,6 @@
   则
   $(bold(I)) tilde.equiv bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s$.
 ]
-
 #proposition("用秩判断线性相关性")[
   $r (bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s) = s arrow.l.r.double bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s$
   线性无关.
@@ -353,7 +350,7 @@
 #proposition()[
   $
     r (bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s , bold(beta)) =
-    cases(r (bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s)\, & "若" bold(beta) upright("可用") bold(alpha)_1\, bold(alpha)_2\, dots.h.c\, bold(alpha)_s upright("表示"), , r (bold(alpha)_1 \, bold(alpha)_2 \, dots.h.c , bold(alpha)_s) + 1\, quad & upright("若") bold(beta) upright("不可用") bold(alpha)_1\, bold(alpha)_2\, dots.h.c\, bold(alpha)_s upright("表示"))
+    cases(r (bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_s)\, & bold(beta) upright("可用") bold(alpha)_1\, bold(alpha)_2\, dots.h.c\, bold(alpha)_s upright("表示"), , r (bold(alpha)_1 \, bold(alpha)_2 \, dots.h.c , bold(alpha)_s) + 1\, quad & bold(beta) upright("不可用") bold(alpha)_1\, bold(alpha)_2\, dots.h.c\, bold(alpha)_s upright("表示"))
   $
 
   用这个命题容易得到下面各个用秩判断线性表示的条件.
@@ -504,6 +501,8 @@
 #proposition([矩阵秩的性质])[
   + $r (bold(A)^tsp) = r (bold(A))$.
 
+  + $r(bold(A)^tsp bold(A)) = r(bold(A)).$
+
   + 如果 $c eq.not 0$, 则 $r (c bold(A)) = r (bold(A))$.
 
   + $r (bold(A) plus.minus bold(B)) lt.eq r (bold(A)) + r (bold(B))$.
@@ -534,132 +533,83 @@
   列数对应相等）, 并且秩相等.
 ]
 
-== 线性方程组的解
+== 实向量的内积和正交矩阵
 
-#proposition([齐次线性方程组解的判定])[
-  $bA_(m times n) bold(x) = bold(0)$ 为 $n$ 元线性方程组
-  $
-    bA bx & = 0 "只有零解" arrow.l.r.double r (bA) = n \
-    bA bx & = 0 "有非零解" arrow.l.r.double r (bA) < n \
-  $
+下面约定向量的分量和矩阵的元素都要求是实数（称为实向量和实矩阵）
 
-  #corollary[$m < n => bA bx = 0$ 有非零解。]
+=== 实向量的内积
+#definition("实向量的内积")[ 两个 $n$ 维实向量
+  $bold(alpha) = (a_1 , a_2 , dots.h.c , a_n)^tack.b , bold(beta) = (b_1 , b_2 , dots.h.c , b_n)^tack.b$
+  的内积规定为:
+  $ (bold(alpha) , bold(beta)) = a_1 b_1 + a_2 b_2 + dots.h.c + a_n b_n = bold(alpha)^tack.b bold(beta) . $
 ]
 
-#proposition("非齐次线性方程组解的判定")[ $bA_(m times n) bold(x) = bold(b)$ 为 $n$ 元线性方程组
-  $
-    bA bx = bold(b) quad cases(
-      "无解" & arrow.l.r.double r (bA) < r (bA, bold(b)) arrow.l.r.double r (bA) = r (bA, bold(b)) - 1,
-      "有唯一解" & arrow.l.r.double r (bA) = r (bA, bold(b)) = n,
-      "有无穷多解" & arrow.l.r.double r (bA) = r (bA, bold(b)) < n
-    )
-  $
+#proposition("内积的性质")[
 
-  #corollary()[
+  + 正定性: $(bold(alpha) , bold(alpha)) gt.eq 0$, 并且
+    $(bold(alpha) , bold(alpha)) = 0 arrow.l.r.double bold(alpha) = bold(0)$.
 
-    + $bA bx = bold(b)$ 有解 $arrow.l.r.double r (bA) = r (bA, bold(b))$;
+  + 对称性: $(bold(alpha) , bold(beta)) = (bold(beta) , bold(alpha))$.
 
-    + $bA bx = bold(b)$ 有解的充分条件为 $r (bA) = m$.
-  ]
+  + 双线性性质:
+    $(bold(alpha)_1 bold(beta)_1 + bold(beta)_2) = (bold(alpha)_1 bold(beta)_1) + (bold(alpha)_2 bold(beta)_2)$;
+    $(bold(alpha)_1 + bold(alpha)_2 , bold(beta)) = (bold(alpha)_1 , bold(beta)) + (bold(alpha)_2 , bold(beta))$.
 
-  #annotation()[
-    + 若 $bA bx = b$ 有唯一解，则 $bA bx = 0$ 只有零解；若 $bA bx = b$
-      有无穷多解，则 $bA bx = 0$ 有非零解;
-
-    + 若 $bA$ 为 $n$ 阶矩阵，则线性方程组解的判定或求解可以利用 Cramer 法则.
-  ]
+  + $(c bold(alpha) , bold(beta)) = c (bold(alpha) , bold(beta)) = (bold(alpha) , c bold(beta))$.
+    ($c$ 为任意实数)
 ]
 
-== 齐次线性方程组解的结构
+#proposition([实向量 $bold(alpha)$ 的长度])[
+  $parallel bold(alpha) parallel = sqrt((bold(alpha) , bold(alpha)))$.
 
-#proposition([$bold(A x) = bold(0)$ 解性质])[ 如果
-  $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 是齐次方程组
-  $bold(A x) = bold(0)$ 的一组解，则它们的任何线性组合
-  $c_1 bold(eta)_1 + c_2 bold(eta)_2 + dots.h.c + c_r bold(eta)_r$
-  也都是解。
+  则 $parallel bold(alpha) parallel gt.eq 0$, 并且
+  $parallel bold(alpha) parallel = 0 arrow.l.r.double bold(alpha) = bold(0)$.
+
+  显然
+  $parallel c bold(alpha) parallel = lr(|c|) parallel bold(alpha) parallel$.
 ]
 
-#definition([$bold(A x) = bold(0)$ 的基础解系和通解])[
-  如果齐次方程组 $bold(A x) = bold(0)$
-  有非零解，则它的解集 $bold(J)$（全部解的集合）是无穷集，称 $bold(J)$
-  的最大无关组为 $bold(A x) = bold(0)$ 的基础解系。
+#proposition([单位正交向量组])[
+  长度为 1 的向量称为单位向量：
 
-  当 $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 是 $bold(A x) = bold(0)$ 的基础解系时：向量 $bold(eta)$ 是 $bold(A x) = bold(0)$ 的解 $arrow.l.r.double bold(eta)$ 可用 $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 线性表示。于是，$bold(A x) = bold(0)$ 的通解为：
-  $ c_1 bold(eta)_1 + c_2 bold(eta)_2 + dots.h.c + c_r bold(eta)_r , quad c_i in RR $
+  + 如果 $bold(alpha)$ 不是零向量, 则
+    $bold(alpha) / (parallel bold(alpha) parallel)$ 是单位向量, 称为
+    $bold(alpha)$ 的单位化.
+
+  + 如果 $(bold(alpha) , bold(beta)) = 0$, 则说 $bold(alpha)$ 和
+    $bold(beta)$ 正交.
+
+  + 如果向量组 $bold(alpha)_1 , bold(alpha)_2 , dots.h.c , bold(alpha)_n$
+    中的每个都是单位向量, 并且两两正交, 则称它们为单位正交向量组.
 ]
 
-#proposition([$r(bold(J))$])[
-  设 $bold(A x) = bold(0)$ 有 $n$ 个未知数，则
-  $ r (bold(J)) = n - r (bold(A)) $
-  即它的基础解系中包含解的个数为 $s = n - r (bold(A))$。
-
-  于是判别一组向量 $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 是
-  $bold(A x) = bold(0)$ 的基础解系的条件为：
-
-  + $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 是
-    $bold(A x) = bold(0)$ 的一组解；
-
-  + $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 线性无关；
-
-  + $s = n - r (bold(A))$。
+=== 正交矩阵
+#definition("正交矩阵")[ $n$ 阶矩阵 $bold(Q)$ 称为正交矩阵, 如果它是实矩阵,
+  并且 $bold(Q) bold(Q)^tack.b = bold(E)$ (即
+  $bold(Q)^(- 1) = bold(Q)^tack.b$).
 ]
 
-#corollary()[
-  如果 $bold(A B) = bold(0) , n$ 为 $bold(A)$ 的列数（$bold(B)$ 的行数）, 则 $r (bold(A)) + r (bold(B)) lt.eq n$.
+#proposition()[ $bold(Q)$ 是正交矩阵 $arrow.l.r.double bold(Q)$
+  的列向量组是单位正交向量组.
 ]
 
-== 非齐次方程组解的结构
+=== 施密特正交化
 
-#proposition([$bold(A x = beta)$ 解的性质])[
-  如果
-  $bold(xi)_1 , bold(xi)_2 , dots.h.c , bold(xi)_s$ 是
-  $bold(A x) = bold(beta)$ 的一组解, 则
+#proposition("施密特正交化")[这是把线性无关向量组改造为单位正交向量组的方法.
 
-  + 它们的线性组合
-    $c_1 bold(xi)_1 + c_2 bold(xi)_2 + dots.h.c + c_s bold(xi)_s$
-    也是 $bold(A x) = bold(beta)$ 解的
-    $arrow.l.r.double c_1 + c_2 + dots.h.c + c_s = 1$.
+  以 3 个线性无关向量 $bold(alpha)_1 , bold(alpha)_2 , bold(alpha)_3$
+  为例.
 
-  + 它们的线性组合
-    $c_1 bold(xi)_1 + c_2 bold(xi)_2 + dots.h.c + c_s bold(xi)_s$
-    是 $bold(A x) = bold(0)$ 的解
-    $arrow.l.r.double c_1 + c_2 + dots.h.c + c_s = 0$.
+  #set enum(numbering: "step 1.")
+  + 令
+    $bold(beta)_1 = bold(alpha)_1 , bold(beta)_2 = bold(alpha)_2 - (bold(alpha)_2 , bold(beta)_1) / (bold(beta)_1 , bold(beta)_1) bold(beta)_1 , bold(beta)_3 = bold(alpha)_3 - (bold(alpha)_3 , bold(beta)_1) / (bold(beta)_1 , bold(beta)_1) bold(beta)_1 - (bold(alpha)_3 , bold(beta)_2) / (bold(beta)_2 , bold(beta)_2) bold(beta)_2$.
 
-  + $bold(A x) = bold(beta)$ 的两个解的差一定是 $bold(A x) = bold(0)$
-    的解.
+  此时 $bold(beta)_1 , bold(beta)_2 , bold(beta)_3$ 是和
+  $bold(alpha)_1 , bold(alpha)_2 , bold(alpha)_3$ 等价的正交非零向量组.
 
-  + 如果 $bold(xi)$ 是 $bold(A x) = bold(beta)$ 的一个解，$bold(eta)$ 是
-    $bold(A x) = bold(0)$ 的解，则 $bold(xi) + bold(eta)$ 是
-    $bold(A x) = bold(beta)$ 的解.
+  2. 作
+    $bold(eta)_1 = bold(beta)_1 \/ parallel bold(beta)_1 parallel , bold(eta)_2 = bold(beta)_2 \/ parallel bold(beta)_2 parallel , bold(eta)_3 = bold(beta)_3 \/ parallel bold(beta)_3 parallel$,
+    则 $bold(eta)_1 , bold(eta)_2 , bold(eta)_3$ 是和
+    $bold(alpha)_1 , bold(alpha)_2 , bold(alpha)_3$ 等价的单位正交向量组.
 ]
 
-#proposition([非齐次方程组的通解])[
-
-  如果 $bold(xi)_0$ 是非齐次方程组 $bold(A x) = bold(beta)$ 的解,
-  $bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_r$ 是导出组
-  $bold(A x) = bold(0)$ 的基础解系, 则 $bold(A x) = bold(beta)$
-  的通解（一般解）为
-  $
-    bold(xi)_0 + c_1 bold(eta)_1 + c_2 bold(eta)_2 + dots.h.c + c_r bold(eta)_r , quad c_1 , c_2 , dots.h.c , c_r in RR .
-  $
-]
-
-#proposition($r(bold(J))$)[
-
-  当非齐次方程组 $bold(A x) = bold(beta)$ 有解时,
-  $r(bold(J)) = n - r (bold(A)) + 1$.
-]
-
-== 公共解与同解
-
-#proposition("同解的几个结论")[
-  + 设矩阵 $bA$，方程组 $bA^T bA bx = 0$ 与 $bA bx = 0$ 同解
-
-  + 若矩阵 $bA$ 列满秩，则方程组 $bA bB bx = 0$ 与 $bB bx = 0$ 同解
-
-  + 若 $bA$ 为实对称矩阵，则 $bA^k bx = 0$ 与 $bA bx = 0$ 同解
-
-  + 若 $bA$ 是 $n$ 阶矩阵，则 $bA^n bx = 0$ 与 $bA^(n + 1) bx = 0$ 同解
-
-  #ref[https://www.bilibili.com/video/BV1s84y1C7SA]
-]

@@ -61,15 +61,13 @@
 === 无穷小的分阶
 #definition("无穷小的分阶")[
   给定两个无穷小 $alpha, beta$, 根据 $alpha / beta$ 作出判断。
-  #text(font: ("Libertinus Serif", "Adobe Kaiti Std R"))[
-    #align(center)[
-      #table(
-        columns: 4,
-        stroke: 0pt,
-        [$1$], [$c med (c != 0)$], [$0$], [$oo$],
-        [等价], [同阶], [高阶], [低阶],
-      )
-    ]
+  #align(center)[
+    #table(
+      columns: 4,
+      stroke: 0pt,
+      [$1$], [$c med (c != 0)$], [$0$], [$oo$],
+      [等价], [同阶], [高阶], [低阶],
+    )
   ]
 
   特别的，如果 $lim beta / alpha^k = c != 0, k > 0$, 那么就是说 $beta$ 是关于 $alpha$ 的 $k$ 阶无穷小。

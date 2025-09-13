@@ -13,7 +13,7 @@
   设函数 $f (x)$ 定义在某区间 $I$ 上，若存在可导函数
   $F (x)$，对于该区间上任意一点都有 $F' (x) = f (x)$ 成立，则称 $F (x)$ 是
   $f (x)$ 在区间 $I$ 上的一个原函数。称
-  $integral f (x) thin d x = F (x) + C$ 为 $f (x)$ 在区间 $I$
+  $integral f (x) thin dif x = F (x) + C$ 为 $f (x)$ 在区间 $I$
   上的不定积分。
 ]<不定积分的定义>
 
@@ -41,13 +41,13 @@
 === 第一类换元法
 #proposition()[
   若 $integral f (u) thin d u = F (u) + C$, 且 $phi (x)$ 可导, 则
-  $ integral f (phi (x)) phi' (x) thin d x = integral f (phi (x)) thin d phi (x) = F (phi (x)) + C . $
+  $ integral f (phi (x)) phi' (x) thin dif x = integral f (phi (x)) thin d phi (x) = F (phi (x)) + C . $
 ]
 === 第二类换元法
 #proposition()[
   设函数 $x = phi (t)$ 可导, 且 $phi' (t) eq.not 0$, 又设
   $integral f (phi (t)) phi' (t) thin d t = F (t) + C$, 则
-  $ integral f (x) thin d x = integral f (phi (t)) phi' (t) thin d t = F (phi^(- 1) (x)) + C . $
+  $ integral f (x) thin dif x = integral f (phi (t)) phi' (t) thin d t = F (phi^(- 1) (x)) + C . $
 ]
 
 #annotation("三种常用的变量代换")[
@@ -241,18 +241,24 @@
   $lim_(lambda arrow.r 0) sum_(i = 1)^n f (xi_i) Delta x_i$
   存在，且此极限值不依赖于区间 $[a , b]$ 的分法，也不依赖于点 $xi_i$
   的取法，则称此极限值为 $f (x)$ 在区间 $[a , b]$ 上的定积分，记为
-  $integral_a^b f (x) d x$，即
-  $ integral_a^b f (x) d x = lim_(lambda arrow.r 0) sum_(i = 1)^n f (xi_i) Delta x_i . $
+  $integral_a^b f (x) dif x$，即
+  $ integral_a^b f (x) dif x = lim_(lambda arrow.r 0) sum_(i = 1)^n f (xi_i) Delta x_i . $
 
 ]
 
 #proposition()[
-  若 $f (x)$ 在区间 $[0 , 1]$ 上连续，则积分 $integral_0^1 f (x) d x$
+  若 $f (x)$ 在区间 $[0 , 1]$ 上连续，则积分 $integral_0^1 f (x) dif x$
   存在。将 $[0 , 1]$ 区间 $n$ 等分，此时 $Delta x_i = 1 / n$，取 $xi_i = i / n$，由定积分的定义得
   $
-    integral_0^1 f (x) d x = lim_(lambda arrow.r 0) sum_(i = 1)^n f (xi_i) Delta x_i = lim_(n arrow.r oo) 1 / n sum_(i = 1)^n f (i / n) .
+    integral_0^1 f (x) dif x = lim_(lambda arrow.r 0) sum_(i = 1)^n f (xi_i) Delta x_i = lim_(n arrow.r oo) 1 / n sum_(i = 1)^n f (i / n) .
   $
   等式右端的极限可通过等式左端的积分来计算。
+
+  #corollary()[ 在 $[a, b]$ 上
+    $
+      integral_a^b f (x) thin dif x = lim_(n arrow.r oo) sum_(k = 1)^n f (a + k dot.op frac(b - a, n)) dot.op frac(b - a, n) .
+    $
+  ]
 ]
 
 #theorem("定积分存在的充分条件")[
@@ -322,7 +328,7 @@
 === 积分学的基本公式
 #theorem([牛顿--莱布尼茨公式 ])[
   如果函数 $F (x)$ 是连续函数 $f (x)$ 在区间 $[a , b]$ 上的一个原函数，则
-  $ integral_a^b f (x) thin d x = F (b) - F (a) . $
+  $ integral_a^b f (x) thin dif x = F (b) - F (a) . $
   通常记为 $F(x)|_a^b$.
 ]
 
@@ -330,7 +336,7 @@
 
 #proposition()[
   $
-    integral_0^(pi / 2) sin^n x thin d x = integral_0^(pi / 2) cos^n x thin d x = cases(delim: "{", frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 1 / 2 dot.op pi / 2\, space space & n "为偶数", , frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 2 / 3\, & n "为大于 1 的奇数")
+    integral_0^(pi / 2) sin^n x thin dif x = integral_0^(pi / 2) cos^n x thin dif x = cases(delim: "{", frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 1 / 2 dot.op pi / 2\, space space & n "为偶数", , frac(n - 1, n) dot.op frac(n - 3, n - 2) dot.op dots.h dot.op 2 / 3\, & n "为大于 1 的奇数")
   $
 ]
 
@@ -356,11 +362,11 @@
 ]
 
 #proposition("常用的区间再现的引申公式")[
-  + $integral_0^(pi / 2) f (sin x) thin d x & = integral_0^(pi / 2) f (cos x) thin d x$
+  + $integral_0^(pi / 2) f (sin x) thin dif x & = integral_0^(pi / 2) f (cos x) thin dif x$
 
-  + $integral_0^(pi / 2) f (sin x , cos x) thin d x & = integral_0^(pi / 2) f (cos x , sin x) thin d x$
+  + $integral_0^(pi / 2) f (sin x , cos x) thin dif x & = integral_0^(pi / 2) f (cos x , sin x) thin dif x$
 
-  + $integral_0^pi x f (sin x) thin d x & = pi / 2 integral_0^pi f (sin x) thin d x = pi integral_0^(pi / 2) f (sin x) thin d x$
+  + $integral_0^pi x f (sin x) thin dif x & = pi / 2 integral_0^pi f (sin x) thin dif x = pi integral_0^(pi / 2) f (sin x) thin dif x$
 ]
 
 
@@ -385,11 +391,11 @@
   $f (x)$，其在任一区间 $[a, b - eta], (0 < eta < b - a)$
   上有界而且可积，而在 $\[ b - eta, b \)$ 无界，这种情况下称点 $b$ 为
   $f (x)$ 的瑕点或者奇点。无界函数的反常积分又称为瑕积分，记为
-  $ integral_a^b f (x) d x = lim_(eta arrow.r 0) integral_a^(b - eta) f (x) d x . $
-  若上述极限存在，则说反常积分 $integral_a^b f (x) d x$
-  收敛。反之，反常积分 $integral_a^b f (x) d x$
+  $ integral_a^b f (x) dif x = lim_(eta arrow.r 0) integral_a^(b - eta) f (x) dif x . $
+  若上述极限存在，则说反常积分 $integral_a^b f (x) dif x$
+  收敛。反之，反常积分 $integral_a^b f (x) dif x$
   发散。为了让上述极限式更简单一些，我们通常取 $t in \[ a , b \)$，使得
-  $ lim_(t arrow.r b^(-)) integral_a^t f (x) d x . $
+  $ lim_(t arrow.r b^(-)) integral_a^t f (x) dif x . $
 ]
 
 === 敛散性的判别
@@ -399,11 +405,11 @@
   设函数$f (x)$, $g (x)$ 在区间 $\[ a , + oo \)$
   上连续，并且 $0 lt.eq f (x) lt.eq g (x) (a lt.eq x < + oo)$，则
 
-  + 当 $integral_a^(+ oo) g (x) thin d x$
-    收敛时，$integral_a^(+ oo) f (x) thin d x$ 收敛；
+  + 当 $integral_a^(+ oo) g (x) thin dif x$
+    收敛时，$integral_a^(+ oo) f (x) thin dif x$ 收敛；
 
-  + 当 $integral_a^(+ oo) f (x) thin d x$
-    发散时，$integral_a^(+ oo) g (x) thin d x$ 发散。
+  + 当 $integral_a^(+ oo) f (x) thin dif x$
+    发散时，$integral_a^(+ oo) g (x) thin dif x$ 发散。
 ]
 
 #corollary("极限形式")[设函数$f (x)$, $g (x)$ 在区间
@@ -411,14 +417,14 @@
   $lim_(x arrow.r + oo) frac(f (x), g (x)) = lambda$ (有限或 $oo$)，则
 
   + 当 $lambda eq.not 0$ 且 $lambda eq.not oo$
-    时，$integral_a^(+ oo) f (x) thin d x$ 与
-    $integral_a^(+ oo) g (x) thin d x$ 有相同的敛散性；
+    时，$integral_a^(+ oo) f (x) thin dif x$ 与
+    $integral_a^(+ oo) g (x) thin dif x$ 有相同的敛散性；
 
-  + 当 $lambda = 0$ 时，若 $integral_a^(+ oo) g (x) thin d x$ 收敛，则
-    $integral_a^(+ oo) f (x) thin d x$ 也收敛；
+  + 当 $lambda = 0$ 时，若 $integral_a^(+ oo) g (x) thin dif x$ 收敛，则
+    $integral_a^(+ oo) f (x) thin dif x$ 也收敛；
 
-  + 当 $lambda = oo$ 时，若 $integral_a^(+ oo) g (x) thin d x$ 发散，则
-    $integral_a^(+ oo) f (x) thin d x$ 也发散。
+  + 当 $lambda = oo$ 时，若 $integral_a^(+ oo) g (x) thin dif x$ 发散，则
+    $integral_a^(+ oo) f (x) thin dif x$ 也发散。
 ]
 
 
@@ -426,10 +432,10 @@
   设$f (x)$, $g (x)$ 在 $\( a , b \]$ 上连续，瑕点同为
   $x = a$，并且 $f (x) lt.eq g (x) (a < x lt.eq b)$，则
 
-  + 当 $integral_a^b g (x) thin d x$ 收敛时，$integral_a^b f (x) thin d x$
+  + 当 $integral_a^b g (x) thin dif x$ 收敛时，$integral_a^b f (x) thin dif x$
     收敛；
 
-  + 当 $integral_a^b f (x) thin d x$ 发散时，$integral_a^b g (x) thin d x$
+  + 当 $integral_a^b f (x) thin dif x$ 发散时，$integral_a^b g (x) thin dif x$
     发散。
 ]
 
@@ -439,14 +445,14 @@
   $lim_(x arrow.r a^(+)) frac(f (x), g (x)) = lambda$ (有限或 $oo$)，则
 
   + 当 $lambda eq.not 0$ 且 $lambda eq.not oo$
-    时，$integral_a^b f (x) thin d x$ 和 $integral_a^b g (x) thin d x$
+    时，$integral_a^b f (x) thin dif x$ 和 $integral_a^b g (x) thin dif x$
     有相同的敛散性；
 
-  + 当 $lambda = 0$ 时，若 $integral_a^b g (x) thin d x$ 收敛，则
-    $integral_a^b f (x) thin d x$ 也收敛；
+  + 当 $lambda = 0$ 时，若 $integral_a^b g (x) thin dif x$ 收敛，则
+    $integral_a^b f (x) thin dif x$ 也收敛；
 
-  + 当 $lambda = oo$ 时，若 $integral_a^b g (x) thin d x$ 发散，则
-    $integral_a^b f (x) thin d x$ 也发散。
+  + 当 $lambda = oo$ 时，若 $integral_a^b g (x) thin dif x$ 发散，则
+    $integral_a^b f (x) thin dif x$ 也发散。
 ]
 
 #proposition("两个重要结论")[

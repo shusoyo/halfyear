@@ -5,41 +5,33 @@
 #show: thmrules.with(qed-symbol: $square$)
 #show: project
 
-= 特征值与矩阵相似
+= 矩阵
 
-#proposition([特征值与特征向量的性质])[
-  + 不同特征值的特征向量线性无关；
+== 可逆矩阵
 
-  + 不同值特征的特征向量之和不是特征向量；
+== 初等变换与初等矩阵
 
-  + $k$ 重特征值最多有 $k$ 个线性无关的特征向量；
+#proposition("初等矩阵的行列式")[
+  + $lr(|bE_(i j)|) = - 1$.
 
-  + 设 $bA$ 的特征值为 $lambda_1 , lambda_2 , dots.h.c , lambda_n$，则
-    $sum_(i = 1)^n lambda_i = sum_(i = 1)^n a_(i i) = upright("tr") (bA)$，$product_(i = 1)^n lambda_i = lr(|bA|)$；
+  + $lr(|bE_i (k)|) = k (k eq.not 0)$.
 
-  + 若 $r (bA) = 1$，即 $bA = bold(alpha) bold(beta)^T$，其中
-    $bold(alpha) , bold(beta)$ 为 $n$ 维非零列向量，则 $bA$ 的特征值为
-    $
-      lambda_1 = upright("tr") (bA) = bold(alpha)^T bold(beta) = bold(beta)^T bold(alpha) ， lambda_2 = dots.h.c = lambda_n = 0
-    $
-
-  + 设 $bold(alpha)$ 为矩阵 $bA$ 属于特征值 $lambda$ 的特征向量，则
-  #align(center)[
-    #table(
-      inset: 10pt,
-      columns: (auto, auto, auto, auto, auto, auto),
-      align: (center, center, center, center, center),
-      [$bA$], [$f(bA)$], [$bA^(-1)$], $bA^\*$, $bA^tsp$, $bold(P)^(-1) bA bold(P)$,
-      $lambda$, $f(lambda)$, $1/lambda$, $(|bA|)/lambda$, $lambda$, $lambda$,
-      $va$, $va$, $va$, $va$, $$, $bold(P)^(-1) va$,
-    )
-  ]
+  + $lr(|bE_(i j) (c)|) = 1$.
 ]
 
-#proposition("特征方程")[
-  $
-    |lambda bold(E) - bold(A) | = lambda^n + a_(n - 1) lambda^(n - 1) + ... + a_1 lambda + a_0 = f(lambda)
-  $
+#proposition("初等矩阵的逆矩阵")[
+  + $bE_(i j)^(- 1) = bE_(i j)$.
+
+  + $bE_i^(-1)(k) = bE_i (1/k)$.
+
+  + $bE_(i j)^(- 1) (c) = bE_(i j) (- c)$.
 ]
 
+#proposition("初等矩阵的转置矩阵")[
+  + $bE^tsp_(i j) = bE_(i j)$.
 
+  + $bE^tsp_(i) (k) = bE_(i) (k)$.
+
+  + $bE^tsp_(i j) (c) = bE_(j i)^tsp (c)$.
+]
+#annotation[ 三种初等矩阵都是可逆矩阵.]

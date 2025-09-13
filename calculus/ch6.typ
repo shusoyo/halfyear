@@ -81,10 +81,17 @@
 
 == 物理应用
 #proposition()[
-  + 变力沿直线做功
+  + 直线做功 $w = f s$.
+
+  + 质量公式 $m = rho v$.
+
+  + 克服重力做功的力 $f = m g$.
+]
+#proposition()[
+  + 变力沿直线做功：$dif w = F(x) dif x$
     $ W = integral_a^b F(x) dif x $
 
-  + 抽水做功
+  + 抽水做功：$dif w = x dif f = x rho g dif v = x rho g A(x) dif x$
     $ W = rho g integral_a^b x A(x) dif x $
 
   + 静水压力

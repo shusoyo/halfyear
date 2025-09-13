@@ -7,9 +7,9 @@
 
 // + `A` : 《武忠祥高数强化讲义》
 // + `B` : 《张宇三十讲》- 26
-// + `C` : 《张宇 1000 题基础篇》- 26， 用 § 来表示章节
-// + `D` : 《李艳芳历年考研数学真题解析及复习思路》
+// + `1000` : 《张宇 1000 题基础篇》- 26， 用 § 来表示章节
 // + `R 2 08 xxx` : 指真题，数二，08 年，答案是 xxx 的答案
+// + `880`
 
 // #set par(leading: 2em)
 
@@ -42,7 +42,7 @@
   当 $x arrow.r 0$ 时，判断 $1 / x sin 1 / x$ 是无界变量还是无穷大量.
 ]
 
-#qst(`R 2 08 lyf-p33`)[
+#qst(`R 2 08 p33`)[
   设函数 $f \( x \)$ 在 $\( - oo \, + oo \)$
   内单调有界，${ x_n }$ 为数列，判断下列命题是否正确.
   #set enum(numbering: "A.")
@@ -103,11 +103,28 @@
   已知方程 $x = cos x$ 在 $(0 \, pi / 3)$ 内有唯一实根 $a$，设 $- 1 lt.eq x_1 lt.eq 1$，定义 $x_(n + 1) = cos x_n\, n = 1\, 2\, dots.h.c$，证明 $lim_(n arrow.r oo) x_n$ 存在，且极限值是 $a$。
 ]
 
-#qst(`R 2 06 lyf-p36-e6`)[
+#qst(`R 2 06 P36 Q6`)[
   设数列 ${ x_n }$ 满足
   $0 < x_1 < pi \, x_(n + 1) = sin x_n med \( n = 1 \, 2 \, dots.h.c \)$, 证明 $lim_(n arrow.r oo) x_n$ 存在，并求该极限.
 ]
 
+#qst(`880 §1 Ac Q10`)[
+  设 $x_1 = sqrt(a) thin (a > 0) , x_(n + 1) = sqrt(a + x_n)$, 证明:
+  $lim_(n arrow.r oo) x_n$ 存在, 并求其值.
+
+  #ps[
+    在证明单调有界中的有界时，要充分利用所给条件或隐含条件的不等式。例如此题在证明有界时就结合了 #hl[单调性] 带来的不等关系 $x_n > x_1 > sqrt(a)$ 来证明有界，另外再构造不等式时，出了加减还可以乘除。
+  ]
+]
+
+#qst(`880 §1 Ac Q11`)[
+  + 设
+    $x_1 = a gt.eq 0 , y_1 = b gt.eq 0 , a lt.eq b , x_(n + 1) = sqrt(x_n y_n) , y_(n + 1) = frac(x_n + y_n, 2) (n = 1 , 2 , dots.h.c)$, 证明: $lim_(n arrow.r oo) x_n = lim_(n arrow.r oo) y_n$.
+
+  #ps[
+    跟上面这道题一样，倒在证明有界了，对于你这种几乎没有数学直觉的人，最好是把 #hl[所有的不等关系列出来] 吧，明明那么简单的不等关系硬是看不出来。
+  ]
+]
 
 // == 无穷小的比阶
 
@@ -117,7 +134,7 @@
   设函数 $f \( x \) = frac(x, a + e^(b x))$ 在 $\( - oo \, + oo \)$ 内连续，且 $lim_(x arrow.r - oo) f \( x \) = 0$，则常数 $a\, b$ 应满足什么条件 ？
 ]
 
-#qst(`B P229 e2`)[
+#qst(`B P229 E2`)[
   若函数 $f \( x \) = frac(1, x e^(- x) - a)$ 在
   $\( - oo \, + oo \)$ 内处处连续，求常数 $a$ 的取值范围。
 ]
@@ -137,11 +154,11 @@
 ]
 
 
-// #qst(`R 2 02 lyf-p45`)[
+// #qst(`R 2 02 p45`)[
 //   设函数 $f \( x \)$ 在 $x = 0$ 的某邻域内具有二阶连续导数，且 $f (0) != 0,$$f' \( 0 \) eq.not 0 \, f'' \( 0 \) eq.not 0$。证明：存在唯一的一组实数 $lambda_1 \, lambda_2 \, lambda_3$，使得当 $h arrow.r 0$ 时，$lambda_1 f \( h \) + lambda_2 f \( 2 h \) + lambda_3 f \( 3 h \) - f \( 0 \)$ 是比 $h^2$ 高阶的无穷小。
 // ]
 
-// #qst(`R 2 06 lyf-p46`)[
+// #qst(`R 2 06 p46`)[
 //   试确定常数 $A \, B \, C$ 的值, 使得
 //   $e^x \( 1 + B x + C x^2 \) = 1 + A x + o \( x^3 \)$，其中 $o \( x^3 \)$
 //   是当 $x arrow.r 0$ 时比 $x^3$ 高阶的无穷小量。
@@ -176,19 +193,19 @@
 //   #ps[函数和常数还分不清真有点闹麻了]
 // ]
 
-// #qst(`R 2 02 {B-p228-e21, lyf-p133-e10}`)[
+// #qst(`R 2 02 {B-p228-e21, p133-e10}`)[
 //   设 $0 < a < b \,$ 证明不等式 $frac(2 a, a^2 + b^2) < frac(ln b - ln a, b - a) < 1 / sqrt(a b) .$
 //   #ps[不要在一棵树上吊死]
 // ]
-// #qst(`R 2 90 lyf-p109-e7`)[
+// #qst(`R 2 90 p109-e7`)[
 //   求曲线 $y = frac(1, 1 + x^2)$ $(x > 0)$ 的拐点。
 //   #ps[计算]
 // ]
-// #qst(`R 2 94 lyf-p130-e6`)[
+// #qst(`R 2 94 p130-e6`)[
 //   设 $f(x)$ 在 $[0,1]$ 上连续且递减，证明：当 $0 < lambda < 1$ 时，有 $integral_0^lambda f (x) thin upright(d) x gt.eq lambda integral_0^1 f (x) thin dif x .$
 //   #ps[想想别的做法]
 // ]
-// #qst(`R 2 95 lyf-p131-e7`)[
+// #qst(`R 2 95 p131-e7`)[
 //   设 $lim_(x arrow.r 0) frac(f (x), x) = 1$，且 $f'' (x) > 0$，证明
 //   $f (x) gt.eq x$。
 //   #ps[想想别的做法，中值定理，泰勒公式]
@@ -223,7 +240,7 @@
   设函数 $f \( x \)$ 在 $\[0,1]$ 上二阶可导，且 $integral_0^1 f \( x \) thin d x = 0$，则当 $f(1 / 2) < 0$ 时，$f'(x)$ 或 $f''(x)$ 需满足什么条件.
 ]
 
-#qst(`R 2 98 lyf-p96-e11`)[
+#qst(`R 2 98 P96 E11`)[
   设函数 $f (x)$ 在 $x = a$ 的某个邻域内连续，且 $f (a)$
   为其极大值，则存在 $delta > 0$，当 $x in (a - delta , a + delta)$
   时，证明：$ lim_(t arrow.r a) frac(f \( t \) - f \( x \), \( t - x \)^2) gt.eq 0 thin \( x eq.not a \) $
@@ -247,11 +264,11 @@
   #ps[等价无穷小代换的改写]
 ]
 
-#qst(`R 2 04 lyf-p93-e8`)[
+#qst(`R 2 04 P93 E8`)[
   设 $f \( x \) = integral_x^(x + pi / 2) \|sin t| thin d t$，求 $f \( x \)$ 的值域。
 ]
 
-#qst(`R 2 01 lyf-p87-e16`)[
+#qst(`R 2 01 P87 E16`)[
   设 $rho = rho \( x \)$ 是抛物线 $y = sqrt(x)$ 上任一点 $M \( x \, y \)$
   $(x gt.eq 1)$ 处的曲率半径，$s = s (x)$ 是该抛物线上介于点
   $A(1, 1)$ 与 $M$ 之间的弧长, 计算 $3 rho frac(dif^2 rho, dif s^2) - (frac(dif rho, dif s))^2$ 的值.
@@ -264,12 +281,12 @@
   #ps[渐近线的定义的推论]
 ]
 
-#qst(`R 2 01 lyf-p107-e4`)[
+#qst(`R 2 01 P107 E4`)[
   曲线 $y = (x - 1)^2 (x - 3)^2$ 的拐点个数.
   #ps[我知道有结论，但是想想为啥那样，顺便背背结论]
 ]<题目-4-2001年试题>
 
-#qst(`R 2 96 lyf-p122-e3`)[
+#qst(`R 2 96 P122 E3`)[
   在区间 $(- oo , + oo)$ 内，方程
   $lr(|x|)^(1 / 4) + lr(|x|)^(1 / 2) - cos x = 0$ 根的分布情况。
 ]
@@ -282,7 +299,7 @@
 #qst(`B P227 E20`)[
   证明 $ (ln frac(1 + x, x) - frac(1, 1 + x))^2 < frac(1, x \( 1 + x \)^2) quad \( x > 0 \). $
 ]
-#qst(`R 2 00 lyf-p132-e9`)[
+#qst(`R 2 00 P132 E9`)[
   函数 $f (x)$ 在 $\[ 0 , + oo \)$ 上可导，$f (0) = 1$，且满足等式
   $ f' (x) + f (x) - frac(1, x + 1) integral_0^x f (t) thin upright(d) t = 0 . $
   + 求导数 $f' (x)$.
@@ -292,7 +309,7 @@
 
 
 
-#qst(`R 2 98 lyf-p131-e8`)[
+#qst(`R 2 98 p131-e8`)[
   设 $x in (0 , 1)$，证明：
 
   + $(1 + x) ln^2 (1 + x) < x^2$.
@@ -346,7 +363,7 @@
   + 证明 $|f'(x)| lt.eq 2 a + b / 2$。
 ]
 
-#qst(`R 2 00 lyf-p143-e11`)[
+#qst(`R 2 00 p143-e11`)[
   设函数 $f (x)$ 在 $[0 , pi]$ 上连续，且
   $ integral_0^pi f (x) thin upright(d) x = 0 , integral_0^pi f (x) cos x thin upright(d) x = 0 . $
   证明：在 $(0 , pi)$ 内至少存在两个不同的点 $xi_1 , xi_2$，使
@@ -355,7 +372,7 @@
 ]
 
 
-#qst(`R 2 07 lyf-p146-e15`)[
+#qst(`R 2 07 p146-e15`)[
   设函数 $f (x) , g (x)$ 在 $[a , b]$ 上连续，在 $(a , b)$
   内具有二阶导数且存在相等的最大值，$f (a) = g (a) , f (b) = g (b)$，证明：存在
   $xi in (a , b)$，使得 $f'' (xi) = g'' (xi)$。
@@ -363,7 +380,7 @@
 ]
 
 
-#qst(`R 2 08 lyf-p147-e16`)[
+#qst(`R 2 08 p147-e16`)[
   + 证明积分中值定理：若函数 $f (x)$ 在闭区间 $[a , b]$
     上连续，则至少存在一点 $eta in [a , b]$，使得
     $ integral_a^b f (x) thin upright(d) x = f (eta) (b - a) . $
@@ -375,7 +392,7 @@
 
 
 
-#qst(`R 2 02 lyf-p137-e4`)[
+#qst(`R 2 02 p137-e4`)[
   设函数 $y = f (x)$ 在 $(0 , + oo)$ 内有界且可导，判断下列命题是否正确。
 
   #set enum(numbering: "A.")
@@ -408,12 +425,12 @@
         $I = integral_0^(n pi) sqrt(1 - sin 2 x) thin upright(d) x .$
       ]
 
-      // #qst(`R 2 98 lyf-p168-e12`)[
+      // #qst(`R 2 98 p168-e12`)[
 
       //   $I = integral frac(ln (sin x), sin^2 x) thin upright(d) x$
       // ]
 
-      #qst(`R 2 94 lyf-p170-e18`)[
+      #qst(`R 2 94 p170-e18`)[
 
         $integral frac(upright(d) x, sin 2 x + 2 sin x)$
       ]
@@ -428,12 +445,12 @@
         $I = integral_0^(pi / 2) frac(sin x, sin x + cos x) thin upright(d) x .$
       ]
 
-      // #qst(`R 2 03 lyf-p167-e10`)[
+      // #qst(`R 2 03 p167-e10`)[
 
       //   $I = integral frac(x e^(arctan x), (1 + x^2)^(3 / 2)) thin upright(d) x$
       // ]
 
-      #qst(`R 2 08 lyf-p182-e21`)[
+      #qst(`R 2 08 p182-e21`)[
 
         $integral_0^1 frac(x^2 arcsin x, sqrt(1 - x^2)) thin upright(d) x$.
       ]
@@ -521,23 +538,23 @@
   $ integral_0^1 f^2 (x) thin upright(d) x lt.eq {1/2, 1/4, 1/8} dot.op integral_0^1 f'^2 (x) thin upright(d) x . $
 ]
 
-#qst(`R 2 88 lyf-p151-e2`)[
+#qst(`R 2 88 p151-e2`)[
   若 $f (x)$ 与 $g (x)$ 在 $(- oo, + oo)$ 上皆可导，且 $f (x) < g (x)$，判断 #v(0.2em) $integral_0^x f (t) thin upright(d) t < integral_0^x g (t) thin upright(d) t$ 是否正确。
 ]
 
-#qst(`R 2 87 lyf-p159-e16`)[
+#qst(`R 2 87 p159-e16`)[
   在第一象限内求曲线 $y = - x^2 + 1$
   上的一点，使该点处的切线与所给曲线及两坐标轴所围成的图形面积最小，并求此最小面积。
 ]
 
-#qst(`R 2 90 lyf-p176-e10`)[
+#qst(`R 2 90 p176-e10`)[
   设 $f (x) = integral_1^x frac(ln t, 1 + t) thin upright(d) t$，其中
   $x > 0$，求 $f (x) + f (1 / x)$.
 ]
 
 
 
-#qst(`R 2 00 lyf-p184-e24`)[
+#qst(`R 2 00 p184-e24`)[
   设函数 $S (x) = integral_0^x lr(|cos t|) thin upright(d) t$.
 
   + 当 $n$ 为正整数，且 $n pi lt.eq x < (n + 1) pi$
@@ -547,7 +564,7 @@
 
 ]
 
-#qst(`R 2 98 lyf-p188-e8`)[
+#qst(`R 2 98 p188-e8`)[
   设 $f (x)$ 连续，求
   $frac(upright(d), upright(d) x) integral_0^x t f (x^2 - t^2) thin upright(d) t$.
 ]
@@ -714,3 +731,6 @@
   $f'_y eq.not 0$。证明：对任意常数 $C , f (x , y) = C$ 为一条直线
   $arrow.l.r.double f''_2 f''_11 - 2 f'_1 f''_2 f''_12 + f''_1 f''_22 = 0$.
 ]
+
+
+
