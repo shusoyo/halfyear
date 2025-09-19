@@ -13,6 +13,51 @@
 
 // #set par(leading: 2em)
 
+
+#let ps = x => box[#text(yellow.negate(space: rgb))[hints: ] #emph[#x]]
+#let req = thmbox(
+  "reqst",
+  "re Q",
+  base: none,
+  inset: (
+    bottom: 1em,
+    left: 0em,
+    right: 0em,
+  ),
+).with(
+  breakable: false,
+  numbering: "i",
+)
+
+#show <the-outline>: it => {
+  it
+  context for (el, meta) in query(figure.where(kind: "thmenv")).zip(query(<meta:thmenvcounter>)) {
+    if meta.value == "reqst" {
+      outline.entry(2, el)
+    }
+  }
+}
+
+#show: project.with(
+  title: "math problems",
+  language: "ch",
+  authors: "suspen",
+  outl: [
+    #outline(
+      indent: auto,
+      title: text(yellow.negate(space: rgb))[Contents],
+      depth: 2,
+    )
+
+    #outline(
+      title: text(yellow.negate(space: rgb))[Revise],
+      target: figure.where(kind: "thmenv"),
+      // indent: true,
+    ) <the-outline>
+  ],
+  title_page: true,
+)
+
 #let qg2c = grid.with(columns: (1fr, 1fr))
 
 #let lim = $limits(lim)$
@@ -63,6 +108,33 @@
 
 // == 函数极限的计算
 
+== 求极限
+#qst(`880 §1 Bc Q11`)[
+  $lim_(x arrow.r oo) x^2 [e^((1 + 1 / x)^x) - (1 + 1 / x)^(e x)]$.
+]
+
+#req(`880 §1 Bc Q17`)[
+
+  #set enum(numbering: "i", start: 1)
+  + 当 $lr(|x|) < 1$ 时，求
+    $ lim_(n arrow.r oo) (1 + x) (1 + x^2) (1 + x^4) dots.h.c (1 + x^(2^n)). $
+
+  + 当 $lr(|x|) eq.not 0$ 时，求
+    $ lim_(n arrow.r oo) cos x / 2 cos x / 4 dots.h.c cos x / 2^n. $
+
+  + 求 $ lim_(x arrow.r pi / 2) frac((1 - sqrt(sin x)) (1 - root(3, sin x)) dots.h.c (1 - root(n, sin x)), (1 - sin x)^(n - 1)) $
+]
+
+$
+  f(x + 2) - f(x) = F'(x) = (integral_x^(x+2) f(x) dif x)' =x
+$
+
+#req(`880 §1 Bc Q18i`)[
+  设 $f (x)$ 是三次多项式，且有
+  $lim_(x arrow.r 2 a) frac(f (x), x - 2 a) = lim_(x arrow.r 4 a) frac(f (x), x - 4 a) = 1 thin (a eq.not 0)$，求
+  $lim_(x arrow.r 3 a) frac(f (x), x - 3 a)$。
+]
+
 == 数列极限的计算
 
 #qst(`A P13 E5`)[
@@ -108,7 +180,7 @@
   $0 < x_1 < pi \, x_(n + 1) = sin x_n med \( n = 1 \, 2 \, dots.h.c \)$, 证明 $lim_(n arrow.r oo) x_n$ 存在，并求该极限.
 ]
 
-#qst(`880 §1 Ac Q10`)[
+#req(`880 §1 Ac Q10`)[
   设 $x_1 = sqrt(a) thin (a > 0) , x_(n + 1) = sqrt(a + x_n)$, 证明:
   $lim_(n arrow.r oo) x_n$ 存在, 并求其值.
 
@@ -117,13 +189,30 @@
   ]
 ]
 
-#qst(`880 §1 Ac Q11`)[
-  + 设
-    $x_1 = a gt.eq 0 , y_1 = b gt.eq 0 , a lt.eq b , x_(n + 1) = sqrt(x_n y_n) , y_(n + 1) = frac(x_n + y_n, 2) (n = 1 , 2 , dots.h.c)$, 证明: $lim_(n arrow.r oo) x_n = lim_(n arrow.r oo) y_n$.
+#req(`880 §1 Ac Q11`)[
+  设
+  $x_1 = a gt.eq 0 , y_1 = b gt.eq 0 , a lt.eq b , x_(n + 1) = sqrt(x_n y_n) , y_(n + 1) = frac(x_n + y_n, 2) (n = 1 , 2 , dots.h.c)$, 证明: $lim_(n arrow.r oo) x_n = lim_(n arrow.r oo) y_n$.
 
   #ps[
     跟上面这道题一样，倒在证明有界了，对于你这种几乎没有数学直觉的人，最好是把 #hl[所有的不等关系列出来] 吧，明明那么简单的不等关系硬是看不出来。
   ]
+]
+
+#req(`880 §1 Bc Q6`)[
+  设 $f_n (x) = 1 - (1 - cos x)^n (n = 1 , 2 , dots.h.c)$.
+
+  #set enum(numbering: "i.", start: 1)
+  + 证明：方程 $f_n (x) = 1 / 2$ 在 $(0 , pi / 2)$ 内有且仅有一个实根
+    $x_n$；
+
+  + 设 $x_n in (0 , pi / 2)$，满足
+    $f_n (x_n) = 1 / 2$，证明：$arccos 1 / n < x_n < pi / 2$，且
+    $lim_(n arrow.r oo) x_n = pi / 2$.
+]
+
+#req(`880 §1 Bc Q20`)[
+  设 $x_1 = 1 / 2 , x_(n + 1) = x_n^2 + x_n (n = 1 , 2 , dots.h.c)$，求极限
+  $ lim_(n arrow.r oo) (frac(1, x_1 + 1) + frac(1, x_2 + 1) + dots.h.c + frac(1, x_n + 1)) . $
 ]
 
 // == 无穷小的比阶

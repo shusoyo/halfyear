@@ -24,10 +24,7 @@
   show math.equation: set text(
     font: (
       "New Computer Modern Math",
-      (
-        name: "New Computer Modern",
-        covers: regex("\p{script=Han}"),
-      ),
+      (name: "New Computer Modern", covers: regex("\p{script=Han}")),
       "Adobe Kaiti Std R",
     ),
     size: 11pt,
@@ -56,7 +53,6 @@
   // set page(margin: 1.5cm)
   show heading: set block(above: 1.4em, below: 1em)
   show heading.where(level: 1): set align(center)
-
   set enum(indent: 1.2em)
 
   // https://typst-doc-cn.github.io/guide/FAQ/math-equation.html#%E5%A6%82%E4%BD%95%E8%AE%A9%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%BC%96%E5%8F%B7
@@ -101,9 +97,6 @@
     "New Computer Modern",
     "Adobe Kaiti Std R",
   ))
-
-  // show highlight.where(body)
-
 
   body
 }

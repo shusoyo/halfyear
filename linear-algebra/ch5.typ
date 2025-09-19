@@ -273,12 +273,11 @@
 #proposition()[
   设 $bold(A)$ 是 $n$
   阶矩阵，$bold(P) = (bold(eta)_1 , bold(eta)_2 , dots.h.c , bold(eta)_n)$
-  是可逆矩阵，则 $ bold(P)^(- 1) bold(A) bold(P) $
-  是对角矩阵，并且对角线上的元素为
+  是可逆矩阵，设对角矩阵 $bold(Lambda)$ 对角线上的元素为
   $lambda_1 , lambda_2 , dots.h.c , lambda_n$。
-  $
-    arrow.l.r.double quad bold(A) bold(eta)_1 = lambda_1 bold(eta)_1 , bold(A) bold(eta)_2 = lambda_2 bold(eta)_2 , dots.h.c , bold(A) bold(eta)_n = lambda_n bold(eta)_n .
-  $
+  则 $ &bold(A) bold(P) = bold(P) bold(Lambda) \
+  <=> &bold(P)^(-1) bold(A P) = bold(Lambda) \
+  arrow.l.r.double &bold(A) bold(eta)_1 = lambda_1 bold(eta)_1 , bold(A) bold(eta)_2 = lambda_2 bold(eta)_2 , dots.h.c , bold(A) bold(eta)_n = lambda_n bold(eta)_n . $
   于是得到
 
   + $n$ 阶矩阵 $bold(A)$ 可对角化 $arrow.l.r.double bold(A)$ 有 $n$ 个线性无关的特征向量。
