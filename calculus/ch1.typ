@@ -18,11 +18,13 @@
   $
 ]
 
-#properties("有界性")[
+#proposition("有界性")[
   若数列极限 ${x_n}$ 存在，则数列 ${x_n}$ 有界。
 ]
-#properties("保号性")[
+
+#proposition("保号性")[
   有数列 $lim_(n -> oo) {x_n} = a >_((<)) b in RR$，则 $exists N in NN^+,$ 当 $n > N,$ 有 $x_n >_((<)) b$. 反之，若有 $x_n >=_((<=)) b$，则 $lim_(n -> oo) = a >=_((<=)) b$.
+  #ps[极限推数列是严格有序，数列推极限是非严格有序。]
 ]
 
 
@@ -45,6 +47,19 @@
   $ ln^a n lt.double n^beta lt.double a^n lt.double n ! lt.double n^n, (a > 0 , beta > 0 , a > 1). $
 ]
 == 极限存在准则
+#proposition("夹逼准则")[
+  若存在 $N$，当 $n > N$ 时，$x_n lt.eq y_n lt.eq z_n$，且
+  $lim_(n arrow.r oo) x_n = lim_(n arrow.r oo) z_n = a$，则
+  $lim_(n arrow.r oo) y_n = a$。
+]
+
+#proposition("单调有界准则")[
+  单调有界数列必有极限。即单调增加、有上界的数列必有极限，单调减少、有下界的数列必有极限。
+]
+
+#annotation()[
+  函数极限有对应的以上两条准则。
+]
 
 
 == 扩充知识

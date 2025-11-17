@@ -123,6 +123,10 @@
 
   #hl[等价关系也有传递性。]
 ]
+#proposition("向量组等价的充要条件")[
+  向量组 $(I)$ 与 $(II)$ 等价 $<=> r(bold(I)) = r(bold(I\I)) = r(bold(I\, I I))$
+]
+
 
 #example()[
   设 $bold(A B) = bold(C)$，证明：
@@ -530,7 +534,10 @@
 
 === 矩阵的等价
 
-#definition()[两个矩阵如果可用初等变换互相转化, 就称它们等价.]
+#definition()[
+  $exists "可逆矩阵" bold(P Q)$ 有 $bold(P A Q) = bold(B)$ 则 $bold(A eq^~ B)$ 等价。
+
+]
 
 #proposition()[
   矩阵等价的 #hl[充要条件] 是它们类型相同（即行,

@@ -94,11 +94,15 @@
   $D$ 内恒有 #hl[ $f''_(x y) (x , y) = f''_(y x) (x , y) .$]
 ]
 
+#proposition("偏积分")[
+
+]
+
 == 全微分
 
 
 #definition("全微分")[
-  若 $Delta z = f (x_0 + Delta x , y_0 + Delta y) - f (x_0 , y_0) = A Delta x + B Delta y + o (rho)$，则称函数
+  #hl[若 $Delta z = f (x_0 + Delta x , y_0 + Delta y) - f (x_0 , y_0) = A Delta x + B Delta y + o (rho)$]，则称函数
   $z = f (x , y)$ 在点 $(x_0 , y_0)$ 可微，$A Delta x + B Delta y$
   称为函数 $z = f (x , y)$ 在点 $(x_0 , y_0)$ 的全微分，记为
   $ dif z = A Delta x + B Delta y . $

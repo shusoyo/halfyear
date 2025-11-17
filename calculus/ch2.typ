@@ -168,9 +168,14 @@
 ]
 
 #definition("无界变量和无穷大量")[
-  《高等数学辅导讲义》P11.
+  + 无穷大量：$forall M > 0, exists N,$ 当 $n > N$ 时，恒有 $|x_n| > M$。
+
+  + 无界变量：$forall M > 0, exists N,$ 有 $|x_N| > M$。
+
   #remark[
     无界不一定要有无穷大的量，如 $f(x) = x sin x$.
+
+    若函数极限不存在（不是无穷大也不是无穷小也不是常数）则必不是无穷大量。
   ]
 ]
 
@@ -210,7 +215,7 @@
 == 函数极限的计算
 
 #proposition("两个重要极限")[
-  $ lim_(x -> 0) (sin x) / x = 1, lim_(x -> 0) (1 + 1 / x)^x = e. $
+  $ lim_(x -> 0) (sin x) / x = 1, lim_(x -> +oo) (1 + 1 / x)^x = e. $
 ]
 
 #annotation("几个重要极限结论")[
@@ -252,7 +257,7 @@
 
   + $f (x)$ 和 $g (x)$ 在 $x_0$ 的某去心邻域内可导，且 $g' (x) eq.not 0$；
 
-  + $lim_(x arrow.r x_0) frac(f' (x), g' (x))$ 存在（或 $oo$）。
+  + #hl[$lim_(x arrow.r x_0) frac(f' (x), g' (x))$ 存在（或 $oo$）。] （必须满足洛必达后的极限存在，才能确定原式存在，且等于洛必达后的极限）
 
   则
   $ lim_(x arrow.r x_0) frac(f (x), g (x)) = lim_(x arrow.r x_0) frac(f' (x), g' (x)) . $

@@ -276,6 +276,10 @@
   若区间 $[a, b]$ 上 $f(x) <= g(x)$， 则有 $ integral_a^b f(x) dif x <= integral_a^b g(x) dif x. $
 ]
 
+#corollary()[
+  若 $f(x)$ 在积分区域上为非负的连续函数，即 $f(x) >= 0$，#hl[但 $f(x) cancel(eq.triple) 0$ 即不恒等于 $0$]，此时有 $ integral_a^b f(x) dif x > 0 . $
+]
+
 #properties("估值定理")[
   设 $M, m$ 分别是 $f(x)$ 在 $[a, b]$ 上的最大值与最小值，则 $ m (b - a) <= integral_a^b f(x) dif x <= M (b - a) . $
 ]
@@ -400,6 +404,10 @@
 
 === 敛散性的判别
 
+
+#ref[
+  https://www.bilibili.com/video/BV1vJp1eTE6S
+]
 
 #proposition("无穷区间上的反常积分的比值审敛法")[
   设函数$f (x)$, $g (x)$ 在区间 $\[ a , + oo \)$

@@ -3,12 +3,12 @@
 #let project(title: "", authors: (), body, language: "en", outl: [], title_page: false) = {
   set document(author: authors, title: title)
   set page(numbering: "1", number-align: center)
-  set heading(numbering: "1.1.a. ")
+  set heading(numbering: "1.1.a ")
 
   // fonts settings
   set text(
     font: (
-      (name: "New Computer Modern", covers: "latin-in-cjk"),
+      "New Computer Modern",
       "Noto Serif CJK SC",
     ),
     lang: language,
@@ -66,7 +66,7 @@
 
   // outline
   if title_page {
-    show outline.entry.where(level: 1): set outline.entry(fill: line(length: 0%))
+    show outline.entry.where(level: 1): set outline.entry(fill: none)
     show outline.entry.where(level: 1): it => {
       v(17pt, weak: true)
       strong(text(yellow.negate(space: rgb))[#it])
@@ -79,14 +79,13 @@
         #v(1em)
 
         #link("https://github.com/shusoyo")[`suspen`]
-        // `,`
-        // #link("https://github.com/Couriee")[`courier`]
 
         #datetime.today().display("[year] - [month] - [day]")
 
         #v(1em)
-        #outl
       ]
+
+      #outl
     ])
   }
 

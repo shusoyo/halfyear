@@ -94,7 +94,7 @@
   + 抽水做功：$dif w = x dif f = x rho g dif v = x rho g A(x) dif x$
     $ W = rho g integral_a^b x A(x) dif x $
 
-  + 静水压力
+  + 静水压力：$dif F = p dif S = rho g h dif S$
     $ P = rho g integral_a^b x [f(x) - h(x)] dif x $
 
   + 引力

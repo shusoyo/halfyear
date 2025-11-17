@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pname=("calculus" "linear-algebra" "paper-set")
+pname=("calculus" "linear-algebra" "paper-set" "english-template")
 syncf_path="$HOME/ss/syncthing/sync/22408/302/"
 # syncf_path="$HOME/Library/Mobile Documents/com~apple~CloudDocs/22408"
 proot=$(dirname "$(readlink -f "$0")")

@@ -9,7 +9,9 @@
 = 函数及其性态
 
 #definition("奇偶性")[
+  + $f(x) + f(-x)$ 必为偶函数。
 
+  + $f(x) - f(-x)$ 必为奇函数。
 ]
 
 #proposition()[
