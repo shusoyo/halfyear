@@ -1,6 +1,6 @@
 #import "@preview/i-figured:0.2.4"
 
-#let project(title: "", authors: (), body, language: "en", outl: [], title_page: false) = {
+#let project(title: "", authors: (), body, language: "en", outl: [], title_page: false, compat_title_page: false) = {
   set document(author: authors, title: title)
   set page(numbering: "1", number-align: center)
   set heading(numbering: "1.1.a ")
@@ -72,21 +72,26 @@
       strong(text(yellow.negate(space: rgb))[#it])
     }
 
-    page([
-      #v(6.18em)
-      #align(center)[
-        #block(text(weight: 700, 1.85em, title))
-        #v(1em)
+    v(6.18em)
+    align(center)[
+      #block(text(weight: 700, 1.85em, title))
+      #v(1em)
 
-        #link("https://github.com/shusoyo")[`suspen`]
+      #link("https://github.com/shusoyo")[`suspen`]
 
-        #datetime.today().display("[year] - [month] - [day]")
+      #datetime.today().display("[year] - [month] - [day]")
 
-        #v(1em)
-      ]
+      #v(1em)
+    ]
 
-      #outl
-    ])
+    outl
+
+
+    if compat_title_page {
+      v(5em)
+    } else {
+      pagebreak()
+    }
   }
 
   // Main body.

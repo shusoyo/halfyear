@@ -66,35 +66,7 @@
 // + `D` : 《李艳芳历年考研数学真题解析及复习思路》
 // + `R 2 08 xxx` : 指真题，数二，08 年，答案是 xxx 的答案
 
-#example("计算错误与失误大赏")[
-  + 计算 $c integral_a^b f'(x) dif x$ 时，要注意是 $c f(b) - c f(a)$ 而不是 $c f(b) - f(a)$。
 
-  + 定积分上下限代入时，应是 $f(a) - f(b)$ 注意符号！
-
-  + 多项式带括号时，应展开每一项，不能心算，以免漏乘！
-
-  + 构造参数方程，应代入验证看是否正确！
-
-  + 读题要细致，图像题要注意是给的哪个函数的图像。
-
-  + #hl[$1^oo$ 类极限不能漏写底数 $e$。]
-
-  + $bold(A)^(upright(T)) bold(A)$ 不要看成  $bold(A) bold(A)^(upright(T))$.
-
-  + 心算时不要过度联想，使 $1/(1 + x^2)$ 变成 $1/(1 + x^2)^2$
-
-  + 二重积分区域对称后不要忘记乘 $2$.
-
-  + 要看清给的坐标点是什么，不要弄混了 $x,y$ 轴。
-
-  + 矩阵初等变换时用铅笔写，写大一点，变一次直接在原矩阵上用橡皮修改！
-
-  + $integral x dif x = integral 1/2 dif x^2$  一定不要忘记 $1/2$.
-
-  + $f^-(f(x)) = x != 1$ 一定要记得！
-
-  + 积分上下限在计算过程中抄错。
-]
 
 = 函数、极限、连续
 
@@ -633,7 +605,7 @@ TODO
   处可导的充分必要条件是存在在 $x = x_0$ 处连续的函数 $g (x)$，使得
   $f (x) - f (x_0) = (x - x_0) g (x)$.
 ]
-#req(`880 §2 Bc Q27`)[
+#qst(`880 §2 Bc Q27`)[
   证明：方程 $sum_(k = 0)^(2 n + 1) frac(x^k, k !) = 0$ ($n$ 为正整数)
   有且仅有一个实根.
 ]
@@ -793,11 +765,11 @@ TODO
 //   $I = integral frac(ln (sin x), sin^2 x) thin  dif  x$
 // ]
 
-#req(`302 94 p170 e18`)[
+#qst(`302 94 p170 e18`)[
   $ integral frac(dif x, sin 2 x + 2 sin x) $
 ]
 
-#req(`A P98 E11`)[
+#qst(`A P98 E11`)[
   $ I = integral frac(dif x, sin x dot.op cos^4 x) $
   #ps[ $1$ 的妙用]
 ]
@@ -1157,7 +1129,7 @@ TODO
 
 == 反常积分
 
-#req(`A P123 E1`)[
+#qst(`A P123 E1`)[
   $integral_0^(+ oo) e^(- x^2) thin dif x$.
 ]
 
@@ -1197,7 +1169,7 @@ TODO
   若反常积分 $integral_e^(+ oo) frac(1, x ln^(a + 1) x) thin dif x$ 收敛，求 $a$ 的取值范围。
 ]
 
-#req(`A P126 E4`)[
+#qst(`A P126 E4`)[
   求证：
   $integral_0^(+ oo) frac(x^2, 1 + x^4) thin dif x = integral_0^(+ infinity) frac(1, 1 + x^4) thin dif x$，并求其值。
 ]
@@ -1225,16 +1197,6 @@ TODO
   ) $ $f, F$ 有一阶连续偏导数, 则
   $frac(dif y, dif x) = underline(quad quad)$.
 ]
-
-
-
-#qst(`880 §4 Ac Q1`)[
-  设 $u = f (x , y , z)$ 有连续偏导数，$y = y (x)$，$z = z (x)$
-  分别由方程 #v(0em) $e^(x y) - y = 0$ 和 $e^z - x z = 0$ 确定，求
-  $frac(dif u, dif x)$.
-]
-
-
 
 #qst(`880 §4 Ac Q11`)[
   设 $z = u / y + e^(- u x) + f (u)$，$u (x , y)$ 满足
@@ -1324,7 +1286,7 @@ TODO
   )$， 在 $(0 , 0)$ 点偏导数存在但不可微.
 ]
 
-#req(`A P156 E3`)[
+#qst(`A P156 E3`)[
   二元函数 $f (x , y)$ 在点 $(0 , 0)$ 处可微的一个充分条件是（ ）
   #set enum(numbering: "A.")
 
@@ -1358,7 +1320,7 @@ TODO
 
 ]
 
-#req(`A P158 E6`)[
+#qst(`A P158 E6`)[
   设 $f (x , y) = lr(|x - y|) phi (x , y)$，其中
   $phi (x , y)$ 在点 $(0 , 0)$ 的某邻域内连续，问
 
@@ -1367,11 +1329,11 @@ TODO
   + 在上述条件下 $f (x , y)$ 在 $(0 , 0)$ 点是否可微？
 ]
 
-#req(`A P158 E7`)[
-  设 $f_x' (x_0 , y_0)$ 存在，$f_y' (x , y)$ 在点 $(x_0 , y_0)$ 处连续，证明：$f (x , y)$ 在点 $(x_0 , y_0)$ 处可微.
+#qst(`A P158 E7`)[
+  设 $f'_x (x_0 , y_0)$ 存在，$f'_y (x , y)$ 在点 $(x_0 , y_0)$ 处连续，证明：$f (x , y)$ 在点 $(x_0 , y_0)$ 处可微.
 ]
 
-#req(`A P167 E9`)[
+#qst(`A P167 E9`)[
   设 $(r , theta)$ 为极坐标，$u = u (r , theta)$
   具有二阶连续偏导数，并满足 $frac(partial u, partial theta) = 0$，且
   $frac(partial^2 u, partial x^2) + frac(partial^2 u, partial y^2) = 0$，求
@@ -1384,7 +1346,7 @@ TODO
   $arrow.l.r.double x frac(partial f, partial x) + y frac(partial f, partial y) = n f (x , y)$.
 ]
 
-#req(`A P171 E6`)[
+#qst(`A P171 E6`)[
   设 $f (x , y)$ 有二阶连续偏导数，且
   $f'_y eq.not 0$。证明：对任意常数 $C , f (x , y) = C$ 为一条直线
   $arrow.l.r.double f''_2 f''_11 - 2 f'_1 f''_2 f''_12 + f''_1 f''_22 = 0$.
@@ -1392,7 +1354,7 @@ TODO
 
 == 多元函数求极值
 
-#req(`880 §4 Ac Q3`)[
+#qst(`880 §4 Ac Q3`)[
   设当 $x gt.eq 0 , y gt.eq 0$ 时，有
   $lr(|x^2 - y^2|) dot.op e^(- x^2 - y^2) lt.eq k$ 成立，求 $k$ 的最小值。
 
@@ -1435,12 +1397,12 @@ TODO
 = 二重积分
 
 == 概念及计算题
-#req(`880 §5 Ab Q3`)[
+#qst(`880 §5 Ab Q3`)[
   $
     I = integral_0^1 1 / 3 x^(- 2 / 3) dif x integral_(arctan x)^(pi / 4) csc 2 y med dif y = underline(#hide[a b c a]) .
   $
 ]
-#req(`880 §5 Ab Q8`)[
+#qst(`880 §5 Ab Q8`)[
   设
   $D : - 1 lt.eq x lt.eq 0 , 1 - sqrt(1 - x^2) lt.eq y lt.eq - x$，则
   $
@@ -1452,12 +1414,12 @@ TODO
   ]
 ]
 
-#req(`880 §5 Ab Q9`)[
+#qst(`880 §5 Ab Q9`)[
   设 $D : 2 x lt.eq x^2 + y^2 , thin 0 lt.eq y lt.eq x lt.eq 2$，则
   $ I = integral.double_D frac(dif x dif y, sqrt(x^2 + y^2)) = underline(#hide[a b c]) . $
 ]
 
-#req(`880 §5 Ab Q10`)[
+#qst(`880 §5 Ab Q10`)[
   设
   $D = { (x , y) divides 0 lt.eq y lt.eq 1 - x , 0 lt.eq x lt.eq 1 }$，则
   $ integral.double_D e^(frac(x, x + y)) dif x dif y = underline(#hide[a b c]) . $
@@ -1466,7 +1428,7 @@ TODO
     此题有多种解法，如二重积分换元，极坐标。
   ]
 ]
-#req(`880 §5 Ab Q12`)[
+#qst(`880 §5 Ab Q12`)[
   设区域 $D$ 由 $x = - sqrt(2 y - y^2)$, $x = - 2$, $y = 0$, $y = 2$
   所围，则
   $ I = integral.double_D y thin dif x dif y = underline(#hide[a b c]) . $
@@ -1475,21 +1437,13 @@ TODO
     此题有多种方法，如形心，割补法。
   ]
 ]
-
-#req(`880 §5 Ab Q12`)[
-  计算
-  $
-    (2 sqrt(2))/3 integral_0^(pi/4) (1 - sin^2 theta) dif(sin theta)
-  $
-]
-
-#req(`880 §5 Ac Q6`)[
+#qst(`880 §5 Ac Q6`)[
   设
   $D = { (x , y) divides 0 lt.eq x lt.eq 2 , 0 lt.eq y lt.eq sqrt(2 x - x^2) }$，计算
   $ I = integral.double_D lr(|x + y - 2|) thin dif x dif y . $
 ]
 
-#req(`880 §5 Ac Q7`)[
+#qst(`880 §5 Ac Q7`)[
   设 $D : 1 lt.eq x^2 + y^2 lt.eq 2 x , y gt.eq 0$，计算
   $ I = integral.double_D frac(y, (1 + x^2 + y^2) sqrt(x^2 + y^2)) thin dif x dif y . $
 ]
@@ -1500,13 +1454,13 @@ TODO
 //   $[1 + x + y]$ 表示不超过 $1 + x + y$ 的最大整数。
 // ]
 
-#req(`880 §5 Ac Q9`)[
+#qst(`880 §5 Ac Q9`)[
   (9) 设
   $D = { (x , y) divides 0 lt.eq x lt.eq 1 , 0 lt.eq y lt.eq 1 }$，计算
   $ I = integral.double_D max { 2 x - x^2 , (1 - y)^2 } thin dif x dif y . $
 ]
 
-#req(`880 §5 Ac Q10`)[
+#qst(`880 §5 Ac Q10`)[
   计算
   $ I = integral.double_D "sgn" (x^2 - y^2 + 2) thin dif x thin dif y , $
   其中 $D : x^2 + y^2 lt.eq 4$.
@@ -1522,7 +1476,7 @@ TODO
   + $(x^2 + y^2)^2 = 2 x y$.
 ]
 
-#req(`880 §5 Ba Q5`)[
+#qst(`880 §5 Ba Q5`)[
   设 $D$ 是以 $(1 , 1)$、$(- 1 , 1)$ 和 $(- 1 , - 1)$
   为顶点的三角形区域，$D_1$ 是 $D$ 在第一象限的部分，且
   $ f (x , y) = x y + integral.double_D f (x , y) thin dif x thin dif y , $
@@ -1541,12 +1495,12 @@ TODO
   ]
 ]
 
-#req(`880 §5 Bb Q1`)[
+#qst(`880 §5 Bb Q1`)[
   设 $D : 0 lt.eq x lt.eq y lt.eq 2 pi$，则
   $ I = integral.double_D lr(|sin (x - y)|) thin dif x dif y = underline(#hide[a b c]) . $
 ]
 
-#req(`880 §5 Bb Q7`)[
+#qst(`880 §5 Bb Q7`)[
   曲线 $r^2 = 2 a^2 cos 2 theta thin (a > 0)$ 所围图形的面积为
   #underline[];.
 
@@ -1600,7 +1554,7 @@ TODO
 
 === 反函数主值区间问题
 
-#req(`880 §5 Bc Q15`)[
+#qst(`880 §5 Bc Q15`)[
   设 $D$ 是由 $y = sqrt(1 - x^2) , y = sqrt(4 - x^2)$ 与 $x + y = 0$
   及 $x$ 轴所围，且位于 $x + y gt.eq 0$ 部分的区域，计算
   $ I = integral.double_D frac(sqrt(x^2 + y^2), x^2 + 2 y^2) thin dif x dif y . $
@@ -1614,7 +1568,7 @@ TODO
 
 === 与微分方程综合
 
-#req(`880 §5 Bc Q12`)[
+#qst(`880 §5 Bc Q12`)[
   设 $f (t)$ 在 $(- oo , + oo)$ 内有连续导数，且
   $ f (t) = 2 integral.double_D (x^2 + y^2) f (sqrt(x^2 + y^2)) thin dif x dif y + t^4 , $
   $D : x^2 + y^2 lt.eq t^2$，求 $f (t)$。
@@ -1634,7 +1588,7 @@ TODO
 
 = 常微分方程
 
-#req(`880 §6 Aa Q4`)[
+#qst(`880 §6 Aa Q4`)[
   设 $y_1 (x) , y_2 (x)$ 是 $y prime + P (x) y = 0$ 的两个不同特解，其中
   $P (x)$ 在 $(- oo , + oo)$ 内连续，且 $P (x)$ 不恒为
   0，则下列结论中错误的是（ ）。
@@ -1650,30 +1604,30 @@ TODO
   + $frac(y_2 (x), y_1 (x)) equiv$ 常数 \($y_1 (x) eq.not 0$)
 ]
 
-#req(`880 §6 Ab Q2`)[
+#qst(`880 §6 Ab Q2`)[
   求微分方程 $(1 + y^2) thin d x + (2 x - 1) y thin d y = 0$ 的通解。
 ]
 
-#req(`880 §6 Ab Q4`)[
+#qst(`880 §6 Ab Q4`)[
   微分方程 $x y' = sqrt(x^2 + y^2) + y$ 的通解为 #underline[];.
 ]
-#req(`880 §6 Ab Q7`)[
+#qst(`880 §6 Ab Q7`)[
   方程 $(1 - x^2) y prime.double - x y prime = 0$ 满足
   $y (0) = 0 , y prime (0) = 1$ 的特解为 #underline[];.
 ]
 
-#req(`880 §6 Ab Q5`)[
+#qst(`880 §6 Ab Q5`)[
   方程 $y prime.double + 2 y prime + y = x e^x$ 满足
   $y (0) = 0 , y prime (0) = 0$ 的特解为 #underline[];.
 ]
-#req(`880 §6 Ac Q3`)[
+#qst(`880 §6 Ac Q3`)[
   求 $ integral e^(x + 1) ast e^(- integral dif x) dif x . $
 ]
-#req(`880 §6 Ac Q6`)[
+#qst(`880 §6 Ac Q6`)[
   + 解 $y(x)$ $ sqrt(y^2 + x^2) + y = 1/2 $
 ]
 
-#req(`880 §6 Ac Q7`)[
+#qst(`880 §6 Ac Q7`)[
   设 $L$ 是一条平面曲线，其上任意一点 $P (x , y) (x > 0)$
   到原点的距离恒等于该
 
@@ -1686,7 +1640,7 @@ TODO
 ]
 
 
-#req(`880 §6 Ac Q9`)[
+#qst(`880 §6 Ac Q9`)[
   设 $y = y (x)$ 满足
   $x y prime - (2 x^2 - 1) y = x^3 (x gt.eq 1) , y (1) = a$.
 
@@ -1696,7 +1650,7 @@ TODO
     的斜渐近线方程.
 ]
 
-#req(`880 §6 Ac Q10`)[
+#qst(`880 §6 Ac Q10`)[
   设 $f (x)$ 满足
   $x f prime (x) - f (x) = a (1 - ln x) + x^2 (x > 0 , a eq.not 0) , f (1) = 1 - a$.
 
@@ -1706,7 +1660,7 @@ TODO
     的取值范围.
 ]
 
-#req(`880 §6 Ac Q11`)[
+#qst(`880 §6 Ac Q11`)[
   设 $f (x)$ 满足
   $x f prime (x) - 3 f (x) = 2 x , f (1) = 1 / 3 k - 1 , k > 0$.
 
@@ -1719,7 +1673,7 @@ TODO
   微分方程 $y prime.double - y = sin^2 x$ 的通解为 #underline[];.
 ]
 
-#req(`880 §6 Bb Q8`)[
+#qst(`880 §6 Bb Q8`)[
   已知 $y^2 = 1/2 x^4 + x^2 + 1/2$，求 $y$.
 ]
 
@@ -1731,7 +1685,7 @@ TODO
   $integral_0^(+ oo) y (x) thin d x = underline(#h(5em))$.
 ]
 
-#qst(`880 §6 Bb Q10`)[
+#qst(`880 §6 Bc Q1`)[
   设 $f (x)$ 满足 $f (x + y) = frac(f (x) + f (y), 1 - f (x) f (y))$, 且 $f prime (0)$ 存在，求 $f prime (x)$ 及 $f (x)$.
 
   #ps[
