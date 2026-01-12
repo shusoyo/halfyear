@@ -64,7 +64,7 @@
 == 偏导数
 #definition("偏导数")[
   $
-    f'_x (x_0 , y_0) & = lim_(Delta x arrow.r 0) frac(f (x_0 + Delta x , y_0) - f (x_0 , y_0), Delta x) = lr(diff/(diff x) f (x , y_0) |_(x = x_0)) ,\
+    f'_x (x_0 , y_0) & = lim_(Delta x arrow.r 0) frac(f (x_0 + Delta x , y_0) - f (x_0 , y_0), Delta x) = lr(partial/(partial x) f (x , y_0) |_(x = x_0)) ,\
     f'_y (x_0 , y_0) & = lim_(Delta y arrow.r 0) frac(f (x_0 , y_0 + Delta y) - f (x_0 , y_0), Delta y) = lr(frac(partial, partial y) f (x_0 , y)|_(y = y_0)) .
   $
 ]
@@ -208,7 +208,7 @@
       G'_x + G'_u frac(partial u, partial x) + G'_v frac(partial v, partial x) = 0
     )
   $
-  解方程组便可得到 $(diff u)/(diff x)$ 与 $(diff v)/(diff x)$. $(diff u)/(diff y)$ 与 $(diff v)/(diff y)$ 同理.
+  解方程组便可得到 $(partial u)/(partial x)$ 与 $(partial v)/(partial x)$. $(partial u)/(partial y)$ 与 $(partial v)/(partial y)$ 同理.
 
 
 ]
@@ -249,8 +249,8 @@
     函数 $L (x , y)$ 的全微分为
     $ d L = [f_x ' (x , y) + r phi_x ' (x , y)] d x + [f_y ' (x , y) + r phi_y ' (x , y)] d y + phi (x , y) d r . $
     因此它极值点必要条件是 $ cases(
-      f_x' (x , y) + r phi_x' (x , y) = 0\
-      f_y' (x , y) + r phi_y' (x , y) = 0\
+      f_x' (x , y) + r phi_x' (x , y) = 0,
+      f_y' (x , y) + r phi_y' (x , y) = 0,
       phi (x , y) = 0
     ) $ 在 $phi (x , y) = 0$ 的条件下，有 $L = f$。因此 $L$
     的极值点就是 $f$ 的极值点.
